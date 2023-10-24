@@ -1,3 +1,4 @@
 # PetConnectWebsite
 Website For Pet Connect
-Flask
+\n Flask
+\n\n Made by Vihas Veggalam, potentially Ruthvik Venkatesan, and most likely Alan Qu
