@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+@font-face {
+    font-family: 'Maven Pro';
+    src: url('../fonts/MavenPro-Regular.ttf');
+}
+:root {
+    --font-family: 'Maven Pro', serif;
+    --primary: #14a0c4;
+    --secondary: #006cc4;
+    --tertiary: #8658dd;
+    --light-primary: #b2ecf0;
+    --error-color: #b151a4;
+    --off-white: #fffdf7;
+    --not-exactly-black: rgb(49, 49, 49);
+}
+body {
+    background-color: var(--off-white);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#Reg-Nav-In > div:first-child {
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+#Reg-Nav-Out {
+    max-width: 1200px;
+    margin: 0 auto;
+    z-index: 999;
+    position: relative;
+    height: 100%;
+}
+
+#Reg-Nav-In {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#Nav-Logo-A {
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    font-size: 1.5em;
+}
+
+
+#Nav-Link-Cont {
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+}
+
+.link-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}

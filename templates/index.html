@@ -1,0 +1,173 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block headerinfo %}
+    <link href="{{ url_for('static', filename='css/contact.css') }}" rel="stylesheet">
+{% endblock %}
+{% block BodyContent %}
+
+    <div id="Landing">
+        <div id="LandingPics"></div>
+        <div>
+            <h1 class="opacity0" data-inviewport="appear">NANOGURUS</h1>
+            <h2 class="opacity0" data-inviewport="appear">BUILDING ROBOTS, BUILDING CHARACTER</h2>
+        </div>
+    </div>
+
+    <div id="AboutUs">
+        <div></div>
+        <div>
+            <h1 class="opacity0" data-inviewport="appear">ABOUT US</h1>
+            <br>
+            <p class="opacity0" data-inviewport="appear">{{ about_us }}</p>
+            <br>
+            <a href="/team" class="opacity0" data-inviewport="appear">View More</a>
+        </div>
+    </div>
+
+
+
+    <div id="CurrMembers">
+        <div>
+            <div class="title-container opacity0" data-inviewport="appear"><h1
+                    style="padding-bottom: 5px; padding-top: 5px">CURRENT TEAM</h1></div>
+            <div class="data-container-row">
+                {% for member in curr_members %}
+                    <div class="individual-container opacity0" data-inviewport="appear"
+                         style="transition-delay: {{ loop.index*(1/12) }}s">
+                        <div class="individual-image" style="background-image: url('{{ member[2] }}'); {{ member[4] }}"></div>
+                        <h3>{{ member[0] }}</h3>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div id="Outreaches">
+        <div class="title-container opacity0" data-inviewport="appear"><h1
+                style="padding-bottom: 5px; padding-top: 5px">LATEST OUTREACHES</h1></div>
+        <div class="data-container-row">
+            {% for outreach in outreaches %}
+                <div class="outreach-card opacity0" data-inviewport="drop-in"
+                     style="transition-delay: {{ loop.index*(1/12) }}s !important;">
+                    <div class="card-img" style="background-image: url('{{ outreach[2] }}')"></div>
+                    <h3>{{ outreach[0] }} ({{ outreach[1] }})</h3>
+                    <a class="outreach-card-button" href="/outreaches#{{ outreach[0] }}">Learn More</a>
+                </div>
+            {% endfor %}
+        </div>
+        <div><a href="/outreaches">View All Outreaches</a></div>
+    </div>
+
+
+    <div id="Robot">
+
+    </div>
+
+
+    <div id="Sponsors">
+        <div>
+            <div class="title-container opacity0" data-inviewport="appear"><h1
+                    style="padding-bottom: 5px; padding-top: 5px;">SPONSORS</h1></div>
+            <div class="title-container opacity0" data-inviewport="appear">
+                <h3 style="padding-bottom: 5px; padding-top: 5px">If you would like to sponsor us, please <a
+                        href="/contact">contact us</a></h3>
+            </div>
+            <div class="data-container-row">
+                {% for sponsor in sponsors %}
+                    <div onclick="window.open('{{ sponsor[2] }}')" class="individual-container opacity0 mouse" data-inviewport="appear"
+                         style="transition-delay: {{ loop.index*(1/12) }}s">
+                        <div class="individual-image" style="background-image: url('{{ sponsor[1] }}')"></div>
+                        <h2>{{ sponsor[0] }}</h2>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function resize_outreach_imgs() {
+            var pic_width = $('.card-img').width();
+            $('.card-img').css('height', (pic_width * 0.5625) + 'px');
+            var pic_h = $('.card-img').outerHeight();
+            var title_h = 0;
+            $('.outreach-card>h3').each(function () {
+                var curr_title_h = $(this).outerHeight();
+                title_h = Math.max(title_h, curr_title_h);
+            })
+            var button_h = $('.outreach-card-button').outerHeight();
+            var total_h = pic_h + title_h + button_h * 3;
+            $('.outreach-card').css('height', total_h + 'px')
+        }
+
+        function resize_main_pics() {
+            let windowH = $(window).height();
+            let navH = $('nav').outerHeight();
+            let num = 0;
+            let windowW = $(window).width();
+            let Landingh1 = $('#Landing h1');
+            let Landingh2 = $('#Landing h2');
+            if (windowW > 1075) {
+                num = 0;
+                Landingh1.css('font-size', '5em')
+                Landingh2.css('font-size', `${(5 / 5) * 3}em`)
+            } else if (windowW > 975) {
+                num = 100;
+                Landingh1.css('font-size', '4.5em')
+                Landingh2.css('font-size', `${(4.5 / 5) * 3}em`)
+            } else if (windowW > 800) {
+                num = 200;
+                Landingh1.css('font-size', '4em')
+                Landingh2.css('font-size', `${(4 / 5) * 3}em`)
+            } else if (windowW > 675) {
+                num = 300;
+                Landingh1.css('font-size', '3.5em')
+                Landingh2.css('font-size', `${(3.5 / 5) * 3}em`)
+            } else if (windowW > 540) {
+                num = 400;
+                Landingh1.css('font-size', '3em')
+                Landingh2.css('font-size', `${(3 / 5) * 3}em`)
+            } else {
+                num = 350;
+                Landingh1.css('font-size', '2.5em')
+                Landingh2.css('font-size', `${(2.5 / 5) * 3}em`)
+            }
+            $('#Landing').css('height', ((windowH - navH - num) + 'px'))
+            console.log(windowH)
+            console.log(navH)
+        }
+
+        resize_main_pics();
+        resize_outreach_imgs();
+        $(window).on('resize', function () {
+            resize_outreach_imgs();
+            resize_main_pics();
+        });
+        let nav_height = $('nav').outerHeight();
+        let pics_div = $('#LandingPics')
+        let pre = '../static/images/slides/';
+        let pics = ['1.webp', '2.webp', '3.webp', '4.webp', '5.webp', '6.webp']
+        pics_div.append(`<div style="background-image: url('${pre + pics[pics.length - 1]}');"></div>`);
+        pics.forEach(function (pic) {
+            pics_div.append(`<div style="background-image: url('${pre + pic}');"></div>`);
+        })
+        var index = 0
+        function next_pic() {
+            const nextIndex = (index + 1) % (pics.length);
+            pics_div.css('transition', '0.4s')
+            pics_div.css('transform', `translateX(-${(nextIndex + 1) * 100}%)`);
+            if (nextIndex === 5) {
+                pics_div.one('transitionend', function (e) {
+                    pics_div.css('transition', 'none')
+                    pics_div.css('transform', `translateX(0)`);
+                })
+            }
+            index = nextIndex;
+        }
+
+        setInterval(next_pic, 4000);
+    </script>
+{% endblock %}
