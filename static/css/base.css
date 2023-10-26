@@ -60,3 +60,19 @@ body {
     display: flex;
     align-items: center;
 }
+.nav-links {
+    font-size: 0.83em;
+    text-decoration: none;
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+    color: var(--not-exactly-black);
+    transition: 0.2s ease-in;
+    padding: 6px;
+    font-weight: bold;
+}
+.for-color {
+    background-color: var(--primary);
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+}

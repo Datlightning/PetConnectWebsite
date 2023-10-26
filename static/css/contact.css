@@ -1,0 +1,52 @@
+#ContactUs {
+    margin: 20px auto;
+}
+
+#ContactUs>div:first-child {
+    text-align: center;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.ContactUsFlexbox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: fit-content;
+    margin-top: 40px;
+}
+#Landing{
+
+    width: 1200px;
+    margin:auto;
+
+}
+.center{
+    margin:auto;
+    justify-content: center;
+}
+.map {
+    width: 600px;
+    height: 450px;
+    border-radius: 20px;
+}
+
+.ContactUsFlexbox>div {
+    flex-basis: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ContactUsFlexbox>div:nth-child(2)>h3 {
+    height: fit-content;
+    text-align: center;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.ContactUsFlexbox>div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+}

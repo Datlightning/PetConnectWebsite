@@ -16,121 +16,20 @@
     <!-- Regular navbar -->
     <div id="Reg-Nav-Out">
         <div id="Reg-Nav-In">
-            <!-- Nanogurus Logo -->
+            <!-- PetConnect Logo -->
             <div style="display: flex">
                 <a href="/" id="Nav-Logo-A">
-                    <img src="../static/images/nanogurus_logo.png" height="40px">
+                    <img src="../static/images/petconnect_logo.png" height="200px">
                 </a>
             </div>
 
             <!-- Navbar Links -->
             <div id="Nav-Link-Cont">
-                <div class="link-container"><a class="nav-links" href="/">HOME</a></div>
-                <div class="menu">
-                    <a class="nav-links" href="/team">TEAM
-                        <img src="../static/images/caret-down-solid.svg" height="15px">
-                    </a>
-                    <div class="sub-menu">
-                        <a class="nav-links" href="/team#CurrMembers">CURRENT MEMBERS</a>
-                        <a class="nav-links" href="/team#CoachMen">COACHES AND MENTORS</a>
-                    </div>
-                </div>
-                <div class="link-container"><a class="nav-links" href="/outreaches">OUTREACHES</a></div>
-                <div class="link-container"><a class="nav-links" href="/contact">CONTACT</a></div>
-                <div class="link-container"><a class="nav-links" style="white-space: nowrap;" href="/scoring">CALCULATE SCORES</a></div>
-                {% if session['logged_in'] is not true %}
-                    <div class="link-container"><a class="nav-links" href="/member-login">MEMBERS LOGIN</a></div>
-                {% endif %}
-                {% if session['logged_in'] is true %}
-                    <div class="menu">
-                        <a class="nav-links">SCOUTING
-                            <img src="../static/images/caret-down-solid.svg" height="15px">
-                        </a>
-                        <div class="sub-menu">
-                            <a class="nav-links" href="/scouting">SCOUTING FORM</a>
-                            <a class="nav-links" href="/display">SCOUTING DISPLAY</a>
-                        </div>
-                    </div>
-                    <div class="menu">
-                        <a class="nav-links">CALENDAR
-                            <img src="../static/images/caret-down-solid.svg" height="15px">
-                        </a>
-                        <div class="sub-menu">
-                            <a class="nav-links" href="/log-hours">ATTENDANCE</a>
-                            <a class="nav-links" href="/calendar">CALENDAR/SIGN-UPS</a>
-                            <a class="nav-links" href="/leaderboards">LEADERBOARDS</a>
-                        </div>
-                    </div>
-
-                    <div class="menu">
-                        <a class="nav-links" style="white-space: nowrap;">RUN TASKS
-                            <img src="../static/images/caret-down-solid.svg" height="15px">
-                        </a>
-                        <div class="sub-menu">
-                            <a onclick="UpdateDataSpreadsheet()" class="nav-links mouse">UPDATE DATA</a>
-                            <a class="nav-links"
-                               href="/logout">LOG {{ session['user'][0].upper() + session['user'][1:].upper() }} OUT</a>
-                        </div>
-                    </div>
-                {% endif %}
-            </div>
-            <!-- Mobile Hamburger Icon -->
+                <div class="link-container"><a class="nav-links" href="/">DO SOMETHING</a></div>            </div>
             <div class="hamburger">
                 <div></div>
             </div>
         </div>
-    </div>
-
-
-    <!-- Mobile hamburger menu dropdown thing -->
-    <div class="mobile-menu">
-        <a class="nav-links" href="/">HOME</a>
-        <div class="menu-mobile">
-            <a class="nav-links has-drop mouse">TEAM
-                <img src="../static/images/caret-down-solid.svg" height="15px">
-            </a>
-            <div class="sub-menu-mobile">
-                <a class="nav-links" href="/team#CurrMembers">CURRENT MEMBERS</a>
-                <a class="nav-links" href="/team#CoachMen">COACHES AND MENTORS</a>
-            </div>
-        </div>
-        <a class="nav-links" href="/outreaches">OUTREACHES</a>
-        <a class="nav-links" href="/contact">CONTACT</a>
-        <a class="nav-links" href="/scoring">CALCULATE SCORES</a>
-        {% if session['logged_in'] is not true %}
-            <a class="nav-links" href="/member-login">MEMBERS LOGIN</a>
-        {% endif %}
-        {% if session['logged_in'] is true %}
-            <div class="menu-mobile">
-                <a class="nav-links has-drop mouse">SCOUTING
-                    <img src="../static/images/caret-down-solid.svg" height="15px">
-                </a>
-                <div class="sub-menu-mobile">
-                    <a class="nav-links" href="/scouting">SCOUTING FORM</a>
-                    <a class="nav-links" href="/display">SCOUTING DISPLAY</a>
-                </div>
-            </div>
-            <div class="menu-mobile">
-                <a class="nav-links has-drop mouse">CALENDAR
-                    <img src="../static/images/caret-down-solid.svg" height="15px">
-                </a>
-                <div class="sub-menu-mobile">
-                    <a class="nav-links" href="/log-hours">ATTENDANCE</a>
-                    <a class="nav-links" href="/calendar">CALENDAR/SIGN-UPS</a>
-                    <a class="nav-links" href="/leaderboards">LEADERBOARDS</a>
-                </div>
-            </div>
-            <div class="menu-mobile">
-                <a class="nav-links has-drop mouse">RUN TASKS
-                    <img src="../static/images/caret-down-solid.svg" height="15px">
-                </a>
-                <div class="sub-menu-mobile">
-                    <a onclick="UpdateDataSpreadsheet()" class="nav-links mouse">UPDATE DATA</a>
-                    <a class="nav-links" href="/logout">LOG {{ session['user'][0].upper() + session['user'][1:].upper() }} OUT</a>
-                </div>
-            </div>
-
-        {% endif %}
     </div>
 </nav>
 <body>
@@ -142,16 +41,18 @@
 {% endblock %}
 </div>
 <footer>
-    <div><h2>PetConnect</h2></div>
-    <div><h3>Copyright © 2023 PetConnect</h3></div>
-    <div>
-        <a href="https://www.instagram.com/nanogurus4347/">
-            <object class="footer-links" data="../static/images/instagram.svg" type="image/svg+xml"></object>
-        </a>
-        <a href="mailto: nanogurusftcrobotics@gmail.com">
-            <object class="footer-links" data="../static/images/email.svg" type="image/svg+xml"></object>
-        </a>
-    </div>
+    <center>
+        <div><h2>PetConnect</h2></div>
+        <div><h3>Copyright © 2023 PetConnect</h3></div>
+        <div>
+            <!-- <a href="https://www.instagram.com/nanogurus4347/">
+                <object class="footer-links" data="../static/images/instagram.svg" type="image/svg+xml"></object>
+            </a>
+            <a href="mailto: nanogurusftcrobotics@gmail.com">
+                <object class="footer-links" data="../static/images/email.svg" type="image/svg+xml"></object>
+            </a> -->
+        </div>
+    </center>
 </footer>
 </body>
 

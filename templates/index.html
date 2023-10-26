@@ -6,87 +6,21 @@
 {% block BodyContent %}
 
     <div id="Landing">
-        <div id="LandingPics"></div>
-        <div>
-            <h1 class="opacity0" data-inviewport="appear">NANOGURUS</h1>
-            <h2 class="opacity0" data-inviewport="appear">BUILDING ROBOTS, BUILDING CHARACTER</h2>
-        </div>
+        <center>
+        <h1 class="opacity0" data-inviewport="appear">PetConnect</h1>
+            <h2 class="opacity0" data-inviewport="appear">BUILDING PETS, BUILDING CHARACTER</h2>
+        </center>
     </div>
 
-    <div id="AboutUs">
+    <!-- <div id="AboutUs">
         <div></div>
         <div>
             <h1 class="opacity0" data-inviewport="appear">ABOUT US</h1>
-            <br>
-            <p class="opacity0" data-inviewport="appear">{{ about_us }}</p>
-            <br>
-            <a href="/team" class="opacity0" data-inviewport="appear">View More</a>
         </div>
-    </div>
+    </div> -->
 
 
 
-    <div id="CurrMembers">
-        <div>
-            <div class="title-container opacity0" data-inviewport="appear"><h1
-                    style="padding-bottom: 5px; padding-top: 5px">CURRENT TEAM</h1></div>
-            <div class="data-container-row">
-                {% for member in curr_members %}
-                    <div class="individual-container opacity0" data-inviewport="appear"
-                         style="transition-delay: {{ loop.index*(1/12) }}s">
-                        <div class="individual-image" style="background-image: url('{{ member[2] }}'); {{ member[4] }}"></div>
-                        <h3>{{ member[0] }}</h3>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-    <div id="Outreaches">
-        <div class="title-container opacity0" data-inviewport="appear"><h1
-                style="padding-bottom: 5px; padding-top: 5px">LATEST OUTREACHES</h1></div>
-        <div class="data-container-row">
-            {% for outreach in outreaches %}
-                <div class="outreach-card opacity0" data-inviewport="drop-in"
-                     style="transition-delay: {{ loop.index*(1/12) }}s !important;">
-                    <div class="card-img" style="background-image: url('{{ outreach[2] }}')"></div>
-                    <h3>{{ outreach[0] }} ({{ outreach[1] }})</h3>
-                    <a class="outreach-card-button" href="/outreaches#{{ outreach[0] }}">Learn More</a>
-                </div>
-            {% endfor %}
-        </div>
-        <div><a href="/outreaches">View All Outreaches</a></div>
-    </div>
-
-
-    <div id="Robot">
-
-    </div>
-
-
-    <div id="Sponsors">
-        <div>
-            <div class="title-container opacity0" data-inviewport="appear"><h1
-                    style="padding-bottom: 5px; padding-top: 5px;">SPONSORS</h1></div>
-            <div class="title-container opacity0" data-inviewport="appear">
-                <h3 style="padding-bottom: 5px; padding-top: 5px">If you would like to sponsor us, please <a
-                        href="/contact">contact us</a></h3>
-            </div>
-            <div class="data-container-row">
-                {% for sponsor in sponsors %}
-                    <div onclick="window.open('{{ sponsor[2] }}')" class="individual-container opacity0 mouse" data-inviewport="appear"
-                         style="transition-delay: {{ loop.index*(1/12) }}s">
-                        <div class="individual-image" style="background-image: url('{{ sponsor[1] }}')"></div>
-                        <h2>{{ sponsor[0] }}</h2>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
 
     <script>
         function resize_outreach_imgs() {

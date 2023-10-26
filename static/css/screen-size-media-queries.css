@@ -1,0 +1,282 @@
+/* Screen smaller than */
+
+@media only screen and (max-width: 1555px) {
+    .column-text-container {
+        width: 65%;
+    }
+
+    .outreach-card {
+        flex-basis: 28%;
+    }
+}
+
+
+@media only screen and (max-width: 1262px) {
+    .outreach-card {
+        flex-basis: 30%;
+    }
+
+    #OutreachContainer {
+        max-width: 90% !important;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .column-text-container {
+        width: 80%;
+    }
+
+    .individual-container > h2 {
+        font-size: 1.5em;
+    }
+
+    .individual-image {
+        width: 140px;
+        height: 140px;
+    }
+
+    .outreach-card {
+        flex-basis: 43%;
+    }
+
+    .outreachcont {
+        flex-basis: 400px !important;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .column-text-container {
+        left: 42%;
+    }
+
+    .column-text-container h3 {
+        font-size: 1.1em;
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    .hamburger {
+        display: flex;
+    }
+
+    #Reg-Nav-In {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    #Reg-Nav-In > div:first-child {
+        margin-left: 30px;
+    }
+
+    #Nav-Link-Cont {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .column2 {
+        flex-basis: 80%;
+        height: fit-content;
+    }
+
+    .column-text-container {
+        left: 0;
+        top: 0;
+        transform: translate(0, 0);
+        position: relative;
+    }
+
+    #OutreachContainer {
+        max-width: 80% !important;
+    }
+
+    .outreach-card {
+        flex-basis: 45%;
+    }
+
+    #events_container {
+        width: 600px !important;
+    }
+
+    iframe {
+        width: 700px !important;
+    }
+
+    #AboutUs > div:nth-child(2) {
+        width: 600px !important;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+
+    .bg-text-container h1 {
+        font-size: 2.3em;
+    }
+
+    .individual-container > h2 {
+        font-size: 1.2em;
+    }
+
+    .individual-image {
+        width: 125px;
+        height: 125px;
+    }
+
+    #Form-Holder > div:nth-child(2) {
+        margin-left: 0 !important;
+        margin-top: 20px;
+    }
+
+    .scouting-div {
+        width: 400px !important;
+    }
+
+    .outreach-card {
+        flex-basis: 65%;
+    }
+
+    iframe {
+        width: 575px !important;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .map {
+        width: 500px !important;
+        height: 375px !important;
+    }
+
+    #events_container {
+        width: 500px !important;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .individual-container {
+        flex-basis: 15%;
+    }
+
+    iframe {
+        width: 500px !important;
+    }
+
+    #AboutUs > div:nth-child(2) {
+        width: 90% !important;
+    }
+
+    #AboutUs h1 {
+        font-size: 2.5em;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .individual-container > h2 {
+        font-size: 1.15em;
+    }
+
+    .individual-image {
+        width: 115px;
+        height: 115px;
+    }
+
+    .map {
+        width: 400px !important;
+        height: 300px !important;
+    }
+    .outreach-card {
+        flex-basis: 85%;
+    }
+
+    iframe {
+        width: 400px !important;
+    }
+
+    #events_container {
+        width: 400px !important;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+
+
+    .column2 {
+        flex-basis: 90%;
+    }
+
+    .bg-text-container h1 {
+        font-size: 2.1em;
+    }
+
+    .bg-text-container {
+        top: 25%;
+    }
+
+    .individual-container {
+        margin: 10px;
+    }
+
+    #OutreachContainer {
+        max-width: 90% !important;
+    }
+
+    .map {
+        width: 350px !important;
+        height: 263px !important;
+    }
+
+    iframe {
+        width: 350px !important;
+    }
+
+    #events_container {
+        width: 350px !important;
+    }
+
+    .event {
+        width: 98% !important;
+    }
+
+    #AboutUs {
+        width: 100%;
+        height: 85vh;
+        position: relative;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    iframe {
+        width: 325px !important;
+    }
+
+    #events_container {
+        width: 325px !important;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .map {
+        width: 300px !important;
+        height: 225px !important;
+    }
+
+    .outreach-card {
+        flex-basis: 95%;
+    }
+
+    iframe {
+        width: 300px !important;
+    }
+
+    #events_container {
+        width: 300px !important;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .outreach-card {
+        flex-basis: 98%;
+    }
+
+}
