@@ -15,7 +15,7 @@
     --not-exactly-black: rgb(49, 49, 49);
 }
 body {
-    background-color: var(--off-white);
+    background-color: var(--primary);
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -60,18 +60,31 @@ body {
     display: flex;
     align-items: center;
 }
+footer{
+    align-items: center;
+    margin: auto;
+}
 .nav-links {
     font-size: 0.83em;
     text-decoration: none;
     margin-left: 0.75rem;
     margin-right: 0.75rem;
     color: var(--not-exactly-black);
-    transition: 0.2s ease-in;
+    transition: 0.2s ease-out;
     padding: 6px;
     font-weight: bold;
+    border-radius: 30px;
+}
+.nav-links:hover {
+    background-color: var(--light-primary);
+    transition: 0.2s ease-in;
+
+}
+body{
+    background-color: var(--primary);
 }
 .for-color {
-    background-color: var(--primary);
+    background-color: var(--tertiary);
     position: absolute;
     width: 100%;
     z-index: 0;
