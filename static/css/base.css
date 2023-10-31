@@ -6,7 +6,7 @@
 }
 :root {
     --font-family: 'Maven Pro', serif;
-    --primary: #14a0c4;
+    --primary: #00ccff;
     --secondary: #006cc4;
     --tertiary: #8658dd;
     --light-primary: #b2ecf0;
@@ -88,4 +88,7 @@ body{
     position: absolute;
     width: 100%;
     z-index: 0;
+}
+h2,h3{
+    text-align:center;
 }

@@ -1,0 +1,10 @@
+.Landing{
+    width: 50%;
+    display:flex;
+    margin:auto;
+    padding: 20px;
+}
+h1{
+    text-align:center;
+
+}
