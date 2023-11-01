@@ -4,7 +4,42 @@
     margin:auto;
     padding: 20px;
 }
+
 h1{
     text-align:center;
+}
+.product{
+    box-shadow: 10px 10px 5px black;
+    background-color: var(--not-exactly-black);
+    height: calc(100vh - 600px);
+    width: 90vw;
+    position: relative;
+    margin: 20px auto;
+}
+.product-url{
+    background-color: var(--tertiary);
+    font-size: 0.83em;
+    text-decoration: none;
+    color: var(--not-exactly-black);
+    transition: 0.2s ease-out;
+    padding: 6px;
+    font-weight: bold;
+    border-radius: 30px;
+    position: absolute;
+    bottom: 10px;
+    left: 42vw;
+}
+.product-url:hover {
+    background-color: var(--light-primary);
+    transition: 0.2s ease-in;
 
+}
+.product-descriptions{
+    color: var(--light-primary);
+    margin: auto;
+    
+}
+.product-title{
+    color: var(--light-primary);
+    font: 3em var(--font-family)
 }
