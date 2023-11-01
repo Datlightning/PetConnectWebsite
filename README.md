@@ -1,5 +1,10 @@
 # PetConnectWebsite
 Website For Pet Connect
 Flask
-Made by Datlightning, potentially Ruthvik Venkatesan, and most likely Alan Qu
-We're COOKING!!!!!!!!!!!!!!!🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯
+Html5 
+Css3
+Hosted on PythonAnywhere
+
+-
+
+Made by Ruthvik Venkatesan and Vihas Veggalam. 
