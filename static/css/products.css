@@ -1,0 +1,66 @@
+
+
+
+.topTitle { 
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    margin-top: 4%;
+    /* margin-right: 90%; */
+    align-items: left;
+    margin-bottom: 20px;
+    max-height: fit-content;
+
+}
+head {
+    max-height: fit-content;
+}
+
+body{ 
+    background-color: rgb(251, 245, 237);
+}
+
+@font-face {
+    font-family: CaveatBold;
+    src: url("../fonts/Fonts/Caveat-Bold.ttf");
+}
+
+.productNames {
+    font-family: CaveatBold;
+    font-size: 70px;
+    margin-top: 4%;
+    /* margin-right: 90%; */
+    align-items: left;
+    margin-bottom: 20px;
+    max-height: fit-content;
+    max-width: fit-content;
+}
+
+.product { 
+    display: inline-flex;
+    max-height: 300px;
+    max-width: fit-content;
+}
+
+.productDescriptions { 
+    font-family: CaveatBold;
+    font-size: 50px; 
+    max-width: 50%;
+    margin-top: 20px;
+    align-items: left; 
+    max-height: fit-content; 
+    max-width: fit-content; 
+    
+}
+
+.productImages { 
+    scale: 100%;
+    margin-left: 10%;
+    float: right;
+    align-items: right; 
+    margin-bottom: 10%;
+    margin-top: 70px; 
+    max-width: fit-content;
+    max-height: fit-content;
+    margin-left: 30%; 
+}

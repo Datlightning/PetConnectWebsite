@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/petconnect.ico') }}">
+
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>{% block title %}{% endblock %}</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link href="{{ url_for('static', filename='css/products.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/screen-size-media-queries.css') }}" rel="stylesheet">
+    {% block headerinfo %}{% endblock %}
+</head>
+
+<body>
+
+
+
+    <div>
+    <div id="body">
+        {% block BodyContent %}
+        {% endblock %}
+    </div>
+    <!-- First Product: the Pet Connect Box: Flagship. Emphasis -->
+
+    
+    <div class = "product">
+        <div class="productNames">
+            <h2>BOX CONNECT</h2>
+        </div>
+
+
+        <div class = "productImages">
+                <img src = "static\images\BoxConnect.png" alt = "logo"> 
+        </div>
+    </div>
+
+    <div class="productDescriptions">
+        <br>
+        <h3>Our flagship petcare product.</h3>
+    </div>
+    </div>
+
+
+</body>
+
+
+</html>
