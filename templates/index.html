@@ -11,10 +11,11 @@
     {% for product in range(products|length) %}
         <div class="product">
             <h3 class = "product-title">{{ names[product] }}</h3><br>
-            <p class="product-descriptions">{{ descriptions[product] }}</p>
-            <div class="individual-image" style="background-image: url('{{ pictures[product] }}')"></div>
+            <div class = "inline-align">
+                <p class="product-descriptions">{{ descriptions[product] }}</p>
+                <img class = "image" src="../static/images/products/{{pictures[product]}}" >
+            </div>
             <a class = "product-url" href="/">Learn More</a>
-            
         </div>
     {% endfor %}
 {% endblock %}

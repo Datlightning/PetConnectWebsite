@@ -13,6 +13,7 @@ h1{
     background-color: var(--not-exactly-black);
     height: calc(100vh - 600px);
     width: 90vw;
+    min-width: 300px;
     position: relative;
     margin: 20px auto;
 }
@@ -29,6 +30,15 @@ h1{
     bottom: 10px;
     left: 42vw;
 }
+.inline-align{
+    display: inline-block;
+}
+
+
+.image{
+    width: 250px;
+    height: 250px;
+}
 .product-url:hover {
     background-color: var(--light-primary);
     transition: 0.2s ease-in;
@@ -36,7 +46,6 @@ h1{
 }
 .product-descriptions{
     color: var(--light-primary);
-    margin: auto;
     
 }
 .product-title{

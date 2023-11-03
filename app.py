@@ -26,10 +26,10 @@ def index():
         "PET SHOES"
     ]
     pictures = [
-        "../static/images/petconnect_logo.png",
-        "../static/images/petconnect_logo.png",
-        "../static/images/petconnect_logo.png",
-        "../static/images/petconnect_logo.png"
+        "petconnect_logo.png",
+        "petconnect_logo.png",
+        "petconnect_logo.png",
+        "petconnect_logo.png"
     ]
 
 
