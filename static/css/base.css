@@ -1,21 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 @font-face {
-    font-family: 'Maven Pro';
-    src: url('../fonts/MavenPro-Regular.ttf');
-}
-:root {
+    font-family: FontName;
+    src: url("{{ url_for('static', filename='fonts/Comic Sans MS 400.ttf') }}");
+  }
+:root { 
     --font-family: 'Maven Pro', serif;
-    --primary: #00ccff;
-    --secondary: #006cc4;
-    --tertiary: #8658dd;
-    --light-primary: #b2ecf0;
+    --primary: #99aa46;
+    --secondary: #7cd0bb;
+    --tertiary: #c0d17c;
+    --light-primary: #d19f7c;
     --error-color: #b151a4;
     --off-white: #fffdf7;
-    --not-exactly-black: rgb(49, 49, 49);
+    --not-exactly-black: rgb(75, 75, 75);
 }
 body {
-    background-color: var(--primary);
+    background-color: var(--off-white);
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -83,7 +83,7 @@ footer{
 
 }
 body{
-    background-color: var(--primary);
+    background-color: var(--off-white);
 }
 .for-color {
     background-color: var(--tertiary);
