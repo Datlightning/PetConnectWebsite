@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "petconnect-404118",
+  "private_key_id": "63cdd5c6de9087aab672fa24be7af3e6bcc838bf",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDHgxpgW0zL5Ro2\nbTVjDTiXaMqhhI8ZdDKl/l9O76N1AuAPnf012wJK0RM0V4tM7Aupgx5p38XSM+FD\n/VTlQU2Ine3bj7TBQ3fb8CyiBxX9QLmzGwu3pURfJYOpXWqcXDs7XaHEl4518AbM\nSBygyyrYVaHjlPphIkxG2DfbK44e/jx2m/tJGs2FMbZKm8CR82CUNTrLb/LsdXJ3\nVF5cPJj/HTD6pKIgAYMRY8FVBmjTT2PW1XKBl+ypCKegMKLeRjIoTxqLFS0G4/ND\n1ar9/GhYZGux+OE7NwI8WpaIYOkkfXCWdS6WAnHLrQFYeUBfi8YmFEfHA1eEq9Ti\nq3u/miEFAgMBAAECggEACEwzPaIDyKXHovnZyDvViF6LBuVXekHd6robRqeAJIQG\nbj/Y4cjbszbiK0F01rHT2QH4stiOsVZdCRHb2l5j63RTXy1T4Ycn0KrlgFD2dij0\npYv7acY4LhOGV/XoUtvMeYSZuhkU4Ld8i48i5FZu0BPc/spvELkiHlQscTNs3sG1\n/iV9+VHVLfr3kIfSiLz5PkZnOFkm6FxVqiylB0HGJBp4Xb5tK2Jo9+ibbjOR5SdI\n7ptf/eVsbQChiN7sqvGAXuqYuGKSJvR7f7kX2yJpyR81olWdsZld/+yf39tHxXVb\n8y7w9ThNOrHZo35nHjPbIxBqg+w9C0ncO9CByZBTBQKBgQDnmKYWqUNBdhoNPoif\nVd61xQZDHAZeduoZJR8Kbdzf2Tcej2rpXbtkw24rYibzRRL2b2KdQbYAQGdHEZMQ\nFvHbIEWkK0696GElfid0wHvr+Dim5vJjoIRlQynOZut94D3FYZ1GzvjIF9+2DR1K\n90vBD1w5DDJkrfaZOY8UnYu9iwKBgQDciPpr28BFKljqjtcjj7evq365MBT2p0TX\nqTavs8D9MLx7p2rp5djioldToGDH23RNixwuQxl2tzzcjLGnRBrEgVMZnLwFWE6q\ncC/tJcbnTXMcFuQMyKaxA5asuRDFBJayMxmzOomS4TCp33BgS9NR/K6UYVTpfa3L\npGhsUsqNrwKBgAfYV+f0m96fzYodUCt1kTG/FtM3I9AXXx6y7zY/Ongqt39FhG2b\nSznClPzLOl6LPHU0mLaS/0NK6zSxF7Y30MGHelRxUx2Dvaaze0qtKoV3xxOARz2w\ntktn1way3c9JxU3mXJmFcU/13xIfp5pefiZwCsOz8hEPA4d1N6+PFqi5AoGAD+xk\nCH2peFUCbo05w3uRC8IaOEzcdqLFOb0iEbWs7ZsjQNppwdGyw0pte8BMvKF/2El/\nE2gM4qGAZ3xRJ36nYCDmWycR/GDP7UaEb18W6YSSFykf9jxWrNlRe88xAsi+CMff\nxy0m2dAgr2NOveU7sOPJxzTv6JwGfHm2gHvJ3EkCgYEAn4TpozPawNsaq2GNDEKL\nECjRLTWS79nreO++uqKCNsHg7OBIgxlNCl31cB4q2yYX6M3vqPIBN3UCI8arz7E0\nKQPA8VyLUgFer3V0+lFivIuV6VzR06lc31EWoEMed5GlBQjFI5ks3UGzRIdttieL\nV1KByUUQxSpPW8pv2j1xPyY=\n-----END PRIVATE KEY-----\n",
+  "client_email": "petconnect-data@petconnect-404118.iam.gserviceaccount.com",
+  "client_id": "107045300310559150730",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/petconnect-data%40petconnect-404118.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

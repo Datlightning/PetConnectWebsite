@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
-@font-face {
+/* @font-face {
     font-family: FontName;
     src: url("{{ url_for('static', filename='fonts/Comic Sans MS 400.ttf') }}");
-  }
+  } */
 :root { 
-    --font-family: 'Maven Pro', serif;
+    --font-family: 'Comic Sans MS', serif;
     --primary: #99aa46;
     --secondary: #7cd0bb;
     --tertiary: #c0d17c;
@@ -23,6 +23,16 @@ body {
 }
 .body{
     margin-top:0px;
+}
+nav{
+    position:fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    left: 0;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+    transition: top 0.3s;
+
 }
 #Reg-Nav-In > div:first-child {
     margin-bottom: 15px;
@@ -67,7 +77,7 @@ footer{
     margin: auto;
 }
 .nav-links {
-    font-size: 0.83em;
+    font-size: 1em;
     text-decoration: none;
     margin-left: 0.75rem;
     margin-right: 0.75rem;
@@ -78,15 +88,15 @@ footer{
     border-radius: 30px;
 }
 .nav-links:hover {
-    background-color: var(--light-primary);
+    color: var(--off-white);
     transition: 0.2s ease-in;
 
 }
 body{
-    background-color: var(--off-white);
+    background-color: #ffffff;
 }
 .for-color {
-    background-color: var(--tertiary);
+    background-color: rgba(192,209,124,.8);
     position: absolute;
     width: 100%;
     z-index: 0;

@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, url_for, flash, redirect, ses
     jsonify
 import os
 import hashlib
+import readdata as rd
 from pathlib import Path
 from werkzeug.utils import secure_filename
 from os.path import join, dirname, realpath
@@ -10,11 +11,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    products = [
-        "THIS IS A TEMPLATE FOR A PRODUCT BECAUSE I AM REALLY LAZY",
-        "THIS IS A TEMPLATE FOR A PRODUCT BECAUSE I AM REALLY LAZY",
-        "THIS IS A TEMPLATE FOR A PRODUCT BECAUSE I AM REALLY LAZY"
-    ]
+   
     description = [
         "MIGHT BE THE DUMBEST PRODUCT I HAVE EVER SEEN (RUTHVIK SAID THIS)",
         "the big BOX",
@@ -32,8 +29,8 @@ def index():
         "petconnect_logo.png"
     ]
 
-
-    return render_template("index.html", products = products, names = names, descriptions = description, pictures =pictures)
+    data = rd.getProducts()
+    return render_template("index.html", names = data["names"], pictures = data["pictures"], descriptions = data['descriptions'])
 
 if __name__ == '__main__':
     app.run(debug=True)
