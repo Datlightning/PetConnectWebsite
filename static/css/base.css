@@ -96,7 +96,7 @@ body{
     background-color: #ffffff;
 }
 .for-color {
-    background-color: rgba(192,209,124,.8);
+    background-color: rgba(192,209,124,.95);
     position: absolute;
     width: 100%;
     z-index: 0;
