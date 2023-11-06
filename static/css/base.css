@@ -5,7 +5,7 @@
     src: url("{{ url_for('static', filename='fonts/Comic Sans MS 400.ttf') }}");
   } */
 :root { 
-    --font-family: 'Comic Sans MS', serif;
+        --font-family: "Tahoma";
     --primary: #99aa46;
     --secondary: #7cd0bb;
     --tertiary: #c0d17c;
