@@ -16,8 +16,15 @@ head {
     max-height: fit-content;
 }
 
+
+@font-face {
+    font-family: FredokaOne;
+    src: url("../fonts/Fonts/FredokaOne-Regular.ttf");
+}
+
 body{ 
     background-color: rgb(251, 245, 237);
+    font: 
 }
 
 @font-face {
@@ -26,7 +33,7 @@ body{
 }
 
 .productNames {
-    font-family: CaveatBold;
+    font-family: FredokaOne;
     font-size: 70px;
     margin-top: 4%;
     /* margin-right: 90%; */
