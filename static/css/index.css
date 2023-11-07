@@ -1,13 +1,20 @@
+
 .landing{
-    padding: 20px;
-    background-color: var(--tertiary);
+    padding: 1px;
+    background-color:  var(--primary);
     align-content: center;
 }
 
 h1{
     text-align:center;
-    font: 5em var(--font-family);
+    font: 10em 'Caveat';
     font-weight: bolder;
+}
+.bluetitle{
+    color: #7cd0bb;
+}
+.browntitle{
+    color: #d19f7c;
 }
 h2{
     text-align:center;
@@ -37,8 +44,8 @@ h2{
     margin-bottom: 10px;
     border-width: 4px;
     border-style: solid;
-    border-color: var(--tertiary);
-    background-color: var(--tertiary);
+    border-color: var(--light-primary);;
+    background-color: var(--light-primary);;
 }
 .product-url-div{
     margin: auto;
@@ -76,7 +83,7 @@ h2{
 
 }
 .product-title{
-    color: var(--tertiary);
+    color: var(--light-primary);
     font: 4em var(--font-family);
     margin: auto;
     margin-top: 10px;

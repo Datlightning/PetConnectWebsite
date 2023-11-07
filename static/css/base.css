@@ -5,8 +5,8 @@
     src: url("{{ url_for('static', filename='fonts/Comic Sans MS 400.ttf') }}");
   } */
 :root { 
-        --font-family: "Tahoma";
-    --primary: #99aa46;
+    --font-family: "Tahoma";
+    --primary: #3FBBD7    ;
     --secondary: #7cd0bb;
     --tertiary: #c0d17c;
     --light-primary: #d19f7c;
@@ -96,7 +96,7 @@ body{
     background-color: #ffffff;
 }
 .for-color {
-    background-color: rgba(192,209,124,.95);
+    background-color: var(--primary);
     position: absolute;
     width: 100%;
     z-index: 0;

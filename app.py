@@ -28,9 +28,36 @@ def index():
         "petconnect_logo.png",
         "petconnect_logo.png"
     ]
+    
 
     data = rd.getProducts()
-    return render_template("index.html", names = data["names"], pictures = data["pictures"], descriptions = data['descriptions'])
-
+    return render_template("index.html",urls = data["urls"], names = data["names"], pictures = data["pictures"], descriptions = data['descriptions'])
+@app.route("/petumbrella")
+def umbrella():
+    data = rd.getProducts()
+    index = 0
+    for i in data["names"]:
+        if "umbrella" in i.lower():
+            break
+        index += 1
+    return render_template("product.html", name = data["names"][index])
+@app.route("/petshoes")
+def shoes():
+    data = rd.getProducts()
+    index = 0
+    for i in data["names"]:
+        if "shoe" in i.lower():
+            break
+        index += 1
+    return render_template("product.html", name = data["names"][index])
+@app.route("/petfeeder")
+def feeder():
+    data = rd.getProducts()
+    index = 0
+    for i in data["names"]:
+        if "feed" in i.lower():
+            break
+        index += 1
+    return render_template("product.html", name = data["names"][index])
 if __name__ == '__main__':
     app.run(debug=True)

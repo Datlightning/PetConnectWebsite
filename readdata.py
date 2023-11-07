@@ -8,9 +8,11 @@ def getProducts():
     names = []
     descriptions = []
     pictures = []
+    urls = []
     for value in values:
         names.append(value[0])
         descriptions.append(value[3])
         pictures.append(value[2])
-    return {"names": names, "descriptions":descriptions, "pictures":pictures}
+        urls.append(value[4])
+    return {"names": names, "descriptions":descriptions, "pictures":pictures, "urls":urls}
     
