@@ -24,7 +24,7 @@ head {
 
 body{ 
     background-color: rgb(251, 245, 237);
-    font: 
+    font: FredokaOne
 }
 
 @font-face {
@@ -50,13 +50,16 @@ body{
 }
 
 .productDescriptions { 
-    font-family: CaveatBold;
+    font-family: FredokaOne;
     font-size: 50px; 
     max-width: 50%;
     margin-top: 20px;
     align-items: left; 
     max-height: fit-content; 
     max-width: fit-content; 
+    border-radius: 5%;
+    background-color: azure;
+    align-items: center;
     
 }
 
@@ -66,7 +69,7 @@ body{
     float: right;
     align-items: right; 
     margin-bottom: 10%;
-    margin-top: 70px; 
+    /* margin-top: 70px;  */
     max-width: fit-content;
     max-height: fit-content;
     margin-left: 30%; 
