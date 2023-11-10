@@ -35,6 +35,11 @@
             <div id="Nav-Link-Cont">
                 <div class="link-container"><a class="nav-links" href="/petfeeder">PET FEEDER</a></div>            
             </div>
+            {% if session['debug'] is true %}
+            <div id="Nav-Link-Cont">
+                <div class="link-container"><a class="nav-links" href="/gatherdata">REFRESH DATA</a></div>            
+            </div>
+            {% endif %}
             <div class="hamburger">
                 <div></div>
             </div>

@@ -26,4 +26,3 @@ def get_product_variations():
 def get_everything():
     get_product_variations()
     get_products()
-get_everything()
