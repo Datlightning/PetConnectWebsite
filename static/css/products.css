@@ -1,0 +1,85 @@
+.opacity0{
+    opacity: 0;
+}
+
+.bluetitle{
+    color: #7cd0bb;
+}
+.browntitle{
+    color: #d19f7c;
+}
+.products{
+    max-width: 95vw;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.product{
+    padding: 30px;
+    width: 300px;
+}
+.render{
+    margin: auto;
+    border-style: solid;
+    align-items: center;
+    border-color: var(--not-exactly-black);
+    width: 50vw;
+    padding: 30px;
+    margin-top: 30px;
+}
+.description{
+    width: 300px;
+    text-align: center;
+}
+[data-inviewport="scale-in"] { 
+    transition: .5s;
+  }
+[data-inviewport="appear"].first-time {
+    opacity: 1;
+    transition: 0.4s;
+    transition-delay: 0.2s;
+}
+[data-inviewport="appear-after"].first-time {
+    opacity: 1;
+    transition: 0.4s;
+    transition-delay: 0.4s;
+}
+[data-inviewport="scale-in"].is-inViewport { 
+    width: 90vw;
+  }
+.landing{
+    padding: 30px;
+    background-color:  var(--not-exactly-black);
+    align-content: center;
+}
+.page-title{
+    margin: auto;
+    height: fit-content;
+    width: fit-content;
+    padding: 20px;
+    /* box-shadow: 5px 5px rgba(0,0,0,.3);  */
+    border-radius: 2px;
+
+}
+h1{
+    text-align:center;
+    font: 10em 'Caveat';
+    font-weight: bolder;
+}
+.image{
+    padding: 17.5px;
+}
+.product-lineup-h2{
+    text-align:left;
+    font-style: var(--font-family);
+    font-size: 3.2em;
+    padding-left: 10px;
+    font-weight: bolder;
+
+}
+.product-h3{
+    font-style: var(--font-family);
+    font-size: 1.5em;
+    font-weight: bolder;
+}

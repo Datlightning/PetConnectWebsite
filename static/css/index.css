@@ -1,7 +1,7 @@
 
 .landing{
-    padding: 1px;
-    background-color:  var(--primary);
+    padding: 30px;
+    background-color:  var(--not-exactly-black);
     align-content: center;
 }
 
@@ -9,6 +9,14 @@ h1{
     text-align:center;
     font: 10em 'Caveat';
     font-weight: bolder;
+}
+.opacity0{
+    opacity: 0;
+}
+[data-inviewport="appear"].first-time {
+    opacity: 1;
+    transition: 0.8s;
+    transition-delay: 0.4s;
 }
 .bluetitle{
     color: #7cd0bb;
@@ -22,12 +30,22 @@ h2{
     font: 3.5em var(--font-family);
 }
 .product{
+    opacity: 0;
     background-color: #fafafa;
     height: fit-content;
     margin: 20px auto;
     display: flex;
     padding: 10px;
     flex-direction: column;
+}
+.page-title{
+    margin: auto;
+    height: fit-content;
+    width: fit-content;
+    padding: 20px;
+    /* box-shadow: 5px 5px rgba(0,0,0,.3);  */
+    border-radius: 2px;
+
 }
 .product-url{
     background-color: #fafafa;
