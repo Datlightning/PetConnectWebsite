@@ -1,0 +1,98 @@
+@font-face {
+    font-family: FredokaOne;
+    src: url(../fonts/FredokaOne-Regular.ttf);
+}
+
+.productImages {
+    background-color: #fafafa;
+    margin: 20px auto;
+
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    scale : 20%; 
+
+    
+    border-radius: 10%;
+}
+
+.productImagesSide {
+    scale: 10%;
+
+}
+
+
+.productWordsLeft {
+    height: 30%;
+    /* margin-right: 50%; 
+    margin-left: auto;
+    margin-bottom: 3%;
+
+    display: flex;
+    padding: 10px;
+    flex-direction: column; */
+    margin-left: 10%; 
+    background-color: rgb(228, 228, 228);
+
+    width: 50%;
+
+    font-family: FredokaOne;
+    font-size: 20px;
+    border-radius: 10%;
+    word-wrap: break-word;
+    text-align: center;
+    float: left; 
+    margin-right: auto;
+    min-height: fit-content;
+    margin-top: 2%;
+    
+
+}
+
+.productWordsRight {
+
+    padding: 10px;
+    /* flex-direction: column;
+    background-color: rgb(228, 228, 228);
+    margin-left: 50%;
+    margin-right: auto; 
+    margin-bottom: 3%;  */
+    margin-right: 5%; 
+    float: right;
+    font-family: FredokaOne;
+    font-size: 20px;
+    border-radius: 10%;
+    word-wrap: break-word;
+    text-align: center;
+    width: 50%;
+    margin-left: auto;
+    height: fit-content; 
+}
+
+.product {
+    background-color: #ffffff;
+    min-height: fit-content; 
+    display: flex;
+}
+
+
+.zoom {
+
+
+    transition: transform .2s;
+    /* Animation */
+    height: fit-content;
+    width: fit-content;
+
+}
+
+.zoom:hover {
+    transform: scale(1.1);
+    /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+footer { 
+    font-family: FredokaOne;
+    margin-top: 30px;
+    min-width: 100%;
+}

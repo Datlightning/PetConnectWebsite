@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block headerinfo %}
+<link href='https://fonts.googleapis.com/css?family=Caveat' rel='stylesheet'>
+<link href="{{ url_for('static', filename='css/product.css') }}" rel="stylesheet">
+{% endblock %}
+{% block BodyContent %}
+<div class="landing">
+    <h1 class="opacity0">{{name}}</h1>
+    <!-- <h2 class="opacity0">Connecting Hearts, Paws, Innovation!!!!</h2> -->
+</div>
+
+
+<!-- MAIN BODY -->
+
+
+<div>
+    <div class="zoom">
+        <div class="productImages">
+            <!-- First Image on the Board -->
+
+            <img src="../static/images/Untitled-2.png" alt = "ImageOfProduct">
+
+        </div>
+    </div>
+    
+    <div>
+
+        <div class="product">
+            <div class="zoom">
+                <div class="productWordsLeft">
+
+
+                    <h1 class="words">
+                        An innovative solution to an emerging problem, the Box Connect makes sure that your pet's food
+                        is always
+                        fresh and tasty.
+                    </h1>
+
+
+                </div>
+            </div>
+
+            <div class="productWordsRight">
+                <!--             
+            <img src = "../static/images/petconnect_logo.png">  -->
+                <div class="zoom">
+
+                    <h1 class="words">
+                        Placeholder for a future Image that WILL BE HERE
+                    </h1>
+
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    {% endblock %}

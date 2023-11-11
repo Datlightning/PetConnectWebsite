@@ -40,7 +40,7 @@ def umbrella():
         if "umbrella" in i.lower():
             break
         index += 1
-    return render_template("product.html", name = data["names"][index])
+    return render_template("petumbrella.html", name = data["names"][index])
 @app.route("/petshoes")
 def shoes():
     data = rd.getProducts()
