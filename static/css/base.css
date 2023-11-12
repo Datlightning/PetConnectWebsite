@@ -4,8 +4,14 @@
     font-family: FontName;
     src: url("{{ url_for('static', filename='fonts/Comic Sans MS 400.ttf') }}");
   } */
+
+
+  @font-face {
+    font-family: FredokaOne;
+    src: url("../fonts/FredokaOne-Regular.ttf");
+  }
 :root { 
-    --font-family: "Tahoma";
+    --font-family: "FredokaOne";
     --primary: #3FBBD7;
     --dark-primary: #236776;
     --secondary: #7cd0bb;
@@ -21,6 +27,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    font-family: FredokaOne;
 }
 .body{
     margin-top:0px;
@@ -46,12 +53,16 @@ nav{
     z-index: 999;
     position: relative;
     height: 100%;
+    
+    font-family: FredokaOne;
 }
 
 #Reg-Nav-In {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    
+    font-family: FredokaOne;
 }
 
 #Nav-Logo-A {
@@ -59,6 +70,7 @@ nav{
     text-decoration: none;
     align-items: center;
     font-size: 1.5em;
+    font-family: FredokaOne;
 }
 
 
@@ -76,6 +88,7 @@ nav{
 footer{
     align-items: center;
     margin: auto;
+    font-family: FredokaOne;
 }
 [data-inviewport="appear-fast"].first-time {
     opacity: 1;

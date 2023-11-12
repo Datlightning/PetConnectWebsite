@@ -3,7 +3,15 @@
     src: url(../fonts/FredokaOne-Regular.ttf);
 }
 
+.product {
 
+    display: flex;
+    flex-direction: column; 
+    font-family: FredokaOne;
+    
+
+
+}
 
 .zoom {
 
