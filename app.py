@@ -21,7 +21,7 @@ def index():
 def umbrella():
     data = rd.getProduct("umbrella")
   
-    return render_template("product.html", products = data["product-names"], name = data["name"], pictures = data["product-pictures"], description = data['product-descriptions'])
+    return render_template("petumbrella.html", products = data["product-names"], name = data["name"], pictures = data["product-pictures"], description = data['product-descriptions'])
 @app.route("/petshoes")
 def shoes():
     data = rd.getProduct("shoe")
