@@ -24,17 +24,21 @@ def getProducts():
 def getProduct(string):
     data = getProducts()
     name = ""
-    for value in data["names"]:
+    url = ""
+    index = 0
+    for value in data["urls"]:
         if string in value.lower():
-            name = value
+            url = value
+            name = data["names"][index]
             break
+        index += 1
     output = {
         "name":name,
         "product-names":[],
         "product-descriptions":[],
         "product-pictures":[]
     }
-    filename = directory.joinpath(name + '-products.txt')
+    filename = directory.joinpath(url[1:] + '-products.txt')
     products = []
     with open(filename.resolve(), "r") as file:
         products = eval(file.read().split("\n")[0])

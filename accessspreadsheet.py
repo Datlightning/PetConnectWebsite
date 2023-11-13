@@ -1,4 +1,5 @@
 import gspread
+import readdata as rd
 from pathlib import Path
 
 directory = Path(__file__).parent.joinpath("data")
@@ -12,16 +13,18 @@ def get_products():
     filename = directory.joinpath("products.txt")
     with open(filename.resolve(), "w+") as file:
         file.write(str(values))
-
 def get_product_variations():
-    products = ["Pet Feeder", "Pet Shoes", "Pet Umbrella"]
-    for product in products:
+    names = rd.getProducts()["names"]
+    urls = rd.getProducts()["urls"]
+    index = 0
+    for product in names:
         sheet = gc.open('PetConnect Website Information').worksheet(product)
         values = sheet.get_all_values()
         values.pop(0)
-        filename = directory.joinpath(product + "-products.txt")
+        filename = directory.joinpath(urls[index][1:] + "-products.txt")
         with open(filename.resolve(), 'w+') as file:
             file.write(str(values))
+        index += 1
 
 def get_everything():
     get_product_variations()

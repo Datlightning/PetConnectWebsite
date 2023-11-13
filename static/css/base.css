@@ -87,7 +87,7 @@ footer{
     transition: 0.3s;
 }
 .nav-links {
-    font-size: 1em;
+    font-size: .8em;
     text-decoration: none;
     margin-left: 0.75rem;
     margin-right: 0.75rem;
@@ -98,7 +98,7 @@ footer{
     border-radius: 30px;
 }
 .nav-links:hover {
-    color: var(--dark-primary);
+    color: var(--off-white);
     transition: 0.2s ease-in;
 
 }

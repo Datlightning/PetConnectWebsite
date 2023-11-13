@@ -26,15 +26,11 @@
             <div id="Nav-Link-Cont">
                 <div class="link-container"><a class="nav-links" href="/">STORE</a></div>            
             </div>
-            <div id="Nav-Link-Cont">
-                <div class="link-container"><a class="nav-links" href="/petumbrella">PET UMBRELLA</a></div>            
-            </div>
-            <div id="Nav-Link-Cont">
-                <div class="link-container"><a class="nav-links" href="/petshoes">PET SHOES</a></div>            
-            </div>
-            <div id="Nav-Link-Cont">
-                <div class="link-container"><a class="nav-links" href="/petfeeder">PET FEEDER</a></div>            
-            </div>
+            {% for number in range(session['products']|length)%}
+                <div id="Nav-Link-Cont">
+                    <div class="link-container"><a class="nav-links" href="{{ session['urls'][number] }}">{{ session['products'][number].upper()}}</a></div>            
+                </div>
+            {% endfor %}
             {% if session['debug'] is true %}
             <div id="Nav-Link-Cont">
                 <div class="link-container"><a class="nav-links" href="/gatherdata">REFRESH DATA</a></div>            
