@@ -6,11 +6,11 @@
 {% endblock %}
 {% block BodyContent %}
 <div class="landing">
-    <h1 data-inviewport="appear-really-fast" class="opacity0 page-title"><span  class = "bluetitle ">Pet</span><span class = "browntitle">Connect</span></h1>
+    <h1 class="opacity0"><span class = "bluetitle">Pet</span><span class = "browntitle">Connect</span></h1>
     <!-- <h2 class="opacity0">Connecting Hearts, Paws, Innovation!!!!</h2> -->
 </div>
 {% for product in range(names|length) %}
-    <div  data-inviewport="appear" class="product" style="transition-delay:{{ loop.index*(1/12) }}s !important;">
+    <div class="product">
         <h3 class="product-title">{{ names[product] }}</h3>
         <div class="product-descriptions-left" id="product-descriptions">{{ descriptions[product] }}</div>
         <div class="product-descriptions-right"> <img class="image"

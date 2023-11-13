@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block headerinfo %}
+<link href='https://fonts.googleapis.com/css?family=Caveat' rel='stylesheet'>
+<link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet">
+{% endblock %}
+{% block BodyContent %}
+<div class="landing">
+    <h1 class="opacity0">{{name}}</h1>
+    <!-- <h2 class="opacity0">Connecting Hearts, Paws, Innovation!!!!</h2> -->
+</div>
+<!-- {% for product in range(names|length) %}
+<div class="product">
+    <h3 class="product-title">{{ names[product] }}</h3>
+    <div class="product-descriptions-left" id="product-descriptions">{{ descriptions[product] }}</div>
+    <div class="product-descriptions-right"> <img class="image"
+                src="../static/images/products/{{pictures[product]}}"></div>
+    <a class="product-url" href="/">Learn More</a>
+</div>
+{% endfor %} -->
+{% endblock %}

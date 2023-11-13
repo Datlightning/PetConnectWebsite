@@ -12,18 +12,5 @@ def get_products():
     filename = directory.joinpath("products.txt")
     with open(filename.resolve(), "w+") as file:
         file.write(str(values))
-
-def get_product_variations():
-    products = ["Pet Feeder", "Pet Shoes", "Pet Umbrella"]
-    for product in products:
-        sheet = gc.open('PetConnect Website Information').worksheet(product)
-        values = sheet.get_all_values()
-        values.pop(0)
-        filename = directory.joinpath(product + "-products.txt")
-        with open(filename.resolve(), 'w+') as file:
-            file.write(str(values))
-
-def get_everything():
-    get_product_variations()
-    get_products()
-get_everything()
+    
+get_products()

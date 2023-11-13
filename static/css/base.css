@@ -11,9 +11,14 @@
     src: url("../fonts/FredokaOne-Regular.ttf");
   }
 :root { 
+<<<<<<< HEAD
     --font-family: "FredokaOne";
     --primary: #3FBBD7;
     --dark-primary: #236776;
+=======
+    --font-family: "Tahoma";
+    --primary: #3FBBD7    ;
+>>>>>>> parent of e460c40 (Added Product Line Ups and Animations so it doesnt look trash)
     --secondary: #7cd0bb;
     --tertiary: #c0d17c;
     --light-primary: #d19f7c;
@@ -90,28 +95,19 @@ footer{
     margin: auto;
     font-family: FredokaOne;
 }
-[data-inviewport="appear-fast"].first-time {
-    opacity: 1;
-    transition: 0.4s;
-    transition-delay: 0.4s;
-}
-[data-inviewport="appear-really-fast"].first-time {
-    opacity: 1;
-    transition: 0.3s;
-}
 .nav-links {
     font-size: 1em;
     text-decoration: none;
     margin-left: 0.75rem;
     margin-right: 0.75rem;
-    color: var(--primary);
+    color: var(--not-exactly-black);
     transition: 0.2s ease-out;
     padding: 6px;
     font-weight: bold;
     border-radius: 30px;
 }
 .nav-links:hover {
-    color: var(--dark-primary);
+    color: var(--off-white);
     transition: 0.2s ease-in;
 
 }
@@ -119,7 +115,7 @@ body{
     background-color: #ffffff;
 }
 .for-color {
-    background-color: var(--not-exactly-black);
+    background-color: var(--primary);
     position: absolute;
     width: 100%;
     z-index: 0;
