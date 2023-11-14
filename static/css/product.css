@@ -1,0 +1,43 @@
+@font-face {
+    font-family: FredokaOne;
+    src: url(../fonts/FredokaOne-Regular.ttf);
+}
+
+.product {
+
+    display: flex;
+    flex-direction: column; 
+    font-family: FredokaOne;
+    
+
+
+}
+
+.zoom {
+
+
+    transition: transform .2s;
+    /* Animation */
+    height: fit-content;
+    width: fit-content;
+
+}
+
+.zoomImages { 
+    transition: transform .2s;
+
+}
+.zoomImages:hover { 
+    transform: scale(1.1);
+}
+
+.zoom:hover {
+    transform: scale(1.1);
+    /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+footer { 
+    font-family: FredokaOne;
+    margin-top: 30px;
+    min-width: 100%;
+}

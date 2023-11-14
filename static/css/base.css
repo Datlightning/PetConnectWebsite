@@ -4,10 +4,21 @@
     font-family: FontName;
     src: url("{{ url_for('static', filename='fonts/Comic Sans MS 400.ttf') }}");
   } */
+
+
+  @font-face {
+    font-family: FredokaOne;
+    src: url("../fonts/FredokaOne-Regular.ttf");
+  }
 :root { 
-    --font-family: "Tahoma";
+<<<<<<< HEAD
+    --font-family: "FredokaOne";
     --primary: #3FBBD7;
     --dark-primary: #236776;
+=======
+    --font-family: "Tahoma";
+    --primary: #3FBBD7    ;
+>>>>>>> parent of e460c40 (Added Product Line Ups and Animations so it doesnt look trash)
     --secondary: #7cd0bb;
     --tertiary: #c0d17c;
     --light-primary: #d19f7c;
@@ -21,6 +32,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    font-family: FredokaOne;
 }
 .body{
     margin-top:0px;
@@ -46,12 +58,16 @@ nav{
     z-index: 999;
     position: relative;
     height: 100%;
+    
+    font-family: FredokaOne;
 }
 
 #Reg-Nav-In {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    
+    font-family: FredokaOne;
 }
 
 #Nav-Logo-A {
@@ -59,6 +75,7 @@ nav{
     text-decoration: none;
     align-items: center;
     font-size: 1.5em;
+    font-family: FredokaOne;
 }
 
 
@@ -76,22 +93,14 @@ nav{
 footer{
     align-items: center;
     margin: auto;
-}
-[data-inviewport="appear-fast"].first-time {
-    opacity: 1;
-    transition: 0.4s;
-    transition-delay: 0.4s;
-}
-[data-inviewport="appear-really-fast"].first-time {
-    opacity: 1;
-    transition: 0.3s;
+    font-family: FredokaOne;
 }
 .nav-links {
     font-size: .8em;
     text-decoration: none;
     margin-left: 0.75rem;
     margin-right: 0.75rem;
-    color: var(--primary);
+    color: var(--not-exactly-black);
     transition: 0.2s ease-out;
     padding: 6px;
     font-weight: bold;
@@ -106,7 +115,7 @@ body{
     background-color: #ffffff;
 }
 .for-color {
-    background-color: var(--not-exactly-black);
+    background-color: var(--primary);
     position: absolute;
     width: 100%;
     z-index: 0;
