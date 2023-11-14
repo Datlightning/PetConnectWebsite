@@ -18,9 +18,13 @@ def get_product_variations():
     urls = rd.getProducts()["urls"]
     index = 0
     for product in names:
-        sheet = gc.open('PetConnect Website Information').worksheet(product)
-        values = sheet.get_all_values()
-        values.pop(0)
+        values = []
+        try:
+            sheet = gc.open('PetConnect Website Information').worksheet(product)
+            values = sheet.get_all_values()
+            values.pop(0)
+        except:
+            values = []
         filename = directory.joinpath(urls[index][1:] + "-products.txt")
         with open(filename.resolve(), 'w+') as file:
             file.write(str(values))
