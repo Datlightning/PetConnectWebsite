@@ -1,1 +1,1 @@
-[['Product 1', 'Crazy', 'petconnect_logo.png'], ['Product 2', 'I', 'petconnect_logo.png'], ['Product 3', 'Was', 'petconnect_logo.png'], ['Product 4', 'Crazy', 'petconnect_logo.png'], ['Product 5', 'Once', 'petconnect_logo.png']]
+[['Ocean Blue', 'Description', 'PetBedMain.png'], ['Volcanic Ash Black', 'Description', 'PetBedSecondary.png']]
