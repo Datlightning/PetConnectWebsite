@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block headerinfo %}
+<link href='https://fonts.googleapis.com/css?family=Caveat' rel='stylesheet'>
+<link href="{{ url_for('static', filename='css/products.css') }}" rel="stylesheet">
+{% endblock %}
+{% block BodyContent %}
+
+<body>
+    <div class="landing">
+        <div class="zoom">
+            <h1 data-inviewport="appear-really-fast" class="page-title opacity0"><span
+                    class="bluetitle">Pet</span><span class="browntitle">Feeder</span></h1>
+
+        </div> <!-- <h2 class="opacity0">Connecting Hearts, Paws, Innovation!!!!</h2> -->
+    </div>
+
+
+    <div data-inviewport="scale-in" class="render">
+        <img src = "../static/images/petconnect_logo.png"> 
+    </div>
+    <div class="product-lineup opacity0" data-inviewport="appear">
+        <div class="zoom">
+            <h2 class="product-lineup-h2">Explore The Lineup</h2>
+        </div>
+    </div>
+    <div class="products">
+        <div class="product">
+            <div data-inviewport="appear-after" class="picture-description opacity0" style=  "transition-delay: .2s">
+                <h3 class="product-h3">{{products[product]}}</h3>
+                <div class="zoom">
+                    <img class="image" src="../static/images/products/{{pictures[product]}}"
+                        alt="Product Image or Logo Image; Load Error; Bad Network Connection">
+                    <p class="description">{{description[product]}}</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+{% endblock %}
+<script>
+    const inViewport = (entries, observer) => {
+        entries.forEach(entry => {
+            entry.target.classList.toggle("is-inViewport", entry.isIntersecting);
+        });
+    };
+
+    const Obs = new IntersectionObserver(inViewport);
+    const obsOptions = {}; //See: https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#Intersection_observer_options
+
+    // Attach observer to every [data-inviewport] element:
+    document.querySelectorAll('[data-inviewport]').forEach(el => {
+        Obs.observe(el, obsOptions);
+    });
+</script>

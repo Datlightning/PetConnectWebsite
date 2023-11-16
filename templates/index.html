@@ -14,8 +14,9 @@
         <h3 class="product-title">{{ names[product] }}</h3>
         <div class="product-descriptions-left" id="product-descriptions">{{ descriptions[product] }}</div>
         <div class="product-descriptions-right"> <img class="image"
-                    src="../static/images/products/{{pictures[product]}}"></div>
+                    src="../static/images/products/{{pictures[product]}}" alt = "images"></div>
         <a class="product-url" href="{{ urls[product] }}">Learn More</a>
     </div>
 {% endfor %}
+  
 {% endblock %}

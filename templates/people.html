@@ -6,25 +6,30 @@
 {% endblock %}
 {% block BodyContent %}
 
+
+
+
 <body>
     <div class="landing">
-        <h1 data-inviewport="appear-really-fast" class="page-title opacity0"><span
-                class="bluetitle">{{name.split()[0]}}</span><span class="browntitle">{{name.split()[1]}}</span></h1>
-        <!-- <h2 class="opacity0">Connecting Hearts, Paws, Innovation!!!!</h2> -->
+        <div class="zoom">
+            <h1 data-inviewport="appear-really-fast" class="page-title opacity0"><span
+                    class="bluetitle">Pet</span><span class="browntitle">Feeder</span></h1>
+
+        </div> <!-- <h2 class="opacity0">Connecting Hearts, Paws, Innovation!!!!</h2> -->
     </div>
+
+
     <div data-inviewport="scale-in" class="render">
-        <p>Put a video here bruh</p>
+        <img src = "../static/images/petconnect_logo.png"> 
     </div>
     <div class="product-lineup opacity0" data-inviewport="appear">
-        <div class = "zoom">
+        <div class="zoom">
             <h2 class="product-lineup-h2">Explore The Lineup</h2>
         </div>
     </div>
     <div class="products">
-        {% for product in range(products|length) %}
         <div class="product">
-            <div data-inviewport="appear-after" class="picture-description opacity0"
-                style="transition-delay:{{ loop.index*(1/12) }}s !important;">
+            <div data-inviewport="appear-after" class="picture-description opacity0" style=  "transition-delay: .2s">
                 <h3 class="product-h3">{{products[product]}}</h3>
                 <div class="zoom">
                     <img class="image" src="../static/images/products/{{pictures[product]}}"
@@ -33,7 +38,7 @@
                 </div>
             </div>
         </div>
-        {% endfor %}
+
     </div>
 </body>
 
