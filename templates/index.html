@@ -14,9 +14,19 @@
     {% for product in range(names|length) %}
     <div data-inviewport="appear" class="product" style="transition-delay:{{ loop.index*(1/12) }}s !important;">
         <h3 class="product-title">{{ names[product] }}</h3>
+        
+        <div class = "products">
+            {% if product % 2 == 0%}
         <div class="product-descriptions-left" id="product-descriptions">{{ descriptions[product] }}</div>
         <div class="product-descriptions-right"> <img class="image"
                 src="../static/images/products/{{pictures[product]}}"></div>
+            {% endif %}
+            {% if product % 2 == 1%}
+            <div class="product-descriptions-left"> <img class="image"
+                src="../static/images/products/{{pictures[product]}}"></div>
+            <div class="product-descriptions-right" id="product-descriptions">{{ descriptions[product] }}</div>
+            {% endif %}
+        </div>
         <a class="product-url" href="{{ urls[product] }}">Learn More</a>
     </div>
 {% endfor %}
