@@ -20,7 +20,7 @@ def index():
     for i in range(len(data["names"])):
         session['products'].append(data["names"][i])
         session['urls'].append(data["urls"][i])
-    return render_template("index.html",urls = data["urls"], names = data["names"], pictures = data["pictures"], descriptions = data['descriptions'])
+    return render_template("index.html",urls = data["urls"], names = data["names"], pictures = data["pictures"], descriptions = data['long-desc'])
 @app.route("/<pid>")
 def umbrella(pid):
     data = rd.getProduct(pid)

@@ -18,6 +18,10 @@
 .product{
     padding: 30px;
     width: 300px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
 }
 .render{
     margin: auto;
@@ -31,6 +35,13 @@
 .description{
     width: 300px;
     text-align: center;
+    font-style: var(--font-family);
+    color: var(--secondary);
+}
+.image{
+    max-height: 300px;
+    max-width: 300px;
+    border-radius: 15px;
 }
 [data-inviewport="scale-in"] { 
     transition: .5s;
@@ -80,6 +91,7 @@ h1{
 }
 .product-h3{
     font-style: var(--font-family);
+    color: var(--light-primary);
     font-size: 1.5em;
     font-weight: bolder;
 }
