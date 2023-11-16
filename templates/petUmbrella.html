@@ -6,6 +6,7 @@
 {% endblock %}
 {% block BodyContent %}
 
+
 <body>
     <div class="landing">
         <h1 data-inviewport="appear-really-fast" class="page-title opacity0"><span
@@ -16,9 +17,7 @@
         <p>Put a video here bruh</p>
     </div>
     <div class="product-lineup opacity0" data-inviewport="appear">
-        <div class = "zoom">
-            <h2 class="product-lineup-h2">Explore The Lineup</h2>
-        </div>
+        <h2 class="product-lineup-h2">Explore The Lineup</h2>
     </div>
     <div class="products">
         {% for product in range(products|length) %}
@@ -26,7 +25,7 @@
             <div data-inviewport="appear-after" class="picture-description opacity0"
                 style="transition-delay:{{ loop.index*(1/12) }}s !important;">
                 <h3 class="product-h3">{{products[product]}}</h3>
-                <div class="zoom">
+                <div class = "zoom" data-inviewport="scale-in">
                     <img class="image" src="../static/images/products/{{pictures[product]}}"
                         alt="Product Image or Logo Image; Load Error; Bad Network Connection">
                     <p class="description">{{description[product]}}</p>

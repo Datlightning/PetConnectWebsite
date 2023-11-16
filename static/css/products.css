@@ -3,10 +3,18 @@
     src: url(../fonts/FredokaOne-Regular.ttf);
 }
 
+h1 { 
+    font-family: FredokaOne;
+    
+}
 
+body { 
+    font-family: FredokaOne;
+}
 
 .opacity0{
     opacity: 0;
+    font-family: FredokaOne;
 }
 
 .bluetitle{
@@ -21,6 +29,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    text-align: center;
 }
 .product{
     padding: 30px;
@@ -55,12 +64,17 @@
 [data-inviewport="scale-in"].is-inViewport { 
     width: 90vw;
   }
+
+[data-inviewport="scale-inImages"].is-inViewport { 
+    width: 90vw;
+  }
 .landing{
     padding: 30px;
     background-color:  var(--not-exactly-black);
     align-content: center;
 }
 .page-title{
+    /* TODO: WHAT THE HELL WHY IS THIS NOT WORKING FOR FIT-CONTENT */
     margin: auto;
     height: fit-content;
     width: fit-content;
@@ -96,6 +110,7 @@ h1{
 
     transition: transform .2s;
     /* Animation */
+    margin-left: 10%;
     
 
 }
@@ -111,8 +126,4 @@ h1{
 .zoom:hover {
     transform: scale(1.1);
     /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-}
-
-body { 
-    font-style: FredokaOne;
 }
