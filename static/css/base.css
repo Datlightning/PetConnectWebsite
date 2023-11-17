@@ -1,9 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
+
+
 /* @font-face {
     font-family: FontName;
     src: url("{{ url_for('static', filename='fonts/Comic Sans MS 400.ttf') }}");
   } */
+
+@font-face {
+    font-family: FredokaOne;
+    src: url("../fonts/FredokaOne-Regular.ttf");
+}
 :root { 
     --font-family: "Tahoma";
     --primary: #3FBBD7;
@@ -21,11 +28,16 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    font-family: FredokaOne;
 }
 .body{
     margin-top:0px;
+    
+    font-family: FredokaOne;
 }
 nav{
+    
+    font-family: FredokaOne;
     position:fixed;
     top: 0;
     width: 100%;
@@ -36,11 +48,15 @@ nav{
 
 }
 #Reg-Nav-In > div:first-child {
+    
+    font-family: FredokaOne;
     margin-bottom: 15px;
     margin-top: 15px;
 }
 
 #Reg-Nav-Out {
+    
+    font-family: FredokaOne;
     max-width: 1200px;
     margin: 0 auto;
     z-index: 999;
@@ -49,12 +65,16 @@ nav{
 }
 
 #Reg-Nav-In {
+    
+    font-family: FredokaOne;
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
 #Nav-Logo-A {
+    
+    font-family: FredokaOne;
     display: flex;
     text-decoration: none;
     align-items: center;
@@ -63,21 +83,28 @@ nav{
 
 
 #Nav-Link-Cont {
+    
+    font-family: FredokaOne;
     display: flex;
     align-items: center;
     margin-left: 50px;
 }
 
 .link-container {
+    
+    font-family: FredokaOne;
     height: 100%;
     display: flex;
     align-items: center;
 }
 footer{
+    
+    font-family: FredokaOne;
     align-items: center;
     margin: auto;
 }
 [data-inviewport="appear-fast"].first-time {
+
     opacity: 1;
     transition: 0.4s;
     transition-delay: 0.4s;
@@ -100,6 +127,8 @@ footer{
 .nav-links:hover {
     color: var(--off-white);
     transition: 0.2s ease-in;
+    transform: scale(1.5);
+    transform: skew(3deg, 5deg)
 
 }
 body{
@@ -112,5 +141,7 @@ body{
     z-index: 0;
 }
 h2,h3{
+    
+    font-family: FredokaOne;
     text-align:center;
 }

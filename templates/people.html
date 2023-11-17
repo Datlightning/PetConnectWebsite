@@ -2,44 +2,124 @@
 {% block title %}Home{% endblock %}
 {% block headerinfo %}
 <link href='https://fonts.googleapis.com/css?family=Caveat' rel='stylesheet'>
-<link href="{{ url_for('static', filename='css/products.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/people.css') }}" rel="stylesheet">
 {% endblock %}
 {% block BodyContent %}
 
 
-
+<!-- Yes, this is a copy of Vihas's template.  -->
+<!-- No, I don't give a shit. -->
 
 <body>
     <div class="landing">
         <div class="zoom">
-            <h1 data-inviewport="appear-really-fast" class="page-title opacity0"><span
-                    class="bluetitle">Pet</span><span class="browntitle">Feeder</span></h1>
+            <h1 data-inviewport="appear-really-fast" class="page-title opacity0"><span class="bluetitle">Our</span><span
+                    class="browntitle">Team</span></h1>
 
         </div> <!-- <h2 class="opacity0">Connecting Hearts, Paws, Innovation!!!!</h2> -->
     </div>
 
 
     <div data-inviewport="scale-in" class="render">
-        <img src = "../static/images/petconnect_logo.png"> 
+        <h1> MEET OUR TEAM! </h1>
     </div>
-    <div class="product-lineup opacity0" data-inviewport="appear">
-        <div class="zoom">
-            <h2 class="product-lineup-h2">Explore The Lineup</h2>
-        </div>
+
+    <!-- AKSHAY -->
+    <br>
+    <br>
+
+    <div class="zoom">
+        <h2 class="product-lineup-h2">Management</h2>
     </div>
+
+
     <div class="products">
+
+
         <div class="product">
-            <div data-inviewport="appear-after" class="picture-description opacity0" style=  "transition-delay: .2s">
-                <h3 class="product-h3">{{products[product]}}</h3>
+
+
+            <div data-inviewport="appear-after" class="picture-description opacity0" style="transition-delay: .2s">
+                <h3 class="product-h3">Akshay Dhawan</h3>
+
+
+
+
                 <div class="zoom">
-                    <img class="image" src="../static/images/products/{{pictures[product]}}"
-                        alt="Product Image or Logo Image; Load Error; Bad Network Connection">
-                    <p class="description">{{description[product]}}</p>
+                    <img class="image" src="../static/images/people/akshay.png" alt="Akshay Dhawan  Image (not loaded)"
+                        onerror="this.src='../static/images/Matt.png';" style="width: 10vw">
                 </div>
+
+                <p class="description">Chief Executive Officer</p>
+                <p class="description">"This could be a quote."</p>
             </div>
+
+
+
+
+
+        </div>
+        <div class="product">
+
+
+            <div data-inviewport="appear-after" class="picture-description opacity0" style="transition-delay: .2s">
+                <h3 class="product-h3">Vrishank Malik</h3>
+
+
+
+
+                <div class="
+                zoom">
+                    <img class="image" src="../static/images/people/akshay.png" alt="Akshay Dhawan  Image (not loaded)"
+                        onerror="this.src='../static/images/Matt.png';" style="width: 10vw">
+                </div>
+
+                <p class="description">Chief Operations Officer</p>
+                <p class="description">"This could be a quote."</p>
+            </div>
+
+
+
+
+
+        </div>
+        <div class="product">
+
+
+            <div data-inviewport="appear-after" class="picture-description opacity0" style="transition-delay: .2s">
+                <h3 class="product-h3">Akshay Dhawan</h3>
+
+
+
+
+                <div class="
+                zoom">
+                    <img class="image" src="../static/images/people/akshay.png" alt="Akshay Dhawan  Image (not loaded)"
+                        onerror="this.src='../static/images/Matt.png';" style="width: 10vw">
+                </div>
+
+                <p class="description">Chief Executive Officer</p>
+                <p class="description">"This could be a quote."</p>
+            </div>
+
+
+
+
+
         </div>
 
+
+        
+
+
+
     </div>
+
+    <div class="zoom">
+        <h2 class="product-lineup-h2">Management</h2>
+    </div>
+
+
 </body>
 
 {% endblock %}
@@ -58,3 +138,5 @@
         Obs.observe(el, obsOptions);
     });
 </script>
+
+<!-- RUTHVIK VENKATESAN - 11- 16 - 23 IST 6:30 PM -->

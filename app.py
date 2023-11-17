@@ -24,9 +24,16 @@ def index():
 @app.route("/petfeeder")
 def petfeeder():
     return render_template("petfeeder.html")
+
+# Fix the above: Ruthvik had a better way to do it than vihas but vihas refused to listen to Ruthvik as per tradition. 
+
 @app.route("/gatherdata")
 def gatherdata():
     gd.get_everything()
     return redirect("/")
+@app.route("/people")
+def people(): 
+    return render_template("people.html") 
+
 if __name__ == '__main__':
     app.run(debug=True)
