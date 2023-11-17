@@ -68,6 +68,12 @@ body {
     transition: 0.4s;
     transition-delay: 0.4s;
 }
+
+[data-inviewport="appear-afterMain"].is-inViewport {
+    opacity: 1;
+    transition: 0.4s;
+    transition-delay: 0.4s;
+}
 [data-inviewport="scale-in"].is-inViewport { 
     width: 90vw;
   }
