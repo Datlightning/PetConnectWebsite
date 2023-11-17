@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 .opacity0{
     opacity: 0;
 }
@@ -35,7 +37,8 @@
 .description{
     width: 300px;
     text-align: center;
-    font-style: var(--font-family);
+    font-family: "Tahoma";
+    font-size: .9em;
     color: var(--secondary);
 }
 .image{
@@ -83,8 +86,7 @@ h1{
 }
 .product-lineup-h2{
     text-align:left;
-    font-style: var(--font-family);
-    font-size: 3.2em;
+    font:  3.2em "Tahoma";
     padding-left: 10px;
     font-weight: bolder;
 
@@ -92,6 +94,6 @@ h1{
 .product-h3{
     font-style: var(--font-family);
     color: var(--light-primary);
-    font-size: 1.5em;
+    font: 1.5em  "Tahoma";
     font-weight: bolder;
 }
