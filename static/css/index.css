@@ -108,8 +108,7 @@
         margin-left: 4%;
         margin-bottom: 2%;
         margin-right: 5%;
-        max-width: 50%;
-        float: left;
+        max-width: 100%;
 
 
     }
@@ -119,12 +118,13 @@
         margin-left: 5%;
         margin-right: 4%;
         margin-bottom: 2%;
-        max-width: 50%;
-        float: right;
+        max-width: 100%;
 
 
     }
-
+    p{
+        max-width: 70%;
+    }
     .image{
         max-height: 300px;
         max-width: 300px;
