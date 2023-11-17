@@ -9,7 +9,7 @@ from werkzeug.utils import secure_filename
 from os.path import join, dirname, realpath
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = "sfdlkfjsdvpc23402938fsdflkmasdlsfds"
+app.config['SECRET_KEY'] = "sfdlkfjsdvpc23402938fsdflkmasddlsfds"
 
 @app.route("/")
 def index():
