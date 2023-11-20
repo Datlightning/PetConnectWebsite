@@ -197,8 +197,16 @@
         width: 575px !important;
     }
 }
-
+@media only screen and (min-width: 800px) {
+    .landing{
+        width: 100%;
+    }
+}
 @media only screen and (max-width: 750px) {
+    .landing{
+        width: fit-content;
+
+    }
     .map {
         width: 500px !important;
         height: 375px !important;

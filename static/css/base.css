@@ -120,7 +120,7 @@ h2,h3{
     display: none;
     align-items: center;
     margin-right: 30px;
-    margin-left: auto;
+    margin-left: 0;
 }
 
 .hamburger > button {
