@@ -1,1 +1,1 @@
-[['Pet Umbrella Dog', 'Innovative', 'PetUmbrellaMain.png'], ['Pet Umbrella Dog 2', 'Breathtaking', 'PetUmbrella2.png'], ['Pet Umbrella Dog 3', 'Creation', 'PetUmbrella3.png']]
+[['Small PetBrella', 'A brand new way to approach an old age problem.', 'PetUmbrellaMain.png'], ['Medium PetBrella', 'Keep your pets fresh and dry. ', 'PetUmbrella2.png'], ['Large PetBrella', 'Designed even for the largest of breeds. ', 'PetUmbrella3.png']]
