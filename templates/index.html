@@ -15,15 +15,16 @@
     <div data-inviewport="appear" class="product" style="transition-delay:{{ loop.index*(1/12) }}s !important;">
         <!-- <div class = "horizontal-align"> -->
         <div>
-        <h3 class="product-title" >{{ names[product] }}</h3>
         <a class="overlay" href="{{ urls[product] }}"></a>
     <!-- </div> -->
         <div class = "products-flex">
             {% if product % 2 == 0%}
-             <div class="product-descriptions-left equal-width" id="product-descriptions">
-                <div><hr></div>
+             <div class="product-descriptions-left equal-width gray description" id="product-descriptions">
+                <h3 class="product-title" >{{ names[product] }}</h3>
+
+                <!-- <div><hr></div> -->
                 <p>{{ descriptions[product] }}</p>
-                <div><hr></div>
+                <!-- <div><hr></div> -->
              </div>
         
             <div class="product-descriptions-right equal-width"> 
@@ -34,10 +35,11 @@
             <div class="product-descriptions-left equal-width"> <img class="image"
                 src="../static/images/products/{{pictures[product]}}">
             </div>
-            <div class="product-descriptions-right equal-width" id="product-descriptions">
-                <div><hr></div>
+            <div class="product-descriptions-right equal-width gray description" id="product-descriptions">
+                <h3 class="product-title" >{{ names[product] }}</h3>
+                <!-- <div><hr></div> -->
                 <p>{{ descriptions[product] }}</p><br>
-                <div><hr></div>
+                <!-- <div><hr></div> -->
             </div>
             {% endif %}
         </div>

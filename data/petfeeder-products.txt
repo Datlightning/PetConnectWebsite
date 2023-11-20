@@ -1,1 +1,1 @@
-[['Automatic Pet Feeder', 'Smart feeders for flexible eating schedules, ensuring your pet enjoys nutritious meals.', 'PetFeeder.png']]
+[]
