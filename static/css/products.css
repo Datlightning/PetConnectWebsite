@@ -23,14 +23,16 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    
+    text-align:center;
+    position:relative;
 }
 .product{
     padding: 30px;
     width: 300px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 5px;
+    margin: 10px auto;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+    display: inline-block;
 }
 .render{
     margin: auto;
@@ -44,7 +46,7 @@
 .description{
     width: 300px;
     text-align: center;
-    font-family: "Tahoma";
+    font-family: "FredokaOne";
     font-size: .9em;
     color: var(--secondary);
 }
@@ -85,7 +87,7 @@
 }
 h1{
     text-align:center;
-    font: 10em 'Caveat';
+    font: 10em 'FredokaOne';
     font-weight: bolder;
 }
 .image{
@@ -93,15 +95,22 @@ h1{
 }
 .product-lineup-h2{
     text-align:left;
-    font:  3.2em "Tahoma";
+    font:  3.2em "FredokaOne";
     padding-left: 10px;
     font-weight: bolder;
 
 }
+.product-lineup-h4{
+    text-align:left;
+    font:  1.2em "FredokaOne";
+    padding-left: 10px;
+    font-weight: bolder;
+}
+
 .product-h3{
     font-style: var(--font-family);
     color: var(--light-primary);
-    font: 1.5em  "Tahoma";
+    font: 1.5em  "FredokaOne";
     font-weight: bolder;
 }
 
