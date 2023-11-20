@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="shortcut icon" href="{{ url_for('static', filename='images/petconnect.ico') }}">
     <meta charset="UTF-8">
@@ -20,49 +21,59 @@
                 <a href="/" id="Nav-Logo-A">
                     <img src="../static/images/petconnect_logo.png" height="100px">
                 </a>
-            </div>  
+            </div>
 
             <!-- Navbar Links -->
             <div id="Nav-Link-Cont">
-                <div class="link-container"><a class="nav-links" href="/">STORE</a></div>            
-            </div>
+                <div class="link-container"><a class="nav-links" href="/">STORE</a></div>
             {% for number in range(session['products']|length)%}
-                <div id="Nav-Link-Cont">
-                    <div class="link-container"><a class="nav-links" href="{{ session['urls'][number] }}">{{ session['products'][number].upper()}}</a></div>            
-                </div>
+                <div class="link-container"><a class="nav-links" href="{{ session['urls'][number] }}">{{
+                        session['products'][number].upper()}}</a></div>
             {% endfor %}
             {% if session['debug'] is true %}
-            <div id="Nav-Link-Cont">
-                <div class="link-container"><a class="nav-links" href="/gatherdata">REFRESH DATA</a></div>            
-            </div>
+                <div class="link-container"><a class="nav-links" href="/gatherdata">REFRESH DATA</a></div>
             {% endif %}
+        </div>
+
             <div class="hamburger">
                 <div></div>
             </div>
         </div>
+       
+    </div>
+    <div class="mobile-menu">
+        <a class="nav-links" href="/">STORE</a>
+        {% for number in range(session['products']|length)%}
+            <a class="nav-links" href="{{ session['urls'][number] }}">{{ session['products'][number].upper()}}</a>
+        {% endfor %}
     </div>
 </nav>
+
 <body>
-<div class="loading-container" id="LoadingContainer">
-    <div class="loading-spinner"></div>
-</div>
-<div>
-<div id="body">
-{% block BodyContent %}
-{% endblock %}
-</div>
-<footer>
-        <div><h2>PetConnect</h2></div>
-        <div><h3>Copyright © 2023 PetConnect</h3></div>
-        <div>
-            <!-- <a href="https://www.instagram.com/nanogurus4347/">
+    <div class="loading-container" id="LoadingContainer">
+        <div class="loading-spinner"></div>
+    </div>
+    <div>
+        <div id="body">
+            {% block BodyContent %}
+            {% endblock %}
+        </div>
+        <footer>
+            <div>
+                <h2>PetConnect</h2>
+            </div>
+            <div>
+                <h3>Copyright © 2023 PetConnect</h3>
+            </div>
+            <div>
+                <!-- <a href="https://www.instagram.com/nanogurus4347/">
                 <object class="footer-links" data="../static/images/instagram.svg" type="image/svg+xml"></object>
             </a>
             <a href="mailto: nanogurusftcrobotics@gmail.com">
                 <object class="footer-links" data="../static/images/email.svg" type="image/svg+xml"></object>
             </a> -->
-        </div>
-</footer>
+            </div>
+        </footer>
 </body>
 
 <script>
@@ -100,7 +111,7 @@
     $(document).ready(function () {
         let vh = $(window).height()
         let navH = $('nav').height()
-        $('#body').css('margin-top', navH+'px')
+        $('#body').css('margin-top', navH + 'px')
         function placeFooter() {
             var footer = $('footer');
             footer.css('position', 'relative');
@@ -114,9 +125,9 @@
         var height = $('nav').height();
         $('.for-color').css('height', height + 'px');
         $('.hamburger').click(function () {
-                $('.mobile-menu').toggleClass('animate-menu');
-                $('.hamburger>div').toggleClass('opened');
-            }
+            $('.mobile-menu').toggleClass('animate-menu');
+            $('.hamburger>div').toggleClass('opened');
+        }
         )
         $(document).on('click tap', '.has-drop', function () {
             var $this = $(this)
@@ -128,4 +139,5 @@
 
 
 </script>
+
 </html>

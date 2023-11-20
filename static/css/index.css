@@ -42,8 +42,8 @@
         opacity: 0;
         background-color: #fafafa;
         height: fit-content;
-        min-width: 80vw;
-        max-width: 80vw;
+        width: 90vw;
+        min-width: 320px;
         margin-left: .8vw;
         margin-top: 1.6vw;
         margin-right: .8vw;
@@ -52,12 +52,13 @@
         flex-direction: column;
         
     }
-    .products{
-       
-        height: fit-content;
+    .products-flex{
+        width: fit-content;
         display: flex;
         padding: 5px;
-        flex-direction: row;
+        flex-wrap: wrap;
+        /* align-items: center; */
+
     }
     .page-title{
         margin: auto;
@@ -89,34 +90,51 @@
     .product-url-div{
         margin: auto;
         text-align:center;
-        
-
     }
     .product-descriptions-left{
-        text-align: center;
         font-size: 2.5em;
-        margin-left: 10%;
-        margin-bottom: 2%;
-        margin-right: 5%;
-        max-width: 100%;
-
+        /* margin-left: 6%; */
+        /* margin-right: auto; */
+        /* margin-bottom: 2%; */
+        margin: auto;
+        min-height: 400px;
+        /* flex: 1 1 320px; */
+        padding: 5px;
+        max-width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
     }
-    .product-descriptions-right{
-        text-align: center;
-        font-size: 2.5em;
-        margin-left: 5%;
-        margin-right: 10%;
-        margin-bottom: 2%;
-        max-width: 100%;
+    
+    .equal-width{
+        flex-basis: 1;
+    }
 
+    .product-descriptions-right{
+        font-size: 2.5em;
+        /* margin-right: 6%; */
+        /* margin-left: auto; */
+        /* margin-bottom: 2%; */
+        margin: auto;
+        min-height: 400px;
+        /* flex: 1 1 320px; */
+        padding: 5px;
+        max-width:40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
     p{
-        max-width: 70%;
+        margin: auto;
+        padding: 5%;
+    }
+    hr{
+        margin: auto;
     }
     .image{
-        max-height: 300px;
-        max-width: 300px;
+        height: 400px;
+        width: 400px;
         border-radius: 15px;
     }
     .product-url:hover {
@@ -136,4 +154,5 @@
         font: 4em var(--font-family);
         margin: auto;
         margin-top: 10px;
+        padding-bottom: 20px;
     }
