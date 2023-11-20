@@ -87,7 +87,7 @@ footer{
     transition: 0.3s;
 }
 .nav-links {
-    font: .8em var(--font-family);
+    font-size: .8em;
     text-decoration: none;
     margin-left: 0.75rem;
     margin-right: 0.75rem;
