@@ -19,34 +19,40 @@
             <!-- PetConnect Logo -->
             <div style="display: flex">
                 <a href="/" id="Nav-Logo-A">
-                    <img src="../static/images/petconnect_logo.png" height="100px">
+                    <img class = "zoomImages" src="../static/images/petconnect_logo.png" height="100px" alt = "If you see this, you were meant to.">
                 </a>
             </div>
 
             <!-- Navbar Links -->
             <div id="Nav-Link-Cont">
+                
                 <div class="link-container"><a class="nav-links" href="/">STORE</a></div>
-            {% for number in range(session['products']|length)%}
+                {% for number in range(session['products']|length)%}
                 <div class="link-container"><a class="nav-links" href="{{ session['urls'][number] }}">{{
                         session['products'][number].upper()}}</a></div>
-            {% endfor %}
-            {% if session['debug'] is true %}
+                {% endfor %}
+                {% if session['debug'] is true %}
+                
+                <div class="link-container"><a class="nav-links" href="/ourteam">MEET US!</a></div>
+
                 <div class="link-container"><a class="nav-links" href="/gatherdata">REFRESH DATA</a></div>
-            {% endif %}
-        </div>
+                
+                {% endif %}
+            </div>
 
             <div class="hamburger">
                 <div></div>
             </div>
         </div>
-       
+
     </div>
     <div class="mobile-menu">
         <a class="nav-links" href="/">STORE</a>
         {% for number in range(session['products']|length)%}
-            <a class="nav-links" href="{{ session['urls'][number] }}">{{ session['products'][number].upper()}}</a>
+        <a class="nav-links" href="{{ session['urls'][number] }}">{{ session['products'][number].upper()}}</a>
         {% endfor %}
     </div>
+
 </nav>
 
 <body>
