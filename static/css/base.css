@@ -87,7 +87,7 @@ footer{
     margin: auto;
     font: "FredokaOne";
     background-color: #55bfd7;
-    color: white; 
+    color: #4b4b4b; 
 }
 [data-inviewport="appear-fast"].first-time {
     opacity: 1;
