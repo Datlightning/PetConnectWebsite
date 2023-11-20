@@ -41,13 +41,13 @@ h1 {
     color: #7cd0bb;
     font-family: "FredokaOne";
 }
-
+/* 
 .bluetitle:hover {
     
     transition: 0.2s ease-in;
 
     color: rgb(255, 255, 255);
-}
+} */
 [data-inviewport="scale-in"] { 
     transition: .5s;
   }
@@ -82,14 +82,14 @@ h1 {
     
     font-family: "FredokaOne";
 }
-
+/* 
 .browntitle:hover{
     
     transition: 0.2s ease-in;
     transform: scale(1.1);
     transform: skew(-5deg, -5deg);
     color: rgb(255, 255, 255);
-}
+} */
 
 h2 {
     text-align: center;

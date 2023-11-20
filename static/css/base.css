@@ -85,7 +85,9 @@ nav{
 footer{
     align-items: center;
     margin: auto;
-    font: "FredokaOne"
+    font: "FredokaOne";
+    background-color: #55bfd7;
+    color: white; 
 }
 [data-inviewport="appear-fast"].first-time {
     opacity: 1;
