@@ -21,13 +21,21 @@
         <div data-inviewport="appear-after" class ="picture-description opacity0" style="transition-delay:{{ loop.index*(1/12) }}s !important;">
             <h3 class = "product-h3">{{products[product]}}</h3>
             <img class="image"
-                src="../static/images/products/{{pictures[product]}}">
+                src="../static/images/products/{{pictures[product]}}" alt = "product image load failure.">
             <p class = "description">{{description[product]}}</p>
         </div>
     </div>
     {% endfor %}
+    
 </div>
 
+<div class = "product-lineup opacity0" data-inviewport="appear">
+    <br>
+    <br>
+    <br>
+    <a class = "product-lineup-h4" href = "/ourteam">Contact one of our representatives in order to place an order or to get more information.</a>
+</div>
+<br>
 
 {% endblock %}
 <script>

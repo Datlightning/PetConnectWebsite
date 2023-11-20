@@ -29,5 +29,12 @@ def umbrella(pid):
 def gatherdata():
     gd.get_everything()
     return redirect("/")
+@app.route("/ourteam")
+def main():
+    print("entering ruthvik's part of the page, aka the good part and every other part LMAOAOAO O")
+
+    # also, one of the only actually documented parts. 
+
+    return render_template("people.html") 
 if __name__ == '__main__':
     app.run(debug=True)

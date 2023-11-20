@@ -1,3 +1,9 @@
+@font-face {
+    font-family: FredokaOne;
+    src: url(../fonts/FredokaOne-Regular.ttf);
+}
+
+
 #ContactUs {
     margin: 20px auto;
 }
@@ -32,6 +38,32 @@
     border-radius: 20px;
 }
 
+[data-inviewport="scale-in"] { 
+    transition: .5s;
+  }
+[data-inviewport="appear"].first-time {
+    opacity: 1;
+    transition: 0.4s;
+    transition-delay: 0.2s;
+}
+[data-inviewport="appear-after"].first-time {
+    opacity: 1;
+    transition: 0.4s;
+    transition-delay: 0.4s;
+}
+
+[data-inviewport="appear-afterMain"].is-inViewport {
+    opacity: 1;
+    transition: 0.4s;
+    transition-delay: 0.4s;
+}
+[data-inviewport="scale-in"].is-inViewport { 
+    width: 90vw;
+  }
+
+[data-inviewport="scale-inImages"].is-inViewport { 
+    width: 90vw;
+  }
 .ContactUsFlexbox>div {
     flex-basis: 500px;
     display: flex;

@@ -4,8 +4,14 @@
     font-family: FontName;
     src: url("{{ url_for('static', filename='fonts/Comic Sans MS 400.ttf') }}");
   } */
+
+  @font-face {
+    font-family: FredokaOne;
+    src: url(../fonts/FredokaOne-Regular.ttf);
+}
+
 :root { 
-    --font-family: "Tahoma";
+    --font-family: "FredokaOne";
     --primary: #3FBBD7;
     --dark-primary: #236776;
     --secondary: #7cd0bb;
@@ -21,6 +27,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    font-family: "FredokaOne";
 }
 .body{
     margin-top:0px;
@@ -33,6 +40,7 @@ nav{
     left: 0;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
     transition: top 0.3s;
+    font: "FredokaOne";
 
 }
 #Reg-Nav-In > div:first-child {
@@ -77,6 +85,9 @@ nav{
 footer{
     align-items: center;
     margin: auto;
+    font: "FredokaOne";
+    background-color: #55bfd7;
+    color: white; 
 }
 [data-inviewport="appear-fast"].first-time {
     opacity: 1;
@@ -101,8 +112,38 @@ footer{
 .nav-links:hover {
     color: var(--off-white);
     transition: 0.2s ease-in;
+    transform: scale(1.1); 
+    transform: skew(-4deg, -2deg);
+    
+    box-shadow: 5px 5px 2px rgba(138, 127, 127, 0.727); 
 
 }
+[data-inviewport="scale-in"] { 
+    transition: .5s;
+  }
+[data-inviewport="appear"].first-time {
+    opacity: 1;
+    transition: 0.4s;
+    transition-delay: 0.2s;
+}
+[data-inviewport="appear-after"].first-time {
+    opacity: 1;
+    transition: 0.4s;
+    transition-delay: 0.4s;
+}
+
+[data-inviewport="appear-afterMain"].is-inViewport {
+    opacity: 1;
+    transition: 0.4s;
+    transition-delay: 0.4s;
+}
+[data-inviewport="scale-in"].is-inViewport { 
+    width: 90vw;
+  }
+
+[data-inviewport="scale-inImages"].is-inViewport { 
+    width: 90vw;
+  }
 body{
     background-color: #ffffff;
 }
@@ -207,4 +248,50 @@ h2,h3{
 .mobile-menu > div, .mobile-menu > a {
     margin-top: 3px;
     margin-bottom: 3px;
+}
+
+
+.zoom {
+
+
+    transition: transform .2s;
+    /* Animation */
+    margin-left: 10%; 
+    margin-right: 10%; 
+    border-radius: 5%;
+    text-align: center;
+    
+
+}
+
+.zoomImages { 
+    transition: transform .2s;
+
+}
+.zoomImages:hover { 
+    transform: scale(1.1);
+}
+
+.zoom:hover {
+    transition: 0.2s ease-in;
+    transform: scale(1.5);
+    transform: skew(-4deg, -2deg);
+
+
+    
+    /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.zoomWords { 
+    transition: transform .2s;
+    margin-left: 10%; 
+    margin-right: 10%; 
+}
+.zoomWords:hover {
+    
+    transition: 0.2s ease-in; 
+    transform: scale(1.1); 
+    transform: skew(-4deg, -2deg);
+    color: rgb(54, 54, 54);
+    box-shadow: 5px 5px 2px rgba(138, 127, 127, 0.727); 
 }

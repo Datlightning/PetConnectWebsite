@@ -19,34 +19,40 @@
             <!-- PetConnect Logo -->
             <div style="display: flex">
                 <a href="/" id="Nav-Logo-A">
-                    <img src="../static/images/petconnect_logo.png" height="100px">
+                    <img class = "zoomImages" src="../static/images/petconnect_logo.png" height="100px" alt = "If you see this, you were meant to.">
                 </a>
             </div>
 
             <!-- Navbar Links -->
             <div id="Nav-Link-Cont">
+                
                 <div class="link-container"><a class="nav-links" href="/">STORE</a></div>
-            {% for number in range(session['products']|length)%}
+                {% for number in range(session['products']|length)%}
                 <div class="link-container"><a class="nav-links" href="{{ session['urls'][number] }}">{{
                         session['products'][number].upper()}}</a></div>
-            {% endfor %}
-            {% if session['debug'] is true %}
+                {% endfor %}
+                {% if session['debug'] is true %}
+                
+                <div class="link-container"><a class="nav-links" href="/ourteam">MEET US!</a></div>
+
                 <div class="link-container"><a class="nav-links" href="/gatherdata">REFRESH DATA</a></div>
-            {% endif %}
-        </div>
+                
+                {% endif %}
+            </div>
 
             <div class="hamburger">
                 <div></div>
             </div>
         </div>
-       
+
     </div>
     <div class="mobile-menu">
         <a class="nav-links" href="/">STORE</a>
         {% for number in range(session['products']|length)%}
-            <a class="nav-links" href="{{ session['urls'][number] }}">{{ session['products'][number].upper()}}</a>
+        <a class="nav-links" href="{{ session['urls'][number] }}">{{ session['products'][number].upper()}}</a>
         {% endfor %}
     </div>
+
 </nav>
 
 <body>
@@ -59,12 +65,19 @@
             {% endblock %}
         </div>
         <footer>
+            <br>
             <div>
-                <h2>PetConnect</h2>
+                <h3>Morris Hills High School 2023 Virtual Enterprises: PetConnect</h3>
             </div>
+            
             <div>
-                <h3>Copyright © 2023 PetConnect</h3>
+                <h3>Ms. Pavero's Academy Business Strategies Honors Class</h3>
+                <h3>Academy of Mathematics, Science, and Engineering (Morris County Vocational School District) Class of '25</h3>
             </div>
+            <div style = "text-align: center;">
+                <a href="https://github.com/Datlightning/PetConnectWebsite" style = "text-align: center;"  target="_blank" rel = "noopener">A website made by Ruthvik Venkatesan and Vihas Veggalam.</a>
+            </div>
+            <br>
             <div>
                 <!-- <a href="https://www.instagram.com/nanogurus4347/">
                 <object class="footer-links" data="../static/images/instagram.svg" type="image/svg+xml"></object>
