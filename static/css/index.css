@@ -42,8 +42,10 @@
     .gray{
         background-color: #fafafa;
         border-radius: 20px;
-        box-shadow: 10px 10px rgba(0,0,0,.3); 
-
+        
+    }
+    .shadow{
+        box-shadow: 10px 10px rgba(0,0,0,.1); 
     }
     .description{
         width: 60%;
@@ -60,7 +62,6 @@
         display: flex;
         padding: 5px;
         flex-direction: column;
-        
     }
     .products-flex{
         width: fit-content;
@@ -68,7 +69,6 @@
         padding: 5px;
         flex-wrap: wrap;
         padding-bottom:50px;
-        /* align-items: center; */
 
     }
     .page-title{
@@ -103,17 +103,17 @@
     }
     .product-descriptions-left{
         font-size: 2.5em;
-        /* margin-left: 6%; */
-        /* margin-right: auto; */
-        /* margin-bottom: 2%; */
-        margin: auto;
-        min-height: 400px;
+        margin-left: 6%; 
+        margin-right: 3%;
+        margin-bottom: 2%;
+        /* margin: auto; */
+        /* min-height: 400px; */
         /* flex: 1 1 320px; */
         padding: 5px;
         max-width: 60%;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
 
     }
     
@@ -123,21 +123,22 @@
 
     .product-descriptions-right{
         font-size: 2.5em;
-        /* margin-right: 6%; */
-        /* margin-left: auto; */
-        /* margin-bottom: 2%; */
+        margin-right: 6%; 
+        margin-left: 3%;
+        margin-bottom: 2%;
         margin: auto;
-        min-height: 400px;
+        /* min-height: 400px; */
         /* flex: 1 1 320px; */
         padding: 5px;
         max-width:60%;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
     }
     p{
         margin: auto;
-        padding: 5%;
+        padding-left: 5%;
+        padding-right: 5%;
     }
     hr{
         margin: auto;
@@ -156,12 +157,12 @@
     }
     #product-descriptions{
         color: var(--secondary);
-        font: 2em var(--font-family);
+        font: 1.4em var(--font-family);
 
     }
     .product-title{
         color: var(--light-primary);
-        font: 3em var(--font-family);
+        font: 2.2em var(--font-family);
         margin: auto;
         margin-top: 10px;
         padding-bottom: 20px;

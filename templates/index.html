@@ -19,24 +19,23 @@
     <!-- </div> -->
         <div class = "products-flex">
             {% if product % 2 == 0%}
-             <div class="product-descriptions-left equal-width gray description" id="product-descriptions">
-                <h3 class="product-title" >{{ names[product] }}</h3>
-
+             <div class="product-descriptions-left equal-width gray description shadow" id="product-descriptions">
+                <p class="product-title" >{{ names[product] }}</p>
                 <!-- <div><hr></div> -->
                 <p>{{ descriptions[product] }}</p>
                 <!-- <div><hr></div> -->
              </div>
         
             <div class="product-descriptions-right equal-width"> 
-                <img class="image" src="../static/images/products/{{pictures[product]}}">
+                <img class="image shadow" src="../static/images/products/{{pictures[product]}}">
             </div>
             {% endif %}
             {% if product % 2 == 1%}
-            <div class="product-descriptions-left equal-width"> <img class="image"
+            <div class="product-descriptions-left equal-width"> <img class="image shadow"
                 src="../static/images/products/{{pictures[product]}}">
             </div>
-            <div class="product-descriptions-right equal-width gray description" id="product-descriptions">
-                <h3 class="product-title" >{{ names[product] }}</h3>
+            <div class="product-descriptions-right equal-width gray description shadow" id="product-descriptions">
+                <p class="product-title" >{{ names[product] }}</p>
                 <!-- <div><hr></div> -->
                 <p>{{ descriptions[product] }}</p><br>
                 <!-- <div><hr></div> -->
