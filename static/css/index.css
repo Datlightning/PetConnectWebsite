@@ -1,10 +1,5 @@
 
-    .landing{
-        padding: 30px;
-        background-color:  var(--not-exactly-black);
-        align-content: center;
-       
-    }
+   
 
     h1{
         text-align:center;
@@ -19,6 +14,13 @@
         height: fit-content;
         margin: auto;
         justify-content: center;
+    }
+    .overlay{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+
     }
     .opacity0{
         opacity: 0;
@@ -45,7 +47,10 @@
         
     }
     .shadow{
-        box-shadow: 10px 10px rgba(0,0,0,.1); 
+        /* box-shadow: 10px 10px rgba(0,0,0,.1);  */
+
+        box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+
     }
     .description{
         width: 60%;
@@ -54,8 +59,8 @@
         opacity: 0;
         background-color: #ffffff;
         height: fit-content;
-        width: 90vw;
-        min-width: 320px;
+        width: 100vw;
+        min-width: var(--picture-width);
         margin-left: .8vw;
         margin-top: 1.6vw;
         margin-right: .8vw;
@@ -64,10 +69,11 @@
         flex-direction: column;
     }
     .products-flex{
-        width: fit-content;
+        width: 100%;
         display: flex;
-        padding: 5px;
         flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-evenly;
         padding-bottom:50px;
 
     }
@@ -81,34 +87,28 @@
     }
     .product-url{
         background-color: #fafafa;
-        font: 1.25em var(--font-family);
+        font: .75em var(--font-family);
         text-decoration: none;
         color: var(--not-exactly-black);
         transition: 0.2s ease-out;
         padding:8px;
-        font-weight: bold;
-        display: inline-block;
-        align-self: center;
-        margin-top: auto;
-        border-radius: 5px;
-        margin-bottom: 10px;
-        border-width: 4px;
-        border-style: solid;
-        border-color: var(--light-primary);;
-        background-color: var(--light-primary);;
+        font-weight: normal;
+        margin: auto;
+        color: var(--primary);
+      
     }
     .product-url-div{
         margin: auto;
         text-align:center;
     }
     .product-descriptions-left{
+        position: relative;
+
         font-size: 2.5em;
-        margin-left: 6%; 
-        margin-right: 3%;
-        margin-bottom: 2%;
-        /* margin: auto; */
-        /* min-height: 400px; */
-        /* flex: 1 1 320px; */
+
+        margin-top: auto;
+        margin-bottom: auto;
+   
         padding: 5px;
         max-width: 60%;
         display: flex;
@@ -122,48 +122,57 @@
     }
 
     .product-descriptions-right{
+        position: relative;
+
         font-size: 2.5em;
-        margin-right: 6%; 
-        margin-left: 3%;
-        margin-bottom: 2%;
-        margin: auto;
-        /* min-height: 400px; */
-        /* flex: 1 1 320px; */
+        margin-top: auto;
+        margin-bottom: auto;
+    
         padding: 5px;
         max-width:60%;
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
-    p{
+    .desc{
         margin: auto;
+        text-align: center;
         padding-left: 5%;
         padding-right: 5%;
+        margin-bottom: 20px;
     }
     hr{
         margin: auto;
     }
     .image{
-        height: 400px;
-        width: 400px;
+        max-height:  400px;
+        max-width:  400px;
         border-radius: 15px;
     }
     .product-url:hover {
-        color: var(--secondary);
-        border-color:var(--secondary);
+        text-decoration: underline;
         background-color: #fafafa;
         transition: 0.2s ease-in;
 
+    }
+    .product-url-flex{
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        z-index: 2;
     }
     #product-descriptions{
         color: var(--secondary);
         font: 1.4em var(--font-family);
 
     }
+    .arrow{
+        color: var(--primary);
+    }
     .product-title{
         color: var(--light-primary);
-        font: 2.2em var(--font-family);
+        font-style: var(--font-family);
         margin: auto;
         margin-top: 10px;
-        padding-bottom: 20px;
     }

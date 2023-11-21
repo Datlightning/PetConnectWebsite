@@ -51,7 +51,6 @@ nav{
 #Reg-Nav-In {
     display: flex;
     flex-direction: row;
-    justify-content: center;
 }
 
 #Nav-Logo-A {
@@ -73,7 +72,20 @@ nav{
     display: flex;
     align-items: center;
 }
-
+.landing{
+    padding-bottom: 30px;
+    background-color:  var(--not-exactly-black);
+    width: 105%;
+    align-content: center;
+   
+}
+.container {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    width: 100%;
+}
 footer{
     align-items: center;
     margin: auto;

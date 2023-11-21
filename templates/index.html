@@ -3,6 +3,8 @@
 {% block headerinfo %}
 <link href='https://fonts.googleapis.com/css?family=Caveat' rel='stylesheet'>
 <link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/screen-size-media-queries.css') }}" rel="stylesheet">
+
 {% endblock %}
 {% block BodyContent %}
 <div class="landing">
@@ -15,29 +17,42 @@
     <div data-inviewport="appear" class="product" style="transition-delay:{{ loop.index*(1/12) }}s !important;">
         <!-- <div class = "horizontal-align"> -->
         <div>
-        <a class="overlay" href="{{ urls[product] }}"></a>
     <!-- </div> -->
         <div class = "products-flex">
             {% if product % 2 == 0%}
              <div class="product-descriptions-left equal-width gray description shadow" id="product-descriptions">
                 <p class="product-title" >{{ names[product] }}</p>
+                <div class="product-url-flex">
+                    <a class="product-url" href="{{ urls[product] }}">Learn More</a>
+                </div>
                 <!-- <div><hr></div> -->
-                <p>{{ descriptions[product] }}</p>
+                <p class="desc">{{ descriptions[product] }}</p>
                 <!-- <div><hr></div> -->
+                <a class="overlay" href="{{ urls[product] }}"></a>
+
              </div>
         
             <div class="product-descriptions-right equal-width"> 
+                <a class="overlay" href="{{ urls[product] }}"></a>
+
                 <img class="image shadow" src="../static/images/products/{{pictures[product]}}">
             </div>
             {% endif %}
             {% if product % 2 == 1%}
-            <div class="product-descriptions-left equal-width"> <img class="image shadow"
-                src="../static/images/products/{{pictures[product]}}">
+            <div class="product-descriptions-left equal-width"> 
+                <img class="image shadow" src="../static/images/products/{{pictures[product]}}">
+                <a class="overlay" href="{{ urls[product] }}"></a>
+
             </div>
             <div class="product-descriptions-right equal-width gray description shadow" id="product-descriptions">
                 <p class="product-title" >{{ names[product] }}</p>
+                <div class="product-url-flex">
+                    <a class="product-url" href="{{ urls[product] }}">Learn More</a>
+                </div>
+                <a class="overlay" href="{{ urls[product] }}"></a>
+
                 <!-- <div><hr></div> -->
-                <p>{{ descriptions[product] }}</p><br>
+                <p  class="desc">{{ descriptions[product] }}</p>
                 <!-- <div><hr></div> -->
             </div>
             {% endif %}
