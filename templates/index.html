@@ -18,8 +18,14 @@
         <!-- <div class = "horizontal-align"> -->
         <div>
     <!-- </div> -->
-        <div class = "products-flex">
             {% if product % 2 == 0%}
+            <div class = "products-flex">
+
+            <div class="product-descriptions-right equal-width"> 
+                <a class="overlay" href="{{ urls[product] }}"></a>
+
+                <img class="image shadow" src="../static/images/products/{{pictures[product]}}">
+            </div>
              <div class="product-descriptions-left equal-width gray description shadow" id="product-descriptions">
                 <p class="product-title" >{{ names[product] }}</p>
                 <div class="product-url-flex">
@@ -32,13 +38,11 @@
 
              </div>
         
-            <div class="product-descriptions-right equal-width"> 
-                <a class="overlay" href="{{ urls[product] }}"></a>
-
-                <img class="image shadow" src="../static/images/products/{{pictures[product]}}">
-            </div>
+            
             {% endif %}
             {% if product % 2 == 1%}
+            <div class = "reverse">
+
             <div class="product-descriptions-left equal-width"> 
                 <img class="image shadow" src="../static/images/products/{{pictures[product]}}">
                 <a class="overlay" href="{{ urls[product] }}"></a>
