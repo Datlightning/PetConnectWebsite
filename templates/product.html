@@ -18,7 +18,7 @@
 <div class = "products">
     {% for product in range(products|length) %}
     <div class = "product">
-        <div data-inviewport="appear-after" class ="picture-description opacity0" style="transition-delay:{{ loop.index*(1/12) }}s !important;">
+        <div data-inviewport="appear-after" class ="opacity0" style="transition-delay:{{ loop.index*(1/12) }}s !important;">
             <h3 class = "product-h3">{{products[product]}}</h3>
             <img class="image"
                 src="../static/images/products/{{pictures[product]}}">
