@@ -83,7 +83,11 @@
     #Nav-Link-Cont {
         display: none;
     }
-
+    .link-container {
+        display: none;
+        opacity: 0;
+        width: fit-content;
+    }
     #Reg-Nav-In {
         justify-content: space-between;
     }

@@ -19,13 +19,46 @@
     justify-content:center;
 
 }
+.product-url:hover {
+    text-decoration: underline;
+    background-color: #fafafa;
+    transition: 0.2s ease-in;
+
+}
+.product-url{
+    font: .75em var(--font-family);
+    text-decoration: none;
+    color: var(--not-exactly-black);
+    transition: 0.2s ease-out;
+    padding:8px;
+    font-weight: normal;
+    margin: auto;
+    color: var(--primary);
+  
+}
+.product-url-div{
+    margin: auto;
+    text-align:center;
+}
+.product-url-flex{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    z-index: 2;
+}
 .product{
-    padding: 30px;
-    width: 300px;
+    width: 320px;
+    border-radius: 10px;
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 5px;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: auto;
+    position: relative;
 }
 .render{
     margin: auto;
@@ -40,13 +73,32 @@
     width: 300px;
     text-align: center;
     font-family: "Tahoma";
+    font-weight: bold;
     font-size: .9em;
     color: var(--secondary);
 }
+.overlay{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    position: absolute;
+    z-index: 1;
+
+}
+.inline{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: auto;
+}
 .image{
-    max-height: 300px;
-    max-width: 300px;
+    height: 296px;
+    width: 296px;
+    margin-left: auto;
+     margin-right: auto;
     border-radius: 15px;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+
 }
 [data-inviewport="scale-in"] { 
     transition: .5s;
@@ -79,9 +131,7 @@ h1{
     font: 10em 'Caveat';
     font-weight: bolder;
 }
-.image{
-    padding: 17.5px;
-}
+
 .product-lineup-h2{
     text-align:center;
     font:  3.2em "Tahoma";
