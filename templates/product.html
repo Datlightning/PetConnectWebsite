@@ -18,12 +18,12 @@
 <div class = "products">
     {% for product in range(products|length) %}
     <div class = "product">
-        <a class="overlay" href="/"></a>
+        <a class="overlay" href="{{urls[product]}}"></a>
         <div data-inviewport="appear-after" class ="opacity0 inline" style="transition-delay:{{ loop.index*(1/12) }}s !important;">
             <h3 class = "product-h3">{{products[product]}}</h3>
             <img class="image" src="../static/images/products/{{pictures[product]}}">
                 <div class="product-url-flex">
-                    <a class="product-url" href="/">Buy Now</a>
+                    <a class="product-url" href="{{urls[product]}}">Buy Now</a>
                 </div>
             <p class = "description">{{description[product]}}</p>
         </div>

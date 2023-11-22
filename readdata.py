@@ -36,7 +36,8 @@ def getProduct(string):
         "name":name,
         "product-names":[],
         "product-descriptions":[],
-        "product-pictures":[]
+        "product-pictures":[],
+        "product-urls":[]
     }
     filename = directory.joinpath(url[1:] + '-products.txt')
     products = []
@@ -46,4 +47,5 @@ def getProduct(string):
         output["product-names"].append(product[0])
         output["product-descriptions"].append(product[1])
         output["product-pictures"].append(product[2])
+        output["product-urls"].append(product[3])
     return output

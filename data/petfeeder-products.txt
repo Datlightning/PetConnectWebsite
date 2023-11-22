@@ -1,1 +1,1 @@
-[['PetFresh', 'Smart feeders for flexible eating schedules, ensuring your pet enjoys nutritious meals.', 'PetFeeder.png']]
+[['PetFresh', 'Smart feeders for flexible eating schedules, ensuring your pet enjoys nutritious meals.', 'PetFeeder.png', 'https://www.google.com/search?q=url&oq=url&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTITCAEQLhiDARjHARixAxjRAxiABDITCAIQLhiDARjHARixAxjRAxiABDINCAMQABiDARixAxiABDINCAQQABiDARixAxiABDIGCAUQRRg9MgYIBhBFGDwyBggHEEUYPNIBBzI2MWowajeoAgCwAgA&sourceid=chrome&ie=UTF-8&safe=active&ssui=on']]
