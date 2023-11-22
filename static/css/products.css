@@ -186,3 +186,32 @@ h1{
 [data-inviewport="scale-inImages"].is-inViewport { 
     width: 90vw;
   }
+
+  .product-url:hover {
+    text-decoration: underline;
+    background-color: #fafafa;
+    transition: 0.2s ease-in;
+
+}
+.product-url{
+    font: .75em var(--font-family);
+    text-decoration: none;
+    color: var(--not-exactly-black);
+    transition: 0.2s ease-out;
+    padding:8px;
+    font-weight: normal;
+    margin: auto;
+    color: var(--primary);
+  
+}
+.product-url-div{
+    margin: auto;
+    text-align:center;
+}
+.product-url-flex{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    z-index: 2;
+}
