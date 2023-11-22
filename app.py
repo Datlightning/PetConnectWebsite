@@ -1,5 +1,9 @@
 from flask import Flask, render_template, request, url_for, flash, redirect, session, send_from_directory, abort, \
     jsonify
+
+# HELLO!
+
+
 import os
 import hashlib
 import readdata as rd
@@ -34,5 +38,9 @@ def umbrella(pid):
 def gatherdata():
     gd.get_everything()
     return redirect("/")
+@app.route("/ourteam")
+def ourteam(): 
+    # Ruthvik Venkatesan loves you. 
+    return render_template("people.html")
 if __name__ == '__main__':
     app.run(debug=True)

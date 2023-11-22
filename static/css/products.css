@@ -186,24 +186,29 @@ h1{
 [data-inviewport="scale-inImages"].is-inViewport { 
     width: 90vw;
   }
-
-  .product-url:hover {
-    text-decoration: underline;
-    background-color: #fafafa;
-    transition: 0.2s ease-in;
-
-}
 .product-url{
-    font: .75em var(--font-family);
+    font-size: .8em;
     text-decoration: none;
-    color: var(--not-exactly-black);
-    transition: 0.2s ease-out;
-    padding:8px;
-    font-weight: normal;
-    margin: auto;
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
     color: var(--primary);
+    transition: 0.2s ease-out;
+    padding: 6px;
+    font-weight: bold;
+    border-radius: 30px;
   
 }
+
+.product-url:hover {
+    color: black; 
+    transition: 0.2s ease-in;
+    transform: scale(1.1); 
+    transform: skew(-4deg, 2deg);
+    
+    box-shadow: 5px 5px 2px rgba(138, 127, 127, 0.727); 
+
+}
+
 .product-url-div{
     margin: auto;
     text-align:center;
