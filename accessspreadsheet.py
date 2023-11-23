@@ -1,7 +1,7 @@
 import gspread
 import readdata as rd
 from pathlib import Path
-
+import static.images.accessfolders as af
 directory = Path(__file__).parent.joinpath("data")
 credentials = Path(__file__).parent.joinpath('creds.json')
 gc = gspread.service_account(filename=credentials.resolve())
@@ -29,7 +29,9 @@ def get_product_variations():
         with open(filename.resolve(), 'w+') as file:
             file.write(str(values))
         index += 1
-
+def get_pictures():
+    af.update()
 def get_everything():
     get_product_variations()
     get_products()
+    get_pictures()
