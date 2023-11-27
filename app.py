@@ -26,9 +26,9 @@ def index():
     session['products'].extend(list(map(parse, data["names"])))
     session['urls'].extend(data["urls"])
     return render_template("index.html",urls = data["urls"], names = data["names"], pictures = data["pictures"], descriptions = data['long-desc'])
-@app.route("/<pid>")
-def umbrella(pid):
-    data = rd.getProduct(pid)
+@app.route("/<product_id>")
+def umbrella(product_id):
+    data = rd.getProduct(product_id)
     return render_template("product.html", urls = data['product-urls'], products = data["product-names"], name = data["name"], pictures = data["product-pictures"], description = data['product-descriptions'])
 @app.route("/gatherdata")
 def gatherdata():

@@ -21,7 +21,7 @@
 }
 .product-url:hover {
     text-decoration: underline;
-    background-color: #fafafa;
+    /* background-color: #fafafa; */
     transition: 0.2s ease-in;
 
 }

@@ -33,7 +33,6 @@ nav{
     left: 0;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
     transition: top 0.3s;
-
 }
 #Reg-Nav-In > div:first-child {
     margin-bottom: 15px;
@@ -58,6 +57,7 @@ nav{
     text-decoration: none;
     align-items: center;
     font-size: 1.5em;
+
 }
 
 
@@ -65,6 +65,8 @@ nav{
     display: flex;
     align-items: center;
     margin-left: 50px;
+    font-family: var(--font-family)
+
 }
 
 .link-container {

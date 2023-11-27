@@ -238,14 +238,14 @@
 
 @media only screen and (min-width: 401px) {
     .product-title {
-        font-size: 2.2em;
+        font-size: 56px;
     }
 
 }
 
 @media only screen and (max-width: 400px) {
     .product-title {
-        font-size: 1em;
+        font-size: 42px;
     }
 
 }
