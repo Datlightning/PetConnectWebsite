@@ -1,1 +1,0 @@
-[['Ocean Blue', 'A cool blue color to keep your pets warm.', 'PetBedMain.png', ''], ['Volcanic Ash Black', 'Feel the Volcanic Heat with this bold colorscheme. ', 'PetBedSecondary.png', '']]
