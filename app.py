@@ -17,22 +17,12 @@ def parse(string):
         return str(out[0]) + str(out[1])
     except IndexError:
         return string
-@app.route("/")
+@app.route("/", methods = ["GET"])
 def index():
-    session['debug'] = True
-    session['products'] = []
-    session['urls'] = []
-    data = rd.getProducts()
-    session['products'].extend(list(map(parse, data["names"])))
-    session['urls'].extend(data["urls"])
-    return render_template("index.html",urls = data["urls"], names = data["names"], pictures = data["pictures"], descriptions = data['long-desc'])
-@app.route("/<product_id>")
-def umbrella(product_id):
-    data = rd.getProduct(product_id)
-    return render_template("product.html", urls = data['product-urls'], products = data["product-names"], name = data["name"], pictures = data["product-pictures"], description = data['product-descriptions'])
-@app.route("/gatherdata")
-def gatherdata():
-    gd.get_everything()
-    return redirect("/")
+    if request.method == "GET":
+        data = rd.getProducts()
+        return jsonify(data)
+    return jsonify({"error": "some descriptive error that is useful for debugging"})
+
 if __name__ == '__main__':
     app.run(debug=True)
