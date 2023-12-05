@@ -10,6 +10,10 @@ from os.path import join, dirname, realpath
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "sdfsdfdfgdfgdsfgdfas"
+getProducts = rd.getProducts()
+getAllProducts = rd.get_all_products()
+# Fixing it UP
+
 def parse(string):
     try:
         out = string.split(" ")
@@ -20,12 +24,10 @@ def parse(string):
 @app.route("/")
 def index():
     session['debug'] = True
-    session['products'] = []
-    session['urls'] = []
-    data = rd.getProducts()
-    session['products'].extend(list(map(parse, data["names"])))
-    session['urls'].extend(data["urls"])
-    return render_template("index.html",cost = data["cost"], feature = data["feature"], sale = data["sale"], names = data["names"], pictures = data["pictures"], descriptions = data['descriptions'])
+    # data = rd.getProducts() just use getProducts fool. 
+    session['products'] = [].extend(list(map(parse, getProducts["names"])))
+    session['urls'] = [].extend(getProducts["urls"])
+    return render_template("index.html",cost = getProducts["cost"], feature = getProducts["feature"], sale = getProducts["sale"], names = getProducts["names"], pictures = getProducts["pictures"], descriptions = getProducts['descriptions'])
 
 @app.route("/about")
 def about_us():
@@ -33,8 +35,8 @@ def about_us():
 
 @app.route("/shop")
 def shop():
-    data = rd.get_all_products()
-    return render_template("shop.html",urls = data["product-urls"],cost = data["cost"], feature = data["feature"], sale = data["sale"], names = data["product-names"], pictures = data["product-pictures"], descriptions = data['product-descriptions'])
+    # data = rd.get_all_products() use getAllProducts Variable. 
+    return render_template("shop.html",urls = getAllProducts["product-urls"],cost = getAllProducts["cost"], feature = getAllProducts["feature"], sale = getAllProducts["sale"], names = getAllProducts["product-names"], pictures = getAllProducts["product-pictures"], descriptions = getAllProducts['product-descriptions'])
 
 @app.route("/contact")
 def contact():
