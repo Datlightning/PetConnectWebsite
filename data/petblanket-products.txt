@@ -1,1 +1,0 @@
-[['Small PetBrella', 'A brand new way to approach an old age problem.', 'PetUmbrellaSmall.png', '', '124', 'Sale', ''], ['Medium PetBrella', 'Keep your pets fresh and dry. ', 'PetUmbrellaMedium.png', '', '124', 'New', 'top-featured'], ['Large PetBrella', 'Designed even for the largest of breeds. ', 'PetUmbrellaLarge.png', '', '1235', '', 'top-featured']]

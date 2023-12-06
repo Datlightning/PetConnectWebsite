@@ -45,7 +45,8 @@ def getProduct(string):
         "product-pictures":[],
         "product-urls":[],
         "sale":[],
-        "feature":[]
+        "feature":[],
+        "cost":[]
     }
     filename = directory.joinpath(url[1:] + '-products.txt')
     products = []
@@ -56,7 +57,16 @@ def getProduct(string):
         output["product-descriptions"].append(product[1])
         output["product-pictures"].append(product[2])
         output["product-urls"].append(product[3])
+        output["sale"].append(product[5])
+        output["feature"].append(product[6])
+        output["cost"].append(product[4])
         
+    return output
+def get_names():
+    filename = directory.joinpath("people.txt")
+    output = []
+    with open(filename.resolve(), "r") as file:
+        output = eval(file.read().strip().split('\n')[0])
     return output
 def get_all_products():
     data = getProducts()
@@ -68,13 +78,17 @@ def get_all_products():
         "product-urls":[],
         "sale":[],
         "feature":[],
-        "cost":[]
+        "cost":[],
+        "model":[],
+        "count":[]
     }
+    output["model"] = data["names"]
     for url in data["urls"]:
         filename = directory.joinpath(url[1:] + '-products.txt')
         products = []
         with open(filename.resolve(), "r") as file:
             products = eval(file.read().split("\n")[0])
+        output["count"].append(len(products))
         for product in products:
             output["product-names"].append(product[0])
             output["product-descriptions"].append(product[1])

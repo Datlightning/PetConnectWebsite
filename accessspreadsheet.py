@@ -7,7 +7,16 @@ import static.images.accessfolders as af
 directory = Path(__file__).parent.joinpath("data")
 credentials = Path(__file__).parent.joinpath('creds.json')
 gc = gspread.service_account(filename=credentials.resolve())
-
+def get_names():
+    
+    sheet = gc.open('PetConnect Website Information').worksheet('People')
+    values = sheet.get_all_values()
+    values.pop(0)
+    filename = directory.joinpath("people.txt")
+    with open(filename.resolve(), "w+") as file:
+        file.write(str(values))
+        file.close()
+    return 
 def get_products():
     sheet = gc.open('PetConnect Website Information').worksheet('Products')
     values = sheet.get_all_values()
@@ -48,11 +57,12 @@ def get_product_variations():
                 1: "best-seller",
                 2: "top-featured"
             }
-            for index, line in enumerate(values):
+            for i, line in enumerate(values):
                 number = randint(0,2)
-                values[index].append(sale[number])
+                values[i].append(sale[number])
                 number = randint(0,2)
-                values[index].append(featured[number])
+                values[i].append(featured[number])
+            
         except:
             values = []
         filename = directory.joinpath(urls[index][1:] + "-products.txt")
@@ -63,5 +73,8 @@ def get_product_variations():
 def get_everything(pictures):
     get_product_variations()
     get_products()
+    get_names()
     if pictures:
         af.update()
+        af.get_people_pictures()
+

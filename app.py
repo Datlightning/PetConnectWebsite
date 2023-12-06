@@ -17,7 +17,6 @@ getAllProducts = rd.get_all_products()
 def parse(string):
     try:
         out = string.split(" ")
-        print(out)
         return str(out[0]) + str(out[1])
     except IndexError:
         return string
@@ -31,12 +30,25 @@ def index():
 
 @app.route("/about")
 def about_us():
-    return render_template("about.html")
+    people = rd.get_names()
+    return render_template("about.html", people=people)
 
-@app.route("/shop")
+@app.route("/shop", methods=["GET", "POST"])
 def shop():
+    if request.method == "POST":
+        name = request.form.get("type")
+        if name == "all":
+            return jsonify(data = getAllProducts)
+        url = ""
+        for index, product_name in enumerate(getProducts["names"]):
+            if product_name == name:
+                url = getProducts["urls"][index]
+        print(url)
+        info = rd.getProduct(url[1:])
+        print(info)
+        return jsonify(data = info)
     # data = rd.get_all_products() use getAllProducts Variable. 
-    return render_template("shop.html",urls = getAllProducts["product-urls"],cost = getAllProducts["cost"], feature = getAllProducts["feature"], sale = getAllProducts["sale"], names = getAllProducts["product-names"], pictures = getAllProducts["product-pictures"], descriptions = getAllProducts['product-descriptions'])
+    return render_template("shop.html", count = getAllProducts["count"], models = getAllProducts["model"], urls = getAllProducts["product-urls"],cost = getAllProducts["cost"], feature = getAllProducts["feature"], sale = getAllProducts["sale"], names = getAllProducts["product-names"], pictures = getAllProducts["product-pictures"], descriptions = getAllProducts['product-descriptions'])
 
 @app.route("/contact")
 def contact():
