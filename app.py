@@ -50,5 +50,14 @@ def gatherdata():
 def gatherpicturesanddata():
     gd.get_everything(True)
     return redirect("/")
+
+@app.route("/blog")
+def gather(): 
+    return render_template("blog.html")
+
+@app.route("/blog/<story>")
+def gatherBlog(story):
+    return render_template("exactblog.html", story = story)
+
 if __name__ == '__main__':
     app.run(debug=True)

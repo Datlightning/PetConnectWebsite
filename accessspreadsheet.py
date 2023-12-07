@@ -65,3 +65,12 @@ def get_everything(pictures):
     get_products()
     if pictures:
         af.update()
+
+def getBlogInfo(): 
+    sheet = gc.open('PetConnect Website Information').worksheet('BlogInfo')
+    values = sheet.get_all_values()[1:]
+    for x in values: 
+        print(x)
+        # funsies
+
+    return values
