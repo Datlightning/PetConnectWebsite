@@ -61,6 +61,8 @@ def gatherdata():
 @app.route("/super-update")
 def gatherpicturesanddata():
     gd.get_everything(True)
+    getProducts = rd.getProducts()
+    getAllProducts = rd.get_all_products()
     return redirect("/")
 if __name__ == '__main__':
     app.run(debug=True)
