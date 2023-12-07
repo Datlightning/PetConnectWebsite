@@ -25,4 +25,3 @@ def update():
     except:
         pass
     shutil.move(source.resolve(), destination.resolve())
-update()
