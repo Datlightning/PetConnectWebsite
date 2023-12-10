@@ -69,8 +69,8 @@ def get_everything(pictures):
 def getBlogInfo(): 
     sheet = gc.open('PetConnect Website Information').worksheet('BlogInfo')
     values = sheet.get_all_values()[1:]
-    for x in values: 
-        print(x)
-        # funsies
-
+    with open(r"data/blogNames.txt", "+a") as f:
+        for x in values: 
+            f.write(x)
     return values
+

@@ -1,4 +1,5 @@
 from pathlib import Path
+
 directory =  Path(__file__).parent.joinpath("data")
 
 def getProducts():
@@ -85,3 +86,10 @@ def get_all_products():
             output["cost"].append(product[4])
         
     return output
+
+
+def readAllBlogInfos(): 
+    pass
+
+def readBlogInfo():
+    pass

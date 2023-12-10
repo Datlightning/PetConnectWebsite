@@ -53,7 +53,7 @@ def gatherpicturesanddata():
 
 @app.route("/blog")
 def gather(): 
-    return render_template("blog.html")
+    return render_template("blog.html" stories = gd.getBlogInfo())
 
 @app.route("/blog/<story>")
 def gatherBlog(story):
