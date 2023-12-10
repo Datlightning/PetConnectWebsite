@@ -10,6 +10,10 @@ from os.path import join, dirname, realpath
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "sdfsdfdfgdfgdsfgdfas"
+# Added to replace VIHAS work because: 
+
+    # Every instance does not need to inefficently recalculate by reading txt files: memory prevalence
+
 getProducts = rd.getProducts()
 getAllProducts = rd.get_all_products()
 # Fixing it UP
@@ -53,7 +57,7 @@ def gatherpicturesanddata():
 
 @app.route("/blog")
 def gather(): 
-    return render_template("blog.html" stories = gd.getBlogInfo())
+    return render_template("blog.html", stories = gd.getBlogInfo())
 
 @app.route("/blog/<story>")
 def gatherBlog(story):
@@ -61,3 +65,4 @@ def gatherBlog(story):
 
 if __name__ == '__main__':
     app.run(debug=True)
+    
