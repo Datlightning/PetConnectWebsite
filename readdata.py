@@ -88,19 +88,19 @@ def get_all_products():
     return output
 
 
-def readAllBlogInfos(): 
+def getBlogNames(): 
+    filename = directory.joinpath("blogNames.txt")
     listOfTitles = []
-    with open(r"/blogdata/blogNames.txt") as f: 
-        for x in f: 
-            listOfTitles.append(f)
+    with open(filename.resolve(), "r") as file: 
+        listOfTitles = file.read().split("\n")
     
     return listOfTitles
 
-def readBlogInfo(name):
-    return open(r"/blogdata/" + name)
+# def readBlogInfo(name):
+#     return 
 
 def readBlogForIndexerPage(): 
-    a = readAllBlogInfos()
+    a = getBlogNames()
     b = [] 
     # B is a list of pointers to files. 
     # @RUTHVIKVENKATESAN IS MORE TALENTED THAN @VIHASVEGGALAM

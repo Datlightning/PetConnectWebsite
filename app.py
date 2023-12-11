@@ -58,7 +58,7 @@ def gatherpicturesanddata():
 
 @app.route("/blog")
 def gather(): 
-    x = rd.readAllBlogInfos()
+    x = rd.getBlogNames()
     y = []
     for a in x: 
         y.append(a)
