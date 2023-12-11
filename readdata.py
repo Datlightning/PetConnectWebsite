@@ -89,7 +89,26 @@ def get_all_products():
 
 
 def readAllBlogInfos(): 
-    pass
+    listOfTitles = []
+    with open(r"/blogdata/blogNames.txt") as f: 
+        for x in f: 
+            listOfTitles.append(f)
+    
+    return listOfTitles
 
-def readBlogInfo():
-    pass
+def readBlogInfo(name):
+    return open(r"/blogdata/" + name)
+
+def readBlogForIndexerPage(): 
+    a = readAllBlogInfos()
+    b = [] 
+    # B is a list of pointers to files. 
+    # @RUTHVIKVENKATESAN IS MORE TALENTED THAN @VIHASVEGGALAM
+    for x in a: 
+        
+        existingPath = r"/" + x
+        with open(existingPath + "/content.txt") as f:
+            b.append(f)
+
+    return b 
+

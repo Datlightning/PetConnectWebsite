@@ -16,6 +16,7 @@ app.config['SECRET_KEY'] = "sdfsdfdfgdfgdsfgdfas"
 
 getProducts = rd.getProducts()
 getAllProducts = rd.get_all_products()
+getBlog = rd.readBlogForIndexerPage()
 # Fixing it UP
 
 def parse(string):
@@ -57,11 +58,16 @@ def gatherpicturesanddata():
 
 @app.route("/blog")
 def gather(): 
-    return render_template("blog.html", stories = gd.getBlogInfo())
+    x = rd.readAllBlogInfos()
+    y = []
+    for a in x: 
+        y.append(a)
+    x.close()
+    return render_template("blog.html", stories = y, storyPointers = getBlog)
 
 @app.route("/blog/<story>")
 def gatherBlog(story):
-    return render_template("exactblog.html", story = story)
+    return render_template("exactblog.html", story = story, content = rd.readBlogInfo(story))
 
 if __name__ == '__main__':
     app.run(debug=True)
