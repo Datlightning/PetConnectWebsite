@@ -13,20 +13,24 @@ def getProducts():
     sale = []
     cost = []
     feature= []
+    ve_urls = []
     for value in values:
-        try:
-            data = [values[0], value[1], value[3], value[2], value[4]]
+        try:            
             names.append(value[0])
             long_descriptions.append(value[1])
             descriptions.append(value[3])
+
             pictures.append(value[2])
             urls.append(value[4])
             cost.append(value[5])
-            sale.append(value[6])
-            feature.append(value[7])
+
+            ve_urls.append(value[6])
+            sale.append(value[7])
+            feature.append(value[8])
+            
         except:
             continue
-    return {"cost":cost, "sale":sale, "feature":feature, "names": names, "descriptions":descriptions, "pictures":pictures, "urls":urls, "long-desc": long_descriptions}
+    return {"ve-urls": ve_urls, "cost":cost, "sale":sale, "feature":feature, "names": names, "descriptions":descriptions, "pictures":pictures, "urls":urls, "long-desc": long_descriptions}
 def getProduct(string):
     data = getProducts()
     name = ""

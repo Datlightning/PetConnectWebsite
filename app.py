@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, url_for, flash, redirect, ses
 import os
 import hashlib
 import readdata as rd
-import accessspreadsheet as gd
+# import accessspreadsheet as gd
 from pathlib import Path
 from werkzeug.utils import secure_filename
 from os.path import join, dirname, realpath
@@ -25,8 +25,7 @@ def index():
     session['debug'] = True
     # data = rd.getProducts() just use getProducts fool. 
     session['products'] = [].extend(list(map(parse, getProducts["names"])))
-    session['urls'] = [].extend(getProducts["urls"])
-    return render_template("index.html",cost = getProducts["cost"], feature = getProducts["feature"], sale = getProducts["sale"], names = getProducts["names"], pictures = getProducts["pictures"], descriptions = getProducts['descriptions'])
+    return render_template("index.html",urls = getProducts["ve-urls"], cost = getProducts["cost"], feature = getProducts["feature"], sale = getProducts["sale"], names = getProducts["names"], pictures = getProducts["pictures"], descriptions = getProducts['descriptions'])
 
 @app.route("/about")
 def about_us():
@@ -53,14 +52,14 @@ def shop():
 @app.route("/contact")
 def contact():
     return render_template("contact-us.html")
-@app.route("/update")
-def gatherdata():
-    gd.get_everything(False)
-    return redirect("/")
+# @app.route("/update")
+# def gatherdata():
+#     gd.get_everything(False)
+#     return redirect("/")
 
-@app.route("/super-update")
-def gatherpicturesanddata():
-    gd.get_everything(True)
-    return redirect("/")
+# @app.route("/super-update")
+# def gatherpicturesanddata():
+#     gd.get_everything(True)
+#     return redirect("/")
 if __name__ == '__main__':
     app.run(debug=True)
