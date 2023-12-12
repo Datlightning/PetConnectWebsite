@@ -109,7 +109,10 @@ def readBlogForIndexerPage():
     for blog in blog_names: 
         directory =  Path(__file__).parent.joinpath("blogdata").joinpath(blog).joinpath("content.txt")
         with open(directory.resolve(), "r") as file:
-            file_names.append(file.read().split("/n"))
+            x = file.readlines()
+            print(x)
+            file_names.append(x)
+            
 
 
     return file_names 
