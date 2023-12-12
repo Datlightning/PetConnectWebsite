@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}Shop{% endblock %}
 {% block headerinfo %}
-    <!-- Bootstrap CSS -->
+<!-- Bootstrap CSS -->
 <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
 <!-- Site CSS -->
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
@@ -10,29 +10,26 @@
 <!-- Custom CSS -->
 <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css')}}">{% endblock %}
 {% block BodyContent %}
-    <!-- Start Top Search -->   
-    <!-- what the hell is this page bro: -->
+<!-- Start Top Search -->
+<!-- what the hell is this page bro: -->
 
-    <!-- End Shop Page -->
+<!-- End Shop Page -->
 
-    {%for x in storyPointers%}
-        <div>
-            <h1> {{ x[0] }} </h1>
+{%for x in storyPointers%}
+<div>
+    <a href = {{"/blog/" + x[0]}} target = "_blank">
+        <h1> {{ x[0] }} </h1>
+    </a>
+    <img src={{ "../blogdata/" + x[0] + "/title.png" }} alt="TitleImage">
 
-            <img src = {{ "../blogdata/" + x[0] + "/title.png" }} alt = "TitleImage" > 
 
 
-            <p> </p> 
-        
-        </h1> 
-            
-             
 
-        </div>
-        
-    {%endfor%}
+</div>
 
-    <!-- Start Instagram Feed  -->
-   
-    <!-- End Instagram Feed  -->
+{%endfor%}
+
+<!-- Start Instagram Feed  -->
+
+<!-- End Instagram Feed  -->
 {% endblock %}
