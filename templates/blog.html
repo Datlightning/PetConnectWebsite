@@ -14,12 +14,12 @@
     <!-- what the hell is this page bro: -->
 
     <!-- End Shop Page -->
-    {% i = 0 %}
-    {%for x in stories%}
-        <div>
-            <h1> {% x %} </h1>
 
-            <img src = {% r"../" + x + r"/title.png" %} alt = "TitleImage" > 
+    {%for x in storyPointers%}
+        <div>
+            <h1> {{ x[0] }} </h1>
+
+            <img src = {{ "../" + x[0] + "/title.png" }} alt = "TitleImage" > 
 
 
             <p> </p> 
@@ -29,7 +29,7 @@
              
 
         </div>
-        {% i ++ %}
+        
     {%endfor%}
 
     <!-- Start Instagram Feed  -->

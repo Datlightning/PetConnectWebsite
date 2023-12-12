@@ -62,7 +62,7 @@ def gather():
     y = []
     for a in x: 
         y.append(a)
-    x.close()
+    
     return render_template("blog.html", stories = y, storyPointers = getBlog)
 
 @app.route("/blog/<story>")

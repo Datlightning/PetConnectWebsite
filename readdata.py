@@ -100,15 +100,17 @@ def getBlogNames():
 #     return 
 
 def readBlogForIndexerPage(): 
-    a = getBlogNames()
-    b = [] 
-    # B is a list of pointers to files. 
-    # @RUTHVIKVENKATESAN IS MORE TALENTED THAN @VIHASVEGGALAM
-    for x in a: 
-        
-        existingPath = r"/" + x
-        with open(existingPath + "/content.txt") as f:
-            b.append(f)
+    directory =  Path(__file__).parent
 
-    return b 
+    blog_names = getBlogNames()
+    file_names = []
+    # @RUTHVIKVENKATESAN IS MORE TALENTED THAN @VIHASVEGGALAM
+    # @VIHASVEGGALAM wrote this codex
+    for blog in blog_names: 
+        directory =  Path(__file__).parent.joinpath("blogdata").joinpath(blog).joinpath("content.txt")
+        with open(directory.resolve(), "r") as file:
+            file_names.append(file.read().split("/n"))
+
+
+    return file_names 
 
