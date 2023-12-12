@@ -25,16 +25,16 @@
     {%if x["tag"] == "p"%} 
             <p>{{x["content"]}}</p>
     
-    {%elif x["tag"] == "b"%} 
+    {%elif x["tag"] == "*b"%} 
         
     <p><b>{{x["content"]}}</b></p>
 
     
-    {%elif x["tag"] == "i"%} 
+    {%elif x["tag"] == "*i"%} 
         
     <p><i>{{x["content"]}}</i></p>
     
-    {%elif x["tag"] == "img"%} 
+    {%elif x["tag"] == "*img"%} 
 
     <img src={{ "../blogdata/" + x["content"] + "/title.png" }} alt="TitleImage">
     

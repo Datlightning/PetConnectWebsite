@@ -73,10 +73,16 @@ def gatherBlog(story):
         line = lp.parser(line) 
         print(line)
 
-    print(story)
+    
     return render_template("exactblog.html", story = story, content = story, contentMain = story[2:])
+
+@app.route("/ruthvikisbetterthanvihasatlifeandisamoreusefulemployeeforpetconnect")
+def life(): 
+    return render_template("ruthvik.html")
+
 
 if __name__ == '__main__':
     app.run(debug=True)
+
 
     
