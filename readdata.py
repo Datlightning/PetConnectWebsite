@@ -96,9 +96,10 @@ def getBlogNames():
     
     return listOfTitles
 
-# def readBlogInfo(name):
-#     return 
-
+def readBlogInfo(name):
+    directory =  Path(__file__).parent.joinpath("blogdata").joinpath(name).joinpath("content.txt")
+    with open(directory.resolve(), "r") as f: 
+        return f.readlines()     
 def readBlogForIndexerPage(): 
     directory =  Path(__file__).parent
 
@@ -110,7 +111,7 @@ def readBlogForIndexerPage():
         directory =  Path(__file__).parent.joinpath("blogdata").joinpath(blog).joinpath("content.txt")
         with open(directory.resolve(), "r") as file:
             x = file.readlines()
-            print(x)
+            
             file_names.append(x)
             
 

@@ -61,5 +61,6 @@ def parser(inp):
         return {"tag":tag, "content":content}
                
     else: 
+        print({"tag":"p", "content":inp})
         return {"tag":"p", "content":inp}
     

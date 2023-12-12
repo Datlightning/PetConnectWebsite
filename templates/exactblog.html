@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %}Shop{% endblock %}
+{% block headerinfo %}
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+<!-- Site CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+<!-- Responsive CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css' )}}">
+<!-- Custom CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css')}}">{% endblock %}
+{% block BodyContent %}
+<!-- Start Top Search -->
+<!-- what the hell is this page bro: -->
+
+<!-- End Shop Page -->
+
+<h1>{{content[0]}}</h1>
+<h3>{{content[1]}}</h3>
+
+<img src={{ "../blogdata/" + content[2] + "/title.png" }} alt="TitleImage">
+
+{%for x in contentMain%}
+
+    {%if x["tag"] == "p"%} 
+            <p>{{x["content"]}}</p>
+    
+    {%elif x["tag"] == "b"%} 
+        
+    <p><b>{{x["content"]}}</b></p>
+
+    
+    {%elif x["tag"] == "i"%} 
+        
+    <p><i>{{x["content"]}}</i></p>
+    
+    {%elif x["tag"] == "img"%} 
+
+    <img src={{ "../blogdata/" + x["content"] + "/title.png" }} alt="TitleImage">
+    
+    {%else%} 
+        <p> {{x["content"]}} </p>
+    {%endif%}
+
+{%endfor%}
+
+<!-- Start Instagram Feed  -->
+
+<!-- End Instagram Feed  -->
+{% endblock %}
