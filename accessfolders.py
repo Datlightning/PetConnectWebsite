@@ -2,7 +2,7 @@ import gdown
 from pathlib import Path
 import shutil
 def get_people_pictures():
-    directory = Path(__file__).parent.parent.parent
+    directory = Path(__file__).parent
     source = directory.joinpath("people")
     destination = directory.joinpath("static").joinpath("images")
     expected = directory.joinpath("static").joinpath("images").joinpath('people')
@@ -14,7 +14,7 @@ def get_people_pictures():
         pass
     shutil.move(source.resolve(), destination.resolve())
 def update():
-    directory = Path(__file__).parent.parent.parent
+    directory = Path(__file__).parent
     source = directory.joinpath("products")
     destination = directory.joinpath("static").joinpath("images")
     expected = directory.joinpath("static").joinpath("images").joinpath('products')

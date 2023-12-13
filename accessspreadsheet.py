@@ -2,7 +2,7 @@ import gspread
 import readdata as rd
 from pathlib import Path
 from random import randint
-import static.images.accessfolders as af
+import accessfolders as af
 
 directory = Path(__file__).parent.joinpath("data")
 credentials = Path(__file__).parent.joinpath('creds.json')
