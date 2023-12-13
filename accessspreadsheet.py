@@ -96,4 +96,5 @@ def get_everything(pictures):
         af.update()
         af.get_people_pictures()
 
-get_everything(False)
+if __name__ == "__main__":
+    get_everything(False)
