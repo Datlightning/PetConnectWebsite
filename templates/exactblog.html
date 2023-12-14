@@ -20,29 +20,29 @@
 
 <img src={{ "../blogdata/" + content[2] + "/title.png" }} alt="TitleImage">
 
-{%for x in contentMain%}
+{% for x in contentMain %}
 
-    {%if x["tag"] == "p"%} 
+    {% if x["tag"] == "p" %} 
             <p>{{x["content"]}}</p>
     
-    {%elif x["tag"] == "*b"%} 
+    {% elif x["tag"] == "*b" %} 
         
-    <p><b>{{x["content"]}}</b></p>
-
+    <p><b>{{ x["content"] }}</b></p>
+    <!-- alan was here -->
     
-    {%elif x["tag"] == "*i"%} 
+    {% elif x["tag"] == "*i" %} 
         
     <p><i>{{x["content"]}}</i></p>
     
-    {%elif x["tag"] == "*img"%} 
+    {% elif x["tag"] == "*img" %} 
 
     <img src={{ "../blogdata/" + x["content"] + "/title.png" }} alt="TitleImage">
     
-    {%else%} 
+    {% else %} 
         <p> {{x["content"]}} </p>
-    {%endif%}
+    {% endif %}
 
-{%endfor%}
+{% endfor %}
 
 <!-- Start Instagram Feed  -->
 

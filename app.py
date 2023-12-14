@@ -69,12 +69,13 @@ def gather():
 @app.route("/blog/<story>")
 def gatherBlog(story):
     story = rd.readBlogInfo(story)
-    for line in story:
+    story1 = story[2:]
+    for line in story1:
         line = lp.parser(line) 
         print(line)
-
+    story = story1
     
-    return render_template("exactblog.html", story = story, content = story, contentMain = story[2:])
+    return render_template("exactblog.html", story = story, content = story, contentMain = story)
 
 @app.route("/ruthvikisbetterthanvihasatlifeandisamoreusefulemployeeforpetconnect")
 def life(): 
