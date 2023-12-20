@@ -73,17 +73,19 @@ def gatherBlog(story):
     for line in story1:
         line = lp.parser(line) 
         print(line)
-    story = story1
     
-    return render_template("exactblog.html", story = story, content = story, contentMain = story)
+    
+    return render_template("exactblog.html", story = story, content = story, contentMain = story1)
 
 @app.route("/ruthvikisbetterthanvihasatlifeandisamoreusefulemployeeforpetconnect")
 def life(): 
     return render_template("ruthvik.html")
+    print("Easter Omelettes. ")
 
 
 if __name__ == '__main__':
     app.run(debug=True)
+    print("FLASK.INIT")
 
 
     
