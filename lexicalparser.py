@@ -45,7 +45,7 @@ def parser(inp):
     if inp[0] == "*":
         inp = inp.split(";")
         tag = inp[0]
-        if inp[0] == 'img':
+        if inp[0] == '*img':
             inp = inp[1:]  
             content = []
             i = 0

@@ -76,8 +76,9 @@ def gatherBlog(story):
     for line in story1:
         line = lp.parser(line) 
         print(line)
-    
-    
+    for item in story1:
+        print(item)
+        item = [item["tag"], item["content"]]
     return render_template("exactblog.html", story = story, content = story, contentMain = story1)
 
 @app.route("/ruthvikisbetterthanvihasatlifeandisamoreusefulemployeeforpetconnect")

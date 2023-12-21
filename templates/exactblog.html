@@ -22,24 +22,24 @@
 
 {% for x in contentMain %}
 
-    {% if x["tag"] == "p" %} 
+    {% if x.0 == "p" %} 
             <p>{{x["content"]}}</p>
     
-    {% elif x["tag"] == "*b" %} 
+    {% elif x.0 == "*b" %} 
         
-    <p><b>{{ x["content"] }}</b></p>
+    <p><b>{{ x.1 }}</b></p>
     <!-- alan was here -->
     
-    {% elif x["tag"] == "*i" %} 
+    {% elif x.0 == "*i" %} 
         
-    <p><i>{{x["content"]}}</i></p>
+    <p><i>{{x.1}}</i></p>
     
-    {% elif x["tag"] == "*img" %} 
+    {% elif x.0 == "*img" %} 
 
-    <img src={{ "../blogdata/" + x["content"] + "/title.png" }} alt="TitleImage">
+    <img src={{ "../blogdata/" + x.1 + "/title.png" }} alt="TitleImage">
     
     {% else %} 
-        <p> {{x["content"]}} </p>
+        <p> {{x.1}} </p>
     {% endif %}
 
 {% endfor %}
