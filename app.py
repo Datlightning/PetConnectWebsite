@@ -67,6 +67,9 @@ def gather():
     return render_template("blog.html", stories = y, storyPointers = getBlog)
 
 @app.route("/blog/<story>")
+# Accurate variable names? Just don't be weak? Learn how to read code? 
+
+
 def gatherBlog(story):
     story = rd.readBlogInfo(story)
     story1 = story[2:]
@@ -79,8 +82,9 @@ def gatherBlog(story):
 
 @app.route("/ruthvikisbetterthanvihasatlifeandisamoreusefulemployeeforpetconnect")
 def life(): 
+    print("Easter Omelettes.")
     return render_template("ruthvik.html")
-    print("Easter Omelettes. ")
+    
 
 
 if __name__ == '__main__':
