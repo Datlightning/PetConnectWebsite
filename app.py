@@ -12,6 +12,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = "sdfsdfdfgdfgdsfgdfas"
 getProducts = rd.getProducts()
 getAllProducts = rd.get_all_products()
+blog_data = rd.get_blogs()
 # Fixing it UP
 
 def parse(string):
@@ -52,6 +53,10 @@ def shop():
 @app.route("/contact")
 def contact():
     return render_template("contact-us.html")
+
+@app.route('/blog')
+def blog():
+    return render_template("blog.html",authors = blog_data["authors"], blog_names = blog_data["names"], blog_descriptions = blog_data["descriptions"], blog_pictures = blog_data["pictures"])
 # @app.route("/update")
 # def gatherdata():
 #     gd.get_everything(False)

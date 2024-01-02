@@ -7,6 +7,15 @@ import accessfolders as af
 directory = Path(__file__).parent.joinpath("data")
 credentials = Path(__file__).parent.joinpath('creds.json')
 gc = gspread.service_account(filename=credentials.resolve())
+def get_blogs():
+    sheet = gc.open("PetConnect Website Information").worksheet("BlogInfo")
+    values = sheet.get_all_values()
+    values.pop(0)
+    filename = directory.joinpath("blogs.txt")
+    with open(filename.resolve(), "w+") as file:
+        file.write(str(values))
+        file.close()
+    return
 def get_names():
     
     sheet = gc.open('PetConnect Website Information').worksheet('People')
@@ -92,6 +101,7 @@ def get_everything(pictures):
     get_products()
     get_product_variations()
     get_names()
+    get_blogs()
     if pictures:
         af.update()
         af.get_people_pictures()
