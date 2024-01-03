@@ -1,2 +1,10 @@
 
 /** ADD YOUR AWESOME CODES HERE **/
+.fa-tiktok {
+    background: url(../webfonts/tiktok.svg) no-repeat;
+    color: white;
+    width: 100%;
+    height: 100%;
+    transform: translate(30%, 25%) !important;
+    position: relative;
+}
