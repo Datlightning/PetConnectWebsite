@@ -26,7 +26,7 @@ def index():
     session['debug'] = True
     # data = rd.getProducts() just use getProducts fool. 
     session['products'] = [].extend(list(map(parse, getProducts["names"])))
-    return render_template("index.html",urls = getProducts["ve-urls"], cost = getProducts["cost"], feature = getProducts["feature"], sale = getProducts["sale"], names = getProducts["names"], pictures = getProducts["pictures"], descriptions = getProducts['descriptions'])
+    return render_template("index.html", authors = blog_data["authors"][:3], blog_names = blog_data["names"][:3], blog_descriptions = blog_data["descriptions"][:3], blog_pictures = blog_data["pictures"][:3],urls = getProducts["ve-urls"], cost = getProducts["cost"], feature = getProducts["feature"], sale = getProducts["sale"], names = getProducts["names"], pictures = getProducts["pictures"], descriptions = getProducts['descriptions'])
 
 @app.route("/about")
 def about_us():
@@ -57,6 +57,11 @@ def contact():
 @app.route('/blog')
 def blog():
     return render_template("blog.html",authors = blog_data["authors"], blog_names = blog_data["names"], blog_descriptions = blog_data["descriptions"], blog_pictures = blog_data["pictures"])
+
+@app.route("/shop/<product>")
+def shop_specific(product):
+    return render_template("shop-detail.html", name = product)
+
 # @app.route("/update")
 # def gatherdata():
 #     gd.get_everything(False)

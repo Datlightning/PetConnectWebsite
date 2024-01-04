@@ -8,3 +8,8 @@
     transform: translate(30%, 25%) !important;
     position: relative;
 }
+.people{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

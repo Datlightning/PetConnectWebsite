@@ -1,1 +1,1 @@
-[['Akshay', 'akshay.jpg', 'CEO'], ['Ruhi', 'ruhi.jpg', 'Assitant VP?'], ['Ishita', 'ishita.jpg', 'Marketing VP'], ['Vrishank', 'vrishank.jpg', 'CFO'], ['Sakshi', 'sakshi.jpg', 'IT VP'], ['Drew', 'drew.jpg', 'HR VP']]
+[['Akshay', 'akshay.png', 'CEO'], ['Ishita', 'ishita.png', 'Marketing VP'], ['Sakshi', 'sakshi.png', 'IT VP'], ['Drew', 'drew.png', 'HR VP']]
