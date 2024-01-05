@@ -1,1 +1,1 @@
-[['PetFresh', 'Smart feeders for flexible eating schedules, ensuring your pet enjoys nutritious meals.', 'PetFeeder/petfeeder.png', 'https://portal.veinternational.org/buybuttons/us015326/btn/petfresh-the-automated-pet-food-feeder-11389/', '$49.99', 'New', '']]
+[['PetFresh', 'Smart feeders for flexible eating schedules, ensuring your pet enjoys nutritious meals.', 'PetFeeder/petfeeder.png', 'https://portal.veinternational.org/buybuttons/us015326/btn/petfresh-the-automated-pet-food-feeder-11389/', '$49.99', '', 'best-seller']]

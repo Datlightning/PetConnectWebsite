@@ -37,8 +37,8 @@ def get_products():
     }
     featured = {
         0: "",
-        1: "best-seller",
-        2: "top-featured"
+        1: "",
+        2: ""
     }
     completed_featured = set()
     for i, line in enumerate(values):
