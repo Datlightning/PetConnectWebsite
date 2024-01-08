@@ -23,7 +23,7 @@ def get_blogs():
 def getProducts():
     values = []
     filename = directory.joinpath("products.txt")
-    with open(filename.resolve(), "r", error="ignore") as file:
+    with open(filename.resolve(), "r") as file:
         values = eval(file.read().split("\n")[0])
     names = []
     descriptions = []
@@ -75,7 +75,7 @@ def getProduct(string):
     }
     filename = directory.joinpath(url[1:] + '-products.txt')
     products = []
-    with open(filename.resolve(), "r", error="ignore") as file:
+    with open(filename.resolve(), "r") as file:
         products = eval(file.read().split("\n")[0])
     for product in products:
         output["product-names"].append(product[0])
@@ -91,7 +91,7 @@ def getProduct(string):
 def get_names():
     filename = directory.joinpath("people.txt")
     output = []
-    with open(filename.resolve(), "r", error="ignore") as file:
+    with open(filename.resolve(), "r") as file:
         output = eval(file.read().strip().split('\n')[0])
     return output
 def get_all_products():
