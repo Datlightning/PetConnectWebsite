@@ -2,7 +2,8 @@ from pathlib import Path
 directory =  Path(__file__).parent.joinpath("data")
 def get_blogs():
     values = []
-    with open(directory.joinpath("blogs.txt").resolve(), "r") as file:
+    filename = directory.joinpath("blogs.txt")
+    with open(filename.resolve(), "r") as file:
         values = eval(file.read().split("\n")[0])
     data = {
         "names":[],
@@ -21,7 +22,8 @@ def get_blogs():
     return data
 def getProducts():
     values = []
-    with open(directory.joinpath("products.txt").resolve(), "r") as file:
+    filename = directory.joinpath("products.txt")
+    with open(filename.resolve(), "r", error="ignore") as file:
         values = eval(file.read().split("\n")[0])
     names = []
     descriptions = []
