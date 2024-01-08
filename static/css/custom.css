@@ -13,3 +13,57 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
+.white{
+    color: white
+}
+.parallax {
+    padding: 100px 0px;
+    /* The image used */
+    background-image: url("../images/img_parallax.jpg");
+  
+    /* Set a specific height */
+    min-height: 500px; 
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+.white-bar{
+    height: 2px;
+    width:100%;
+    background-color:white;
+}
+.center{
+    margin:auto;
+    width: fit-content;
+    padding: 10px
+}
+.social-title{
+    font-weight: 700;
+    padding: 10px;
+    font-size: 2.2em;
+}
+.instagram-title{
+    translate: 0px 4px;
+}
+.img-insta{
+    height: 100%;
+    width: 100%;
+}
+.department-space{
+    height: 2px;
+    width:100%;
+    background-color:black;
+    margin: 50px 0px;
+}
+.video{
+    width: 100%;
+    top: 10vh;
+    translate: 0px -100px;
+    position: relative;
+    pointer-events: none;
+    z-index: 0;
+}

@@ -8,13 +8,15 @@ def get_blogs():
         "names":[],
         "descriptions":[],
         "pictures":[],
-        "authors":[]
+        "authors":[],
+        "ids":[]
     }
     for d in values:
         data["names"].append(d[0])
         data["descriptions"].append(d[1])
         data["pictures"].append(d[2])
         data["authors"].append(d[3])
+        data["ids"].append(d[4])
 
     return data
 def getProducts():
@@ -66,7 +68,8 @@ def getProduct(string):
         "product-urls":[],
         "sale":[],
         "feature":[],
-        "cost":[]
+        "cost":[],
+        "options":[]
     }
     filename = directory.joinpath(url[1:] + '-products.txt')
     products = []
@@ -77,9 +80,10 @@ def getProduct(string):
         output["product-descriptions"].append(product[1])
         output["product-pictures"].append(product[2])
         output["product-urls"].append(product[3])
-        output["sale"].append(product[5])
-        output["feature"].append(product[6])
+        output["sale"].append(product[6])
+        output["feature"].append(product[7])
         output["cost"].append(product[4])
+        output["options"].append(product[5])
         
     return output
 def get_names():
@@ -100,22 +104,44 @@ def get_all_products():
         "feature":[],
         "cost":[],
         "model":[],
-        "count":[]
+        "type":[]
     }
     output["model"] = data["names"]
-    for url in data["urls"]:
-        filename = directory.joinpath(url[1:] + '-products.txt')
-        products = []
-        with open(filename.resolve(), "r") as file:
-            products = eval(file.read().split("\n")[0])
-        output["count"].append(len(products))
-        for product in products:
-            output["product-names"].append(product[0])
-            output["product-descriptions"].append(product[1])
-            output["product-pictures"].append(product[2])
-            output["product-urls"].append(product[3])
-            output["sale"].append(product[5])
-            output["feature"].append(product[6])
-            output["cost"].append(product[4])
+    for index, url in enumerate(data["urls"]):        
+        name = data["names"][index]
+        output["product-names"].append(name)
+        output["product-descriptions"].append(data["descriptions"][index])
+        output["product-pictures"].append(data["pictures"][index])
+        output["product-urls"].append(f"/shop/{name}")
+        output["sale"].append("")
+        output["feature"].append('')
+        output["cost"].append(data["cost"][index])
+        if "bundle" in name.lower():
+            output["type"].append("bundle")
+        else:
+            output["type"].append("individual")
         
+    return output
+
+def getProductByType(name):
+    data = get_all_products()
+    output = {
+        "product-names":[],
+        "product-descriptions":[],
+        "product-pictures":[],
+        "product-urls":[],
+        "sale":[],
+        "feature":[],
+        "cost":[],
+        "options":[]
+    }
+    for index, item in enumerate(data["type"]):
+        if item == name:
+            output["product-names"].append(data["product-names"][index])
+            output["product-pictures"].append(data["product-pictures"][index])
+            output["product-descriptions"].append(data["product-descriptions"][index])
+            output["product-urls"].append(data["product-urls"][index])
+            output["cost"].append(data['cost'][index])
+            output["sale"].append("")
+            output["feature"].append("")
     return output

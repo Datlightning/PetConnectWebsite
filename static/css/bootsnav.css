@@ -546,7 +546,7 @@ nav.navbar.bootsnav ul.dropdown-menu.megamenu-content .content ul.menu-col li a:
     nav.navbar.bootsnav li.dropdown ul.dropdown-menu > li a:hover,
     nav.navbar.bootsnav li.dropdown ul.dropdown-menu > li a:hover{
         background-color: transparent;
-		color: #b0b435;
+		color: #3fbbd7;
 		-ms-transform: translateX(3px);
 		-webkit-transform: translateX(3px);
 		transform: translateX(3px);
@@ -554,7 +554,7 @@ nav.navbar.bootsnav ul.dropdown-menu.megamenu-content .content ul.menu-col li a:
     
     nav.navbar.bootsnav li.dropdown ul.dropdown-menu > li > a{
         padding: 10px 15px;
-        color: #6f6f6f;
+        color: #ffffff;
     }
     
     nav.navbar.bootsnav li.dropdown ul.dropdown-menu > li:last-child > a{
@@ -571,7 +571,16 @@ nav.navbar.bootsnav ul.dropdown-menu.megamenu-content .content ul.menu-col li a:
         content: "\f105";
         margin-top: 0;
     }
-    
+    .dropdown-toggle:after {
+        display: inline-block;
+        margin-left: .5em;
+        vertical-align: .25em;
+        content: "";
+        border-top: .3em solid;
+        border-right: .3em solid transparent;
+        border-bottom: 0;
+        border-left: .3em solid transparent;
+      }
     nav.navbar.bootsnav ul.navbar-right li.dropdown ul.dropdown-menu li.dropdown > a.dropdown-toggle:before{
         font-family: 'FontAwesome';
         float: left;

@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 {% block title %}Shop{% endblock %}
 {% block headerinfo %}
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
-    <!-- Site CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
-    <!-- Responsive CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css' )}}">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css')}}">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+<!-- Site CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+<!-- Responsive CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css' )}}">
+<!-- Custom CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css')}}">
 
-    <link href='https://fonts.googleapis.com/css?family=Caveat' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Caveat' rel='stylesheet'>
 {% endblock %}
 {% block BodyContent %}
 <div class="top-search">
@@ -39,19 +39,116 @@
     </div>
 </div>
 <!-- make work for specific products -->
-<div class="about-box-main">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="banner-frame"> <img class="img-fluid" src="../static/images/{{ blog_pictures[title] }}" alt="Pet Connect" />
+{% if "Fresh" in name %}
+<div class = "video">
+    <video autoplay muted src="../static/videos/PetFreshAnimationV2.mkv">
+</div>
+{% endif %}
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="col-md-6 product-image ">
+                <img class="card-img-top mb-5 mb-md-0" src="../static/images/products/{{product_pictures[0]}}"
+                    alt="..." />
+            </div>
+            <div class="col-md-6">
+                <div class="small mb-1"></div>
+                <div class="name-holder">
+                    <h1 class="display-5 fw-bolder">{{ name }}</h1>
                 </div>
-            </div>      
-            <div class="col-lg-6">
-                <h2 class="noo-sh-title-top">{{ blog_names[title] }}</h2>
-                <p>{{ authors[title] }}</p><br><br>
-                <p>{{ blog_descriptions[title] }}</p>
+                <div class="fs-5 mb-5 cost">
+                    <span>{{product_costs[0]}}</span>
+                </div>
+                <div class="description">
+                    <p class="lead">{{product_descriptions[0]}}</p>
+                </div>
+                <div class="d-flex">
+                    {% if product_names|length > 1 %}
+                    <form action="" method="post">
+                        <select id = "form-select" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                            {% for item in range(product_names|length) %}
+                            {% if item == 0 %}
+                            <option selected value="{{item}}">{{product_options[item]}}</option>
+                            {% else %}
+                            <option value="{{item}}">{{product_options[item]}}</option>
+                            {% endif %}
+                            {% endfor %}
+                        </select>
+                    </form>
+                    {% else %}
+                    <br>
+                    {% endif %}
+
+
+                </div>
+                <button class="btn btn-outline-dark flex-shrink-0" id="redirect" type="button">
+                    <i class="bi-cart-fill me-1"></i>
+                    Buy Now
+                </button>
             </div>
         </div>
     </div>
-</div>
+</section>
+<script type="text/javascript">
+    fix_ipad = function (evt) {
+        go_to = document.getElementById('form-select');
+        go_to.selectedIndex = 0; // reset to default value before leaving current page
+    };
+
+    window.addEventListener("pagehide", fix_ipad, false);
+
+    goto_page_and_reset_default = function () {
+        go_to = document.getElementById('form-select');
+        go_to.selectedIndex = 0; // reset to default value before leaving current page
+
+
+    }
+    document.getElementById("redirect").onclick = function () {
+        location.href = "{{ product_urls[0] }}";
+    };
+    $(document).ready(function () {
+        $('select.form-select').change(function () {
+            console.log($('select.form-select').val())
+            $.ajax({
+                type: 'POST',
+                url: '/shop/{{name}}',
+                data: { type: $('select.form-select').val() },
+                success: function (response) {
+
+                    let picture = response["picture"]
+                    let description = response["description"]
+                    let name = response["name"]
+                    let url = response["url"]
+                    let cost = response["cost"]
+
+                    $(".product-image").empty()
+                    $(".product-image").append(`<img class="card-img-top mb-5 mb-md-0"
+                    src="../static/images/products/${picture}" alt="..." />`)
+
+                    $(".description").empty()
+                    $(".description").append(`<p class="lead">${description}</p>`)
+
+                    $(".cost").empty()
+                    $(".cost").append(`<span>${cost}</span>`)
+
+
+                    // $(".name-holder").empty()
+                    // $(".name-holder").append(`<h1 class="display-5 fw-bolder">${ name }</h1>`)
+
+                    document.getElementById("redirect").onclick = function () {
+                        location.href = url;
+                    };
+
+
+
+                },
+                error: function (error) {
+                    console.log(error);
+                    console.log("error");
+                }
+            });
+        });
+    });
+</script>
+
 {% endblock %}

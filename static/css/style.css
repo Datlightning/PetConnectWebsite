@@ -881,6 +881,15 @@
  .title-all{
      margin-bottom: 30px;
 }
+.title-sp h1{
+    font-size: 32px;
+    font-weight: 700;
+}
+.title-sp p{
+    font-size: 16px;
+    padding: 0px 0px 10px 0px;
+    font-weight: 3;
+}
  .title-all h1{
      font-size: 32px;
      font-weight: 700;
@@ -892,6 +901,7 @@
 }
  .products-box{
      padding: 70px 0px;
+     background-color: rgba(0, 0, 0, 0);
 }
  .special-menu{
      margin-bottom: 40px;

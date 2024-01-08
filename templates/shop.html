@@ -69,13 +69,13 @@
                                             
                                             <div class="products-single fix">
                                                 <div class="box-img-hover">
-                                                    <div class="type-lb">
+                                                    <!-- <div class="type-lb">
                                                         <p class="{{ sale[product].lower() }}">{{ sale[product]}}</p>
-                                                    </div>
+                                                    </div> -->
                                                     <img src="../static/images/products/{{pictures[product]}}" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                  
-                                                        <a class="cart" href= "{{ urls[product] }}">Buy Now</a>
+                                                        <a class="cart" href= "{{ urls[product] }}">Learn More</a>
                                                     </div>
                                                 </div>
                                                 <div class="why-text">
@@ -110,7 +110,7 @@
                                                         <h4>{{ names[product] }}</h4>
                                                         <h5>{{ cost[product] }}</h5>
                                                         <p>{{ descriptions[product]}} </p>
-                                                        <a class="btn hvr-hover" href="{{ urls[product] }}">Buy Now</a>
+                                                        <a class="btn hvr-hover" href="{{ urls[product] }}">Learn More</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -133,9 +133,8 @@
                             <div class="list-group list-group-collapse list-group-sm list-group-tree" id="list-group-men" data-children=".sub-men">
                                 <a name="all" class="list-group-item list-group-item-action"> All <small class="text-muted"> ({{names|length}}) </small></a>
 
-                                {% for name in range(models|length) %}
-                                <a name="{{models[name]}}" class="list-group-item list-group-item-action"> {{models[name]}}  <small class="text-muted"> ({{ count[name] }}) </small></a>
-                                {% endfor %}
+                                <a name="individual" class="list-group-item list-group-item-action"> Individual Products  <small class="text-muted"> (3) </small></a>
+                                <a name="bundles" class="list-group-item list-group-item-action"> Bundles  <small class="text-muted"> (0) </small></a>
                             </div>
                         </div>
                     
@@ -176,7 +175,7 @@
                                                     <img src="../static/images/products/${picture}" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                  
-                                                        <a class="cart" href= "${url}">Buy Now</a>
+                                                        <a class="cart" href= "${url}">Learn More</a>
                                                     </div>
                                                 </div>
                                                 <div class="why-text">
@@ -199,7 +198,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-sm-6 col-md-6 col-lg-8 col-xl-8">
-                                                <div class="why-text full-width"><h4>${name}</h4><h5>${cost}</h5><p>${desc} </p><a class="btn hvr-hover" href="${url}">Buy Now</a></div></div></div>`)
+                                                <div class="why-text full-width"><h4>${name}</h4><h5>${cost}</h5><p>${desc} </p><a class="btn hvr-hover" href="${url}">Learn More</a></div></div></div>`)
                     }
                 },
                 error: function(error){

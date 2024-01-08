@@ -83,75 +83,21 @@
             <a href="/" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
         </div>
     </div>
-    <!-- End Slider -->
-
-    <!-- Start Categories  -->
-    <!-- <div class="categories-shop w3-hide">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="shop-cat-box">
-                        <img class="img-fluid" src="../static/images/categories_img_01.jpg" alt="" />
-                        <a class="btn hvr-hover" href="/">Lorem ipsum dolor</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="shop-cat-box">
-                        <img class="img-fluid" src="../static/images/categories_img_02.jpg" alt="" />
-                        <a class="btn hvr-hover" href="/">Lorem ipsum dolor</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="shop-cat-box">
-                        <img class="img-fluid" src="../static/images/categories_img_03.jpg" alt="" />
-                        <a class="btn hvr-hover" href="/">Lorem ipsum dolor</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- End Categories -->
-<!-- 	
-	<div class="box-add-products w3-hide">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 col-md-6 col-sm-12">
-					<div class="offer-box-products">
-						<img class="img-fluid" src="../static/images/add-img-01.jpg" alt="" />
-					</div>
-				</div>
-				<div class="col-lg-6 col-md-6 col-sm-12">
-					<div class="offer-box-products">
-						<img class="img-fluid" src="../static/images/add-img-02.jpg" alt="" />
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> -->
+    <div class="white-bar"></div>
 
     <!-- Start Products  -->
+    <div class="parallax">
     <div class="products-box">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="title-all text-center">
-                        <h1>Our Product Line</h1>
-                        <p>Innovation. Intelligence. Imagination.</p>
+                    <div class="title-sp text-center">
+                        <h1 class="white">Our Product Line</h1>
+                        <p class="white">Innovation. Intelligence. Imagination.</p>
                     </div>
                 </div>
             </div>
-            <!-- <div class="row">
-                <div class="col-lg-12">
-                    <div class="special-menu text-center">
-                        <div class="button-group filter-button-group">
-                            <button class="active" data-filter="*">All</button>
-                            <button data-filter=".top-featured">Top featured</button>
-                            <button data-filter=".best-seller">Best seller</button>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-
+            
             <div class="row special-list">
                     {% for product in range(names|length) %}
                     <div class="inline col-lg-4 col-md-6 special-grid {{ feature[product]}}">
@@ -175,6 +121,7 @@
             </div>
         </div>
     </div>
+</div>
     <!-- End Products  -->
 
     <!-- Start Blog  -->
@@ -188,26 +135,30 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 col-lg-4 col-xl-4">
+                
                     {% for title in range(blog_names|length)  %}
-                        <div class="blog-box">
-                            <div class="blog-img">
-                                <img class="img-fluid" src="../static/images/{{ blog_pictures[title] }}" alt="" />
-                            </div>
-                            <div class="blog-content">
-                                <div class="title-blog">
-                                    <h3>{{ blog_names[title] }}</h3>
-                                    <a class="btn hvr-hover" href="/blog">Read More</a>
-                                    <p>{{ authors[title] }}</p>
+                        <div class="col-md-6 col-lg-4 col-xl-4">
+                            <div class="blog-box">
+                                <div class="blog-img">
+                                    <img class="img-fluid" src="../static/images/{{ blog_pictures[title] }}" alt="" />
+                                </div>
+                                <div class="blog-content">
+                                    <div class="title-blog">
+                                        <h3>{{ blog_names[title] }}</h3>
+                                        <a class="blog btn hvr-hover" href = "/blog/{{ ids[title]}}">Read More</a>
+                                        <p>{{ authors[title] }}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     {% endfor %}
                 </div>
                 
+                
             </div>
         </div>
     </div>
+    
     <!-- End Blog  -->
 
 

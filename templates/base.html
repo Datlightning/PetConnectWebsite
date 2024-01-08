@@ -14,8 +14,8 @@
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="../static/images/favicon.png" type="image/x-icon">
+    <!-- <link rel="apple-touch-icon" href="../static/images/apple-touch-icon.png"> -->
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
@@ -32,7 +32,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="right-phone-box">
-                        <p>Follow us on Instagram :- <a href="/">@petconnect.ve</a></p>
+                        <p>Follow us on Instagram :- <a href="https://www.instagram.com/petconnect.ve/">@petconnect.ve</a></p>
                     </div>
                     <div class="our-link">
                         <ul>
@@ -77,7 +77,7 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                    <a class="navbar-brand" href="index.html"><img src="images/favicon.png" class="logo" alt=""></a>
+                    <a class="navbar-brand" href="index.html"><img src="../static/images/logo.png" class="logo" alt=""></a>
                 </div>
                 <!-- End Header Navigation -->
 
@@ -88,8 +88,26 @@
                         <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="/about">About Us</a></li>
                         <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/social">Social</a></li>
 
-                        <li class="nav-item"><a class="nav-link" href="/shop">Shop</a></li>
+
+                        <!-- <li class="nav-item"><a class="nav-link" href="/shop">Shop</a></li> -->
+                        <li class = "nav-item dropdown" >
+                            <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" href="/shop">
+                              Shop
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                              </svg>
+
+                            </a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                              <li class="nav-item"><a href="/shop/Pet%20Fresh">Pet Fresh</a></li>
+                              <li class="nav-item"><a href="/shop/Pet%20Poncho">Pet Poncho</a></li>
+                              <li class="nav-item"><a href="/shop/Pet%20Bed">Pet Bed</a></li>
+                              <hline class="white"></hline>
+                              <li class="nav-item"><a  href="/shop">Bundles</a></li>
+                            </ul>
+                        </li>
                         <li class="nav-item"><a class="nav-link" href="/blog">Blog</a></li>
                     
                     </ul>
@@ -174,14 +192,7 @@
                     </div> -->
                 </div>
             </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="../static/images/instagram-img-06.jpg" alt="" />
-                    <!-- <div class="hov-in">
-                        <a href="/"><i class="fab fa-instagram"></i></a>
-                    </div> -->
-                </div>
-            </div>
+            
             <div class="item">
                 <div class="ins-inner-box">
                     <img src="../static/images/instagram-img-07.jpg" alt="" />
@@ -200,12 +211,13 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="../static/images/instagram-img-05.jpg" alt="" />
+                    <img src="../static/images/instagram-img-06.jpg" alt="" />
                     <!-- <div class="hov-in">
                         <a href="/"><i class="fab fa-instagram"></i></a>
                     </div> -->
                 </div>
             </div>
+            
         </div>
     </div>
      <!-- Start Footer  -->
@@ -221,25 +233,13 @@
 							</ul>
 						</div>
 					</div>
-					<!-- <div class="col-lg-4 col-md-12 col-sm-12">
-						<div class="footer-top-box">
-							<h3>Newsletter</h3>
-							<form class="newsletter-box">
-								<div class="form-group">
-									<input class="" type="email" name="Email" placeholder="Email Address*" />
-									<i class="fa fa-envelope"></i>
-								</div>
-								<button class="btn hvr-hover" type="submit">Submit</button>
-							</form>
-						</div>
-					</div> -->
 					<div class="col-lg-6 col-md-12 col-sm-12">
 						<div class="footer-top-box">
 							<h3>Social Media</h3>
 							<p></p>
 							<ul>
-                                <li><a href="/"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
-                                <li><a href="/"><i class="fab fa-tiktok" aria-hidden="true"></i></a></li>
+                                <li><a href="https://www.instagram.com/petconnect.ve/"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                                <!-- <li><a href="/"><i class="fab fa-tiktok" aria-hidden="true"></i></a></li> -->
                             </ul>
 						</div>
 					</div>
@@ -250,7 +250,8 @@
                         <div class="footer-widget">
                             <h4>About PetConnect</h4>
                             <p>We strive to pay our employees no money.</p> 
-							<p>And also do pet things ig.</p> 							
+							<p>And also do pet things ig.</p>
+                                <!-- <a class="footer-link" href="/about">Learn More</a> -->
                         </div>
                     </div>
                     <!-- <div class="col-lg-4 col-md-12 col-sm-12">
@@ -277,7 +278,7 @@
                                     <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a></p>
                                 </li> -->
                                 <li>
-                                    <p><i class="fas fa-envelope"></i>Email: <a href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a></p>
+                                    <p><i class="fas fa-envelope"></i>Email: <a href="https://mail.google.com/mail/?view=cm&fs=1&to=petconnect.nj@veinternational.org">petconnect.nj@veinternational.org</a></p>
                                 </li>
                             </ul>
                         </div>
@@ -290,7 +291,7 @@
 
     <!-- Start copyright  -->
     <div class="footer-copyright">
-        <p class="footer-company">All Rights Reserved. &copy; 2023 <a href="/">PetConnect</a>
+        <p class="footer-company">All Rights Reserved. &copy; 2024 <a href="/">PetConnect</a>
     </div>
     <!-- End copyright  -->
     <!-- ALL JS FILES -->
