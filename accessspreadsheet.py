@@ -12,8 +12,8 @@ def get_blogs():
     values = sheet.get_all_values()
     values.pop(0)
     filename = directory.joinpath("blogs.txt")
-    with open(filename.resolve(), "w+", "utf-8") as file:
-        file.write(str(values))
+    with open(filename.resolve(), "w+") as file:
+        file.write(str(values).encode("UTF-8"))
         file.close()
     return
 def get_names():
@@ -22,8 +22,8 @@ def get_names():
     values = sheet.get_all_values()
     values.pop(0)
     filename = directory.joinpath("people.txt")
-    with open(filename.resolve(), "w+", "utf-8") as file:
-        file.write(str(values))
+    with open(filename.resolve(), "w+") as file:
+        file.write(str(values).encode("UTF-8"))
         file.close()
     return 
 def get_products():
@@ -54,8 +54,8 @@ def get_products():
             completed_featured = set()
         values[i].append(featured[number])
     filename = directory.joinpath("products.txt")
-    with open(filename.resolve(), "w+", "utf-8") as file:
-        file.write(str(values))
+    with open(filename.resolve(), "w+") as file:
+        file.write(str(values).encode("UTF-8"))
 def get_product_variations():
     names = rd.getProducts()["names"]
     urls = rd.getProducts()["urls"]
@@ -93,8 +93,8 @@ def get_product_variations():
         except:
             values = []
         filename = directory.joinpath(urls[index][1:] + "-products.txt")
-        with open(filename.resolve(), 'w+', "utf-8") as file:
-            file.write(str(values))
+        with open(filename.resolve(), 'w+') as file:
+            file.write(str(values).encode("UTF-8"))
         index += 1
 
 def get_everything(pictures):
