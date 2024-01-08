@@ -13,7 +13,7 @@ def get_blogs():
     values.pop(0)
     filename = directory.joinpath("blogs.txt")
     with open(filename.resolve(), "w+") as file:
-        file.write(str(values).encode("UTF-8"))
+        file.write(str(values))
         file.close()
     return
 def get_names():
@@ -23,7 +23,7 @@ def get_names():
     values.pop(0)
     filename = directory.joinpath("people.txt")
     with open(filename.resolve(), "w+") as file:
-        file.write(str(values).encode("UTF-8"))
+        file.write(str(values))
         file.close()
     return 
 def get_products():
@@ -55,7 +55,7 @@ def get_products():
         values[i].append(featured[number])
     filename = directory.joinpath("products.txt")
     with open(filename.resolve(), "w+") as file:
-        file.write(str(values).encode("UTF-8"))
+        file.write(str(values))
 def get_product_variations():
     names = rd.getProducts()["names"]
     urls = rd.getProducts()["urls"]
@@ -94,7 +94,7 @@ def get_product_variations():
             values = []
         filename = directory.joinpath(urls[index][1:] + "-products.txt")
         with open(filename.resolve(), 'w+') as file:
-            file.write(str(values).encode("UTF-8"))
+            file.write(str(values))
         index += 1
 
 def get_everything(pictures):
