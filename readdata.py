@@ -2,7 +2,8 @@ from pathlib import Path
 directory =  Path(__file__).parent.joinpath("data")
 def get_blogs():
     values = []
-    with open(directory.joinpath("blogs.txt").resolve(), "r") as file:
+    filename = directory.joinpath("blogs.txt")
+    with open(filename.resolve(), "r") as file:
         values = eval(file.read().split("\n")[0])
     data = {
         "names":[],
@@ -21,7 +22,8 @@ def get_blogs():
     return data
 def getProducts():
     values = []
-    with open(directory.joinpath("products.txt").resolve(), "r") as file:
+    filename = directory.joinpath("products.txt")
+    with open(filename.resolve(), "r") as file:
         values = eval(file.read().split("\n")[0])
     names = []
     descriptions = []
@@ -73,7 +75,7 @@ def getProduct(string):
     }
     filename = directory.joinpath(url[1:] + '-products.txt')
     products = []
-    with open(filename.resolve(), "r", error="ignore") as file:
+    with open(filename.resolve(), "r") as file:
         products = eval(file.read().split("\n")[0])
     for product in products:
         output["product-names"].append(product[0])
@@ -89,7 +91,7 @@ def getProduct(string):
 def get_names():
     filename = directory.joinpath("people.txt")
     output = []
-    with open(filename.resolve(), "r", error="ignore") as file:
+    with open(filename.resolve(), "r") as file:
         output = eval(file.read().strip().split('\n')[0])
     return output
 def get_all_products():
