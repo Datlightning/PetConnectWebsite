@@ -136,20 +136,18 @@
             </div>
             <div class="row">
                 
-                    {% for title in range(blog_names|length)  %}
+                    {% for id in ids %}
                         <div class="col-md-6 col-lg-4 col-xl-4">
-                            <div class="blog-box">
                                 <div class="blog-img">
-                                    <img class="img-fluid" src="../static/images/{{ blog_pictures[title] }}" alt="" />
+                                    <img class="img-fluid" src="../static/images/{{ blog_data['pictures'][id] }}" alt="" />
                                 </div>
                                 <div class="blog-content">
                                     <div class="title-blog">
-                                        <h3>{{ blog_names[title] }}</h3>
-                                        <a class="blog btn hvr-hover" href = "/blog/{{ ids[title]}}">Read More</a>
-                                        <p>{{ authors[title] }}</p>
+                                        <h3>{{ blog_data["names"][id] }}</h3>
+                                        <a class="btn btn-outline-info" href = "/blog/{{ id }}">Read More</a>
+                                        <p>{{ blog_data["authors"][id] }}</p>
                                     </div>
                                 </div>
-                            </div>
                         </div>
                     {% endfor %}
                 </div>

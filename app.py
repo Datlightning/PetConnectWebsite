@@ -1,3 +1,4 @@
+import re
 from flask import Flask, render_template, request, url_for, flash, redirect, session, send_from_directory, abort, \
     jsonify
 import os
@@ -31,7 +32,7 @@ def index():
 
 
     session['products'] = [].extend(list(map(parse, getProducts["names"])))
-    return render_template("index.html",ids = blog_data["ids"][:3], authors = blog_data["authors"][:3], blog_names = blog_data["names"][:3], blog_descriptions = blog_data["descriptions"][:3], blog_pictures = blog_data["pictures"][:3],urls = getProducts["ve-urls"], cost = getProducts["cost"], feature = getProducts["feature"], sale = getProducts["sale"], names = getProducts["names"], pictures = getProducts["pictures"], descriptions = getProducts['descriptions'])
+    return render_template("index.html",ids = blog_data["recents"][:3] , blog_data = blog_data,urls = getProducts["ve-urls"], cost = getProducts["cost"], feature = getProducts["feature"], sale = getProducts["sale"], names = getProducts["names"], pictures = getProducts["pictures"], descriptions = getProducts['descriptions'])
 
 @app.route("/about")
 def about_us():
@@ -57,11 +58,13 @@ def contact():
 
 @app.route('/blog/<blogid>')
 def blog_specific(blogid):
-    return render_template("blog.html", focus_id = blogid, ids = blog_data["ids"], authors = blog_data["authors"], blog_names = blog_data["names"], blog_descriptions = blog_data["descriptions"], blog_pictures = blog_data["pictures"])
+    if blogid not in blog_data["ids"]:
+        return render_template("404.html", text="Blog Not Found.", link="/blog", back="Back to Blogs")
+    return render_template("blog-specific.html", focus_id = blogid, id = blog_data["ids"][blogid], author = blog_data["authors"][blogid], blog_name = blog_data["names"][blogid], blog_description = blog_data["descriptions"][blogid], blog_picture = blog_data["pictures"][blogid])
 
 @app.route('/blog')
 def blog():
-    return render_template("blog.html", focus_id = "1", ids = blog_data["ids"], authors = blog_data["authors"], blog_names = blog_data["names"], blog_descriptions = blog_data["descriptions"], blog_pictures = blog_data["pictures"])
+    return render_template("blog.html", focus_id = "1", ids = blog_data["recents"], blog_data = blog_data)
 
 
 @app.route("/shop/<product>", methods  = ["GET", "POST"])
@@ -96,9 +99,9 @@ def shop_specific(product):
 @app.route("/social")
 def social():
     return render_template("social.html")
-@app.route("/<idk>")
-def unknown(idk):
-    return render_template("404.html")
+@app.route('/<path:path>')
+def catch_all(path):
+        return render_template("404.html", back="Back to PetConnect", link = "/", text = "Page Not Found.")
 # @app.route("/update")
 # def gatherdata():
 #     gd.get_everything(False)

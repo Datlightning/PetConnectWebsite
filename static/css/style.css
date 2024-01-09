@@ -1595,7 +1595,11 @@
 .about-box-main a.btn{
 	padding: 12px 15px;
 }
+.read_more{
+    color: #3FBBD7;
+    border: solid;
 
+}
  .service-block-inner::before {
      content: "";
      width: 100%;

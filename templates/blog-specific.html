@@ -27,7 +27,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h2>Blogs</h2>
+                <h2>{{ title }}</h2>
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="/">Home</a></li>
                     <li class="breadcrumb-item active">Blogs</li>
@@ -37,28 +37,25 @@
     </div>
 </div>
 <!-- End All Title Box -->
-<br><br>
+
 <!-- Start Contact Us  -->
-    <div class="container" id="{{ ids[title] }}" tabindex="-1">
-        <div class="row">
-            {% for id in ids %}
-                <div class="col-lg-4">
-                    <div class="banner-frame"> <img class="img-fluid" src="../static/images/{{ blog_data['pictures'][id] }}"
+<div class="about-box-main" tabindex="-1">
+    <div class="container" id = "{{ id }}" tabindex="-1">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="banner-frame"> <img class="img-fluid" src="../static/images/{{ blog_picture }}"
                             alt="Pet Connect" />
                     </div>
-                    <div class="blog-content">
-                                    <div class="title-blog">
-                                        <h3>{{ blog_data["names"][id] }}</h3>
-                                        <a class="btn btn-outline-info" href = "/blog/{{ id }}">Read More</a>
-                                        <p>{{ blog_data["authors"][id] }}</p>
-                                    </div>
-                                </div>
                 </div>
 
-            {% endfor %}
+                <div class="col-lg-6">
+                    <!-- <h2 class="noo-sh-title-top">{{ blog_name }}</h2> -->
+                    <p>{{ author }}</p><br><br>
+                    <p>{{blog_description}}</p>
+                </div>
+            </div>
+            <hr>
         </div>
-
-    </div>
-
+</div>
 
 {% endblock %}

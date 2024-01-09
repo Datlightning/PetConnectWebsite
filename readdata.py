@@ -6,18 +6,20 @@ def get_blogs():
     with open(filename.resolve(), "r") as file:
         values = eval(file.read().split("\n")[0])
     data = {
-        "names":[],
-        "descriptions":[],
-        "pictures":[],
-        "authors":[],
-        "ids":[]
+        "names":{},
+        "descriptions":{},
+        "pictures":{},
+        "authors":{},
+        "ids":{},
+        "recents":[]
     }
     for d in values:
-        data["names"].append(d[0])
-        data["descriptions"].append(d[1])
-        data["pictures"].append(d[2])
-        data["authors"].append(d[3])
-        data["ids"].append(d[4])
+        data["names"][d[4]] = d[0]
+        data["descriptions"][d[4]] = d[1]
+        data["pictures"][d[4]] = d[2]
+        data["authors"][d[4]] = d[3]
+        data["ids"][d[4]] = d[4]
+        data["recents"].append(d[4])
 
     return data
 def getProducts():
