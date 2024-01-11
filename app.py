@@ -3,6 +3,8 @@ from flask import Flask, render_template, request, url_for, flash, redirect, ses
     jsonify
 import os
 import hashlib
+
+from graphviz import render
 import readdata as rd
 # import accessspreadsheet as gd
 from pathlib import Path
@@ -69,7 +71,7 @@ def blog_specific(blogid):
         text = "1 View."
     else:
         text = f"{views} Views."
-    return render_template("blog-specific.html", view_text = text, focus_id = blogid, id = blog_data["ids"][blogid], author = blog_data["authors"][blogid], blog_name = blog_data["names"][blogid], blog_description = blog_data["descriptions"][blogid], blog_picture = blog_data["pictures"][blogid])
+    return render_template("blog-specific.html",type = blog_data["type"][blogid], picture_description = blog_data["picture-descriptions"][blogid], view_text = text, focus_id = blogid, id = blog_data["ids"][blogid], author = blog_data["authors"][blogid], blog_name = blog_data["names"][blogid], blog_description = blog_data["descriptions"][blogid], blog_picture = blog_data["pictures"][blogid])
 
 @app.route('/blog')
 def blog():
@@ -87,7 +89,9 @@ def shop_specific(product):
 
     if request.method == "POST":
         name = int(request.form.get("type"))
-        
+        if name not in info["cost"]:
+            return render_template("404.html", text="Item Not Found.", link="/shop", back="Back to SHop")
+
         
         cost = info["cost"][name]
         description = info["product-descriptions"][name]

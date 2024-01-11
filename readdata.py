@@ -13,16 +13,20 @@ def get_blogs():
         "ids":{},
         "views":{},
         "likes":{},
+        "picture-descriptions":{},
+        "type":{},
         "recents":[]
     }
     for d in values:
         data["names"][d[4]] = d[0]
-        data["descriptions"][d[4]] = d[1]
+        data["descriptions"][d[4]] = d[1].split("\n\n")
         data["pictures"][d[4]] = d[2]
         data["authors"][d[4]] = d[3]
         data["ids"][d[4]] = d[4]
-        data["views"][d[4]] = d[5]
-        data["likes"][d[4]] = d[6]
+        data["picture-descriptions"][d[4]] = d[5]
+        data["type"][d[4]] = d[6]
+        data["views"][d[4]] = d[7]
+        data["likes"][d[4]] = d[8]
         data["recents"].append(d[4])
 
     return data
@@ -100,7 +104,7 @@ def add_view(blog_id):
         data = eval(file.read().split("\n")[0])
     for i, line in enumerate(data):
         if blog_id == line[4]:
-            data[i][5] += 1
+            data[i][7] += 1
             break
     with open(filename.resolve(), "w+") as file:
         file.write(str(data))

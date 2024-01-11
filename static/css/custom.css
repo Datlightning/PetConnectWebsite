@@ -106,3 +106,21 @@
 .shop-disclaimer{
     color: #3ebbd7;
 }
+a.about-link{
+    color: white;
+    text-decoration: underline !important;
+    text-decoration-thickness: 10px;
+    text-decoration-color: white;
+    transition: .3s;
+
+
+}
+a.about-link:hover{
+    color: #3ebbd7;
+}
+.full{
+    margin:auto;
+}
+.max-height{
+    height: 100% !important;
+}
