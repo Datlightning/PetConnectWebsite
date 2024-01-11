@@ -122,9 +122,7 @@ def get_everything(pictures):
         af.update()
         af.get_people_pictures()
 
-        reset_blogs()
-    else:
-        get_new_blogs()
-
+    reset_blogs()
+   
 if __name__ == "__main__":
     get_everything(False)
