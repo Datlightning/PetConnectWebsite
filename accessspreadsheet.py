@@ -1,4 +1,5 @@
 import gspread
+from pyparsing import rest_of_line
 import readdata as rd
 from pathlib import Path
 from random import randint
@@ -13,8 +14,9 @@ def reset_blogs():
     values.pop(0)
     filename = directory.joinpath("blogs.txt")
     for i, v in enumerate(values):
-        values[i] = v.extend([2,2]) #views and likes
+        v.extend([2,2]) #views and likes
     with open(filename.resolve(), "w+") as file:
+
         file.write(str(values))
         file.close()
     return
@@ -28,7 +30,7 @@ def get_new_blogs():
         data = eval(file.read().split("\n")[0])
         file.close()
     for i, v in enumerate(values[len(data):]):
-        values[i] = v.extend([2,2])
+         v.extend([2,2])
     with open(filename.resolve(), "a") as file:
         file.write(str(values[len(data):]))
         file.close()
@@ -120,7 +122,8 @@ def get_everything(pictures):
     if pictures:
         af.update()
         af.get_people_pictures()
-        reset_blogs
+
+        reset_blogs()
     else:
         get_new_blogs()
 
