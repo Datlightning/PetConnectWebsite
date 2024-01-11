@@ -60,15 +60,42 @@
     margin: 50px 0px;
 }
  video {
-    /* width: 100%; */
-    width: 75%;
+    width: 100%;
 
-    /* pointer-events: none;
-    z-index: 0; */
 }
 .video{
-    width: 100%;
-    background-color: black;
+
     top: 8vh;
     position: relative;
 }
+.wallpaper {
+    background-image: url("../images/banner-01.jpg");
+    /* width: 100% */
+
+}
+.wallpaper-img{
+    width: 100%;
+    position: relative;
+
+    z-index: 1;
+    padding: 0
+
+}
+.upper{
+    position: absolute;
+
+    z-index: 2;
+}
+.slide{
+    position: relative;
+
+}
+/* .like{
+    border: none;
+    color: black;
+    transition: 0.3s;
+
+}
+.like:hover{
+    color: red;
+} */

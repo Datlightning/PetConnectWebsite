@@ -11,6 +11,8 @@ def get_blogs():
         "pictures":{},
         "authors":{},
         "ids":{},
+        "views":{},
+        "likes":{},
         "recents":[]
     }
     for d in values:
@@ -19,6 +21,8 @@ def get_blogs():
         data["pictures"][d[4]] = d[2]
         data["authors"][d[4]] = d[3]
         data["ids"][d[4]] = d[4]
+        data["views"][d[4]] = d[5]
+        data["likes"][d[4]] = d[6]
         data["recents"].append(d[4])
 
     return data
@@ -90,6 +94,16 @@ def getProduct(string):
         output["options"].append(product[5])
         
     return output
+def add_view(blog_id):
+    filename = directory.joinpath("blogs.txt")
+    with open(filename.resolve(), "r") as file:
+        data = eval(file.read().split("\n")[0])
+    for i, line in enumerate(data):
+        if blog_id == line[4]:
+            data[i][5] += 1
+            break
+    with open(filename.resolve(), "w+") as file:
+        file.write(str(data))
 def get_names():
     filename = directory.joinpath("people.txt")
     output = []

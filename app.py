@@ -58,9 +58,16 @@ def contact():
 
 @app.route('/blog/<blogid>')
 def blog_specific(blogid):
+    blog_data = rd.get_blogs()
     if blogid not in blog_data["ids"]:
         return render_template("404.html", text="Blog Not Found.", link="/blog", back="Back to Blogs")
-    return render_template("blog-specific.html", focus_id = blogid, id = blog_data["ids"][blogid], author = blog_data["authors"][blogid], blog_name = blog_data["names"][blogid], blog_description = blog_data["descriptions"][blogid], blog_picture = blog_data["pictures"][blogid])
+    views = blog_data["views"][blogid]
+    rd.add_view(blogid)
+    if views == 1:
+        text = "1 View."
+    else:
+        text = f"{views} Views."
+    return render_template("blog-specific.html", view_text = text, focus_id = blogid, id = blog_data["ids"][blogid], author = blog_data["authors"][blogid], blog_name = blog_data["names"][blogid], blog_description = blog_data["descriptions"][blogid], blog_picture = blog_data["pictures"][blogid])
 
 @app.route('/blog')
 def blog():
