@@ -9,4 +9,4 @@ Hosted on PythonAnywhere
 
 -
 
-Made by Ruthvik Venkatesan and Vihas Veggalam. 
+Made by "Ruthvik Venkatesan" and Vihas Veggalam. 
