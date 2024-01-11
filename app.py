@@ -25,11 +25,12 @@ def parse(string):
 @app.route("/", methods=["GET", "POST"])
 def index():
     session['debug'] = True
+    blog_data = rd.get_blogs()
+
     if request.method == "POST":
         id = request.form.get("id")
         print(id)
         return redirect(f"/blog/{id}")
-
 
     session['products'] = [].extend(list(map(parse, getProducts["names"])))
     return render_template("index.html",ids = blog_data["recents"][:3] , blog_data = blog_data,urls = getProducts["ve-urls"], cost = getProducts["cost"], feature = getProducts["feature"], sale = getProducts["sale"], names = getProducts["names"], pictures = getProducts["pictures"], descriptions = getProducts['descriptions'])
@@ -41,6 +42,7 @@ def about_us():
 
 @app.route("/shop", methods=["GET", "POST"])
 def shop():
+    
     if request.method == "POST":
         name = request.form.get("type")
         if name == "all":
@@ -71,6 +73,8 @@ def blog_specific(blogid):
 
 @app.route('/blog')
 def blog():
+    blog_data = rd.get_blogs()
+
     return render_template("blog.html", focus_id = "1", ids = blog_data["recents"], blog_data = blog_data)
 
 
