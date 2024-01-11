@@ -1,5 +1,4 @@
 import gspread
-from pyparsing import rest_of_line
 import readdata as rd
 from pathlib import Path
 from random import randint
