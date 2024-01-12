@@ -14,7 +14,12 @@
     flex-wrap: wrap;
 }
 .white{
-    color: white
+    color: white !important
+}
+hr.white{
+    background-color: white !important;
+    margin: auto;
+    width: 80%
 }
 .parallax {
     padding: 100px 0px;
@@ -67,6 +72,39 @@
 
     top: 8vh;
     position: relative;
+}
+.banner-video{
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+}
+.banner-button{
+    
+    margin-top: 12.5%;
+    position: relative;
+    z-index: 2;
+    transition-delay: 6s;
+    animation: fadeInAnimation ease 3.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    92% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.banner-font{
+    font-size: 2em !important;
+}
+.banner-container{
+    position:relative;
+}
 }
 .wallpaper {
     background-image: url("../images/banner-01.jpg");

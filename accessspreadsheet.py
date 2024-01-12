@@ -114,12 +114,16 @@ def get_product_variations():
             file.write(str(values))
         index += 1
 
-def get_everything():
+def get_everything(pictures):
     get_products()
     get_product_variations()
     get_names()
-    
+    if pictures:
+        af.update_product_pictures()
+        af.update_blog_pictures()
+        af.get_people_pictures()
+
     reset_blogs()
    
 if __name__ == "__main__":
-    get_everything()
+    get_everything(False)

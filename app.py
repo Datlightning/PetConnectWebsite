@@ -5,6 +5,7 @@ import os
 import hashlib
 
 from graphviz import render
+from sympy import true
 import readdata as rd
 # import accessspreadsheet as gd
 from pathlib import Path
@@ -15,6 +16,8 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = "sdfsdfdfgdfgdsfgdfas"
 getProducts = rd.getProducts()
 getAllProducts = rd.get_all_products()
+individualProducts = rd.getProductByType("individual")
+product_lock = False
 blog_data = rd.get_blogs()
 # Fixing it UP
 
@@ -24,9 +27,19 @@ def parse(string):
         return str(out[0]) + str(out[1])
     except IndexError:
         return string
+def set_session():
+    global product_lock
+    if not product_lock:
+        product_lock = True
+@app.context_processor
+def utility_processor():
+    def get_session():
+        return list(map(parse, getProducts["names"]))
+
+    return dict(get_session=get_session)
+
 @app.route("/", methods=["GET", "POST"])
 def index():
-    session['debug'] = True
     blog_data = rd.get_blogs()
 
     if request.method == "POST":
@@ -34,8 +47,7 @@ def index():
         print(id)
         return redirect(f"/blog/{id}")
 
-    session['products'] = [].extend(list(map(parse, getProducts["names"])))
-    return render_template("index.html",ids = blog_data["recents"][:3] , blog_data = blog_data,urls = getProducts["ve-urls"], cost = getProducts["cost"], feature = getProducts["feature"], sale = getProducts["sale"], names = getProducts["names"], pictures = getProducts["pictures"], descriptions = getProducts['descriptions'])
+    return render_template("index.html",ids = blog_data["recents"][:3] , blog_data = blog_data,urls = individualProducts["product-urls"], cost = individualProducts["cost"], feature = individualProducts["feature"], sale = individualProducts["sale"], names = individualProducts["product-names"], pictures = individualProducts["product-pictures"], descriptions = individualProducts['product-descriptions'])
 
 @app.route("/about")
 def about_us():
@@ -44,7 +56,6 @@ def about_us():
 
 @app.route("/shop", methods=["GET", "POST"])
 def shop():
-    
     if request.method == "POST":
         name = request.form.get("type")
         if name == "all":
@@ -85,12 +96,16 @@ def shop_specific(product):
     for index, product_name in enumerate(getProducts["names"]):
             if product_name == product:
                 url = getProducts["urls"][index]
+                break
+    else:
+        return render_template("404.html", text="Item Not Found.", link="/shop", back="Back to Shop")
+
     info = rd.getProduct(url[1:])
 
     if request.method == "POST":
         name = int(request.form.get("type"))
         if name not in info["cost"]:
-            return render_template("404.html", text="Item Not Found.", link="/shop", back="Back to SHop")
+            return render_template("404.html", text="Item Not Found.", link="/shop", back="Back to Shop")
 
         
         cost = info["cost"][name]
