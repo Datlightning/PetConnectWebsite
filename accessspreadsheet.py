@@ -74,8 +74,8 @@ def get_products():
     with open(filename.resolve(), "w+") as file:
         file.write(str(values))
 def get_product_variations():
-    names = rd.getProducts()["names"]
-    urls = rd.getProducts()["urls"]
+    names = rd.getSignatureProducts()["names"]
+    urls = rd.getSignatureProducts()["urls"]
     index = 0
     for product in names:
         values = []

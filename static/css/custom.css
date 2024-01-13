@@ -80,7 +80,7 @@ hr.white{
 }
 .banner-button{
     
-    margin-top: 12.5%;
+    margin: auto;
     position: relative;
     z-index: 2;
     transition-delay: 6s;
@@ -104,8 +104,10 @@ hr.white{
 }
 .banner-container{
     position:relative;
+    display:inline-block !important;
+    width: 100%
 }
-}
+
 .wallpaper {
     background-image: url("../images/banner-01.jpg");
     /* width: 100% */

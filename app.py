@@ -13,8 +13,8 @@ from werkzeug.utils import secure_filename
 from os.path import join, dirname, realpath
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = "sdfsdfdfgdfgdsfgdfas"
-getProducts = rd.getProducts()
+app.config['SECRET_KEY'] = "verysecretkeyshhhh"
+getSignatureProducts = rd.getSignatureProducts()
 getAllProducts = rd.get_all_products()
 individualProducts = rd.getProductByType("individual")
 product_lock = False
@@ -34,7 +34,7 @@ def set_session():
 @app.context_processor
 def utility_processor():
     def get_session():
-        return list(map(parse, getProducts["names"]))
+        return list(map(parse, getSignatureProducts["names"]))
 
     return dict(get_session=get_session)
 
@@ -44,7 +44,6 @@ def index():
 
     if request.method == "POST":
         id = request.form.get("id")
-        print(id)
         return redirect(f"/blog/{id}")
 
     return render_template("index.html",ids = blog_data["recents"][:3] , blog_data = blog_data,urls = individualProducts["product-urls"], cost = individualProducts["cost"], feature = individualProducts["feature"], sale = individualProducts["sale"], names = individualProducts["product-names"], pictures = individualProducts["product-pictures"], descriptions = individualProducts['product-descriptions'])
@@ -62,7 +61,6 @@ def shop():
             return jsonify(data = getAllProducts)
         else:
             info = rd.getProductByType(name)
-            print(info)
             return jsonify(data = info)
     # data = rd.get_all_products() use getAllProducts Variable. 
     return render_template("shop.html", models = getAllProducts["model"], urls = getAllProducts["product-urls"],cost = getAllProducts["cost"], feature = getAllProducts["feature"], sale = getAllProducts["sale"], names = getAllProducts["product-names"], pictures = getAllProducts["product-pictures"], descriptions = getAllProducts['product-descriptions'])
@@ -93,9 +91,9 @@ def blog():
 
 @app.route("/shop/<product>", methods  = ["GET", "POST"])
 def shop_specific(product):
-    for index, product_name in enumerate(getProducts["names"]):
+    for index, product_name in enumerate(getSignatureProducts["names"]):
             if product_name == product:
-                url = getProducts["urls"][index]
+                url = getSignatureProducts["urls"][index]
                 break
     else:
         return render_template("404.html", text="Item Not Found.", link="/shop", back="Back to Shop")
@@ -104,9 +102,9 @@ def shop_specific(product):
 
     if request.method == "POST":
         name = int(request.form.get("type"))
-        if name not in info["cost"]:
-            return render_template("404.html", text="Item Not Found.", link="/shop", back="Back to Shop")
-
+        if name >= len(info["cost"]):
+            data = {"redirect":f"/shop/{product}/{index}"}
+            return jsonify(data)
         
         cost = info["cost"][name]
         description = info["product-descriptions"][name]
@@ -119,12 +117,11 @@ def shop_specific(product):
             "description":description,
             "name":name,
             "picture":picture,
-            "url":url
+            "url":url,
+            "redirect":""
         }
-        print(output)
         return jsonify(output)
                 
-    print(info)
     return render_template("shop-detail.html", product_options = info["options"], name = product, product_names = info["product-names"], product_pictures = info["product-pictures"], product_urls = info["product-urls"], product_descriptions = info["product-descriptions"], product_costs = info["cost"])
 @app.route("/social")
 def social():

@@ -124,6 +124,9 @@
                 url: '/shop/{{name}}',
                 data: { type: $('select.form-select').val() },
                 success: function (response) {
+                    if (response["redirect"] !== ""){
+                        window.location.href = response["redirect"];
+                    }
 
                     let picture = response["picture"]
                     let description = response["description"]

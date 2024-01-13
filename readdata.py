@@ -30,7 +30,7 @@ def get_blogs():
         data["recents"].append(d[4])
 
     return data
-def getProducts():
+def getSignatureProducts():
     values = []
     filename = directory.joinpath("products.txt")
     with open(filename.resolve(), "r") as file:
@@ -62,7 +62,7 @@ def getProducts():
             continue
     return {"ve-urls": ve_urls, "cost":cost, "sale":sale, "feature":feature, "names": names, "descriptions":descriptions, "pictures":pictures, "urls":urls, "long-desc": long_descriptions}
 def getProduct(string):
-    data = getProducts()
+    data = getSignatureProducts()
     name = ""
     url = ""
     index = 0
@@ -115,7 +115,7 @@ def get_names():
         output = eval(file.read().strip().split('\n')[0])
     return output
 def get_all_products():
-    data = getProducts()
+    data = getSignatureProducts()
     url = ""
     output = {
         "product-names":[],
