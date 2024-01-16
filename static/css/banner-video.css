@@ -1,20 +1,92 @@
+.top_header {
+  position: relative;
+  background-color: black;
+  height: 75vh;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
 
-  header video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 90%;
-    height: 90%;
-   
-    z-index: 0;
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-  }
+.top_header video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
 
-  header .container {
-    position: relative;
-    z-index: 2;
+.top_header .container {
+  -ms-transform: translateY(20%);
+  -moz-transform:  translateY(20%);
+  -webkit-transform: translateY(20%);
+  transform: translateY(20%);
+  position: relative;
+  z-index: 2;
+  transition-delay: 6s;
+  animation: fadeInAnimation ease 3.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.xl{
+  font-size: 1.8em !important;
+  /* font-style: bold; */
+  font-weight: 1200;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
   }
-  
+  92% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+.top_header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.2;
+  z-index: 1;
+}
+
+
+.alternate_header{
+  display: none;
+}
+.large{
+  font-size: 3.2em;
+  /* font-style: bold; */
+  font-weight: 1200;
+}
+.larger-button{
+  font-size: 2.2em;
+  /* font-style: bold; */
+  font-weight: 1200;
+}
+/* Media Query for devices withi coarse pointers and no hover functionality */
+
+/* This will use a fallback image instead of a video for devices that commonly do not support the HTML5 video element */
+
+@media (pointer: coarse) and (hover: none) {
+  .top_header {
+    display: none
+  }
+  .alternate_header{
+    display: block;
+
+  }
+}

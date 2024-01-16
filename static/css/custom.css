@@ -121,6 +121,11 @@ hr.white{
     padding: 0
 
 }
+strong{
+    font-size: 2.8em !important;
+    /* font-style: bold; */
+    font-weight: 1200;
+  }
 .upper{
     position: absolute;
 

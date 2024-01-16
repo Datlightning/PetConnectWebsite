@@ -15,6 +15,9 @@
 <!-- Custom CSS -->
 <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css')}}">
 
+<link rel="stylesheet" href="{{ url_for('static', filename='css/banner-video.css')}}">
+
+
 <link href='https://fonts.googleapis.com/css?family=Caveat' rel='stylesheet'>
 
 
@@ -38,6 +41,28 @@
 <!-- End Top Search -->
 
 <!-- Start Slider -->
+<div class="top_header">
+    <div class="overlay"></div>
+
+    <video playsinline="playsinline" autoplay="autoplay" muted="muted">
+        <source src="../static/videos/Logo Animation2-1.m4v" type="video/mp4">
+    </video>
+
+    <div class="container h-100">
+        <div class="d-flex h-100 text-center align-items-center">
+            <div class="w-100 text-white">
+                <div class="container row">
+                    <div class="col-md-12">
+                        <p class="m-b-40 large">Connecting hearts, one paw at a time.</p>
+                        <p><a class="btn btn-info btn-lg larger-button" href="/shop">Shop Now</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="alternate_header">
+
 <div id="slides-shop" class="cover-slides">
     <ul class="slides-container">
         <li class="text-center">
@@ -45,15 +70,16 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="m-b-20" style="font-family: 'Caveat';"><strong>PetConnect</strong></h1>
-                        <p class="m-b-40">Connecting hearts, one paw at a time.</p>
-                        <p><a class="btn hvr-hover" href="/shop">Shop Now</a></p>
+                        <h1 class="xl m-b-20" style="font-family: 'Caveat';"><strong>PetConnect</strong></h1>
+                        <p class="m-b-40 xl">Connecting hearts, one paw at a time.</p>
+                        <p><a class="btn hvr-hover " href="/shop">Shop Now</a></p>
                     </div>
     </ul>
     <div class="slides-navigation">
         <a href="/" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
         <a href="/" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
     </div>
+</div>
 </div>
 <div class="white-bar"></div>
 
