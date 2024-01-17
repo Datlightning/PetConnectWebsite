@@ -11,18 +11,26 @@ def get_blogs():
         "pictures":{},
         "authors":{},
         "ids":{},
+        "views":{},
+        "likes":{},
+        "picture-descriptions":{},
+        "type":{},
         "recents":[]
     }
     for d in values:
         data["names"][d[4]] = d[0]
-        data["descriptions"][d[4]] = d[1]
+        data["descriptions"][d[4]] = d[1].split("\n\n")
         data["pictures"][d[4]] = d[2]
         data["authors"][d[4]] = d[3]
         data["ids"][d[4]] = d[4]
+        data["picture-descriptions"][d[4]] = d[5]
+        data["type"][d[4]] = d[6]
+        data["views"][d[4]] = d[7]
+        data["likes"][d[4]] = d[8]
         data["recents"].append(d[4])
 
     return data
-def getProducts():
+def getSignatureProducts():
     values = []
     filename = directory.joinpath("products.txt")
     with open(filename.resolve(), "r") as file:
@@ -54,7 +62,7 @@ def getProducts():
             continue
     return {"ve-urls": ve_urls, "cost":cost, "sale":sale, "feature":feature, "names": names, "descriptions":descriptions, "pictures":pictures, "urls":urls, "long-desc": long_descriptions}
 def getProduct(string):
-    data = getProducts()
+    data = getSignatureProducts()
     name = ""
     url = ""
     index = 0
@@ -90,6 +98,16 @@ def getProduct(string):
         output["options"].append(product[5])
         
     return output
+def add_view(blog_id):
+    filename = directory.joinpath("blogs.txt")
+    with open(filename.resolve(), "r") as file:
+        data = eval(file.read().split("\n")[0])
+    for i, line in enumerate(data):
+        if blog_id == line[4]:
+            data[i][7] += 1
+            break
+    with open(filename.resolve(), "w+") as file:
+        file.write(str(data))
 def get_names():
     filename = directory.joinpath("people.txt")
     output = []
@@ -97,7 +115,7 @@ def get_names():
         output = eval(file.read().strip().split('\n')[0])
     return output
 def get_all_products():
-    data = getProducts()
+    data = getSignatureProducts()
     url = ""
     output = {
         "product-names":[],

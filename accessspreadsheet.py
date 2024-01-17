@@ -7,15 +7,32 @@ import accessfolders as af
 directory = Path(__file__).parent.joinpath("data")
 credentials = Path(__file__).parent.joinpath('creds.json')
 gc = gspread.service_account(filename=credentials.resolve())
-def get_blogs():
+def reset_blogs():
     sheet = gc.open("PetConnect Website Information").worksheet("BlogInfo")
     values = sheet.get_all_values()
     values.pop(0)
     filename = directory.joinpath("blogs.txt")
+    for i, v in enumerate(values):
+        v.extend([2,2]) #views and likes
     with open(filename.resolve(), "w+") as file:
+
         file.write(str(values))
         file.close()
     return
+def get_new_blogs():
+    sheet = gc.open("PetConnect Website Information").worksheet("BlogInfo")
+    values = sheet.get_all_values()
+    values.pop(0)
+    filename = directory.joinpath("blogs.txt")
+    data = []
+    with open(filename.resolve(), 'r') as file:
+        data = eval(file.read().split("\n")[0])
+        file.close()
+    for i, v in enumerate(values[len(data):]):
+         v.extend([2,2])
+    with open(filename.resolve(), "a") as file:
+        file.write(str(values[len(data):]))
+        file.close()
 def get_names():
     
     sheet = gc.open('PetConnect Website Information').worksheet('People')
@@ -45,9 +62,9 @@ def get_products():
         number = randint(0,1)
         values[i].append(sale[number])
         number = randint(0,2)
-        while not number in completed_featured:
+        while  number not in completed_featured:
             number = randint(0,2)
-            if not number in completed_featured:
+            if  number not in completed_featured:
                 break
         completed_featured.add(number)
         if len(completed_featured) == 3:
@@ -57,8 +74,8 @@ def get_products():
     with open(filename.resolve(), "w+") as file:
         file.write(str(values))
 def get_product_variations():
-    names = rd.getProducts()["names"]
-    urls = rd.getProducts()["urls"]
+    names = rd.getSignatureProducts()["names"]
+    urls = rd.getSignatureProducts()["urls"]
     index = 0
     for product in names:
         values = []
@@ -101,10 +118,12 @@ def get_everything(pictures):
     get_products()
     get_product_variations()
     get_names()
-    get_blogs()
     if pictures:
-        af.update()
+        af.update_product_pictures()
+        af.update_blog_pictures()
         af.get_people_pictures()
 
+    reset_blogs()
+   
 if __name__ == "__main__":
     get_everything(False)
