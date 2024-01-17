@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,9 +19,6 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/variables.css')}}">
-
-
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
     <!-- Site CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
@@ -30,38 +26,39 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css' )}}">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css')}}">
-
     {% block headerinfo %}{% endblock %}
     <div class="main-top">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="right-phone-box">
-                        <p>Follow us on Instagram :- <a
-                                href="https://www.instagram.com/petconnect.ve/">@petconnect.ve</a></p>
+                        <p>Follow us on Instagram :- <a href="https://www.instagram.com/petconnect.ve/">@petconnect.ve</a></p>
                     </div>
                     <div class="our-link">
                         <ul>
-                            <li><a href="https://veinternational.org/"><i class="fas fa-location-arrow"></i> What is
-                                    Virtual Enterprises?</a></li>
+                            <li><a href="https://veinternational.org/"><i class="fas fa-location-arrow"></i> What is Virtual Enterprises?</a></li>
                             <!-- <li><a href="/"><i class="fas fa-headset"></i> Contact Us</a></li> -->
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <!-- <div class="login-box">
+					<!-- <div class="login-box">
 						<select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In">
 							<option>Register Here</option>
 							<option>Sign In</option>
 						</select>
 					</div> -->
                     <div class="text-slid-box">
-
-                        <p class="disclaimer">
-                            <i class="shop-disclaimer fab fa-opencart"></i> This Virtual Enterprise online store is for
-                            education purposes only (2023-2024 PetConnect).
-                        </p>
-
+                        <div id="offer-box" class="carouselTicker">
+                            <ul class="offer-box">
+                                <li>
+                                    <i class="fab fa-opencart"></i> This is a VE Business
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> For Educational Purposes Only
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -77,10 +74,9 @@
             <div class="container">
                 <!-- Start Header Navigation -->
                 <div class="navbar-header">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu"
-                        aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fa fa-bars"></i>
-                    </button>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
                     <a class="navbar-brand" href="/"><img src="../static/images/logo.png" class="logo" alt=""></a>
                 </div>
                 <!-- End Header Navigation -->
@@ -88,39 +84,22 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-
+                        
                         <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" href="/shop">
-                                Shop
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
-                                </svg>
+                              Shop
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                              </svg>
 
                             </a>
                             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                {% if get_session()|length == 0 %}
-                                <li class="nav-item"><a href="/shop/PetFresh">PetFresh</a></li>
-                                <li class="nav-item"><a href="/shop/PetBrella">PetBrella</a></li>
-                                <li class="nav-item"><a href="/shop/PetBed">PetBed</a></li>
-                                <hr class="white">
-                                </hr>
-                                <li class="nav-item"><a href="/shop/PetBundle">PetBundle</a></li>
-                                {% else %}
-                                {% for product in get_session() %}
-                                {% if "Bundle" in product %}
-                                <hr class="white">
-                                </hr>
-                                <li class="nav-item"><a href="/shop/PetBundle">PetBundle</a></li>
-                                {% else %}
-                                <li class="nav-item"><a href="/shop/{{product }}">{{product }}</a></li>
-                                {% endif %}
-
-
-                                {% endfor %}
-                                {% endif %}
+                              <li class="nav-item"><a href="/shop/Pet%20Fresh">Pet Fresh</a></li>
+                              <li class="nav-item"><a href="/shop/Pet%20Poncho">Pet Poncho</a></li>
+                              <li class="nav-item"><a href="/shop/Pet%20Bed">Pet Bed</a></li>
+                              <hline class="white"></hline>
+                              <li class="nav-item"><a  href="/shop">Bundles</a></li>
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="/about">About Us</a></li>
@@ -134,7 +113,7 @@
 
                     </ul>
                 </div>
-
+           
             </div>
             <!-- Start Side Menu -->
             <!-- <div class="side">
@@ -214,7 +193,7 @@
                     </div> -->
                 </div>
             </div>
-
+            
             <div class="item">
                 <div class="ins-inner-box">
                     <img src="../static/images/instagram-img-07.jpg" alt="" />
@@ -239,43 +218,41 @@
                     </div> -->
                 </div>
             </div>
-
+            
         </div>
     </div>
-    <!-- Start Footer  -->
-    <footer>
+     <!-- Start Footer  -->
+     <footer>
         <div class="footer-main">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-12 col-sm-12">
-                        <div class="footer-top-box">
-                            <h3>Business Time</h3>
-                            <ul class="list-time">
-                                <li>Monday - Friday: 07.18am to 3:02pm</li>
-                                <li>Saturday: Closed</li>
-                                <li>Sunday: <span>Closed</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12 col-sm-12">
-                        <div class="footer-top-box">
-                            <h3>Social Media</h3>
-                            <p></p>
-                            <ul>
-                                <li><a href="https://www.instagram.com/petconnect.ve/"><i class="fab fa-instagram"
-                                            aria-hidden="true"></i></a></li>
+				<div class="row">
+					<div class="col-lg-6 col-md-12 col-sm-12">
+						<div class="footer-top-box">
+							<h3>Business Time</h3>
+							<ul class="list-time">
+								<li>Monday - Friday: 07.18am to 07.59pm</li> <li>Saturday: Closed</li> <li>Sunday: <span>Closed</span></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-12 col-sm-12">
+						<div class="footer-top-box">
+							<h3>Social Media</h3>
+							<p></p>
+							<ul>
+                                <li><a href="https://www.instagram.com/petconnect.ve/"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
                                 <!-- <li><a href="/"><i class="fab fa-tiktok" aria-hidden="true"></i></a></li> -->
                             </ul>
-                        </div>
-                    </div>
-                </div>
-                <hr>
+						</div>
+					</div>
+				</div>
+				<hr>
                 <div class="row">
                     <div class="col-lg-6 col-md-12 col-sm-12">
                         <div class="footer-widget">
                             <h4>About PetConnect</h4>
-                            <p>Connecting hearts, one paw at a time.</p>
-                            <a class="about-link" href="/about">Learn More</a>
+                            <p>Innovation. Intelligence. Imagination.</p> 
+							<p>A Virtual Enterprises Project.</p>
+                                <!-- <a class="footer-link" href="/about">Learn More</a> -->
                         </div>
                     </div>
                     <!-- <div class="col-lg-4 col-md-12 col-sm-12">
@@ -296,16 +273,13 @@
                             <h4>Contact Us</h4>
                             <ul>
                                 <li>
-                                    <p><i class="fas fa-map-marker-alt"></i>Address: Morris Hills High School<br>520 W
-                                        Main Street Rockaway<br> NJ 07866 </p>
+                                    <p><i class="fas fa-map-marker-alt"></i>Address: Morris Hills High School<br>520 W Main Street Rockaway<br> NJ 07866 </p>
                                 </li>
                                 <!-- <li>
                                     <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a></p>
                                 </li> -->
                                 <li>
-                                    <p><i class="fas fa-envelope"></i>Email: <a
-                                            href="https://mail.google.com/mail/?view=cm&fs=1&to=petconnect.nj@veinternational.org">petconnect.nj@veinternational.org</a>
-                                    </p>
+                                    <p><i class="fas fa-envelope"></i>Email: <a href="https://mail.google.com/mail/?view=cm&fs=1&to=petconnect.nj@veinternational.org">petconnect.nj@veinternational.org</a></p>
                                 </li>
                             </ul>
                         </div>
