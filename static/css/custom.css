@@ -102,6 +102,13 @@ hr.white{
 .banner-font{
     font-size: 2em !important;
 }
+.bottom{
+    height: 55vh !important;
+}
+.row{
+    display: flex;
+}
+
 .banner-container{
     position:relative;
     display:inline-block !important;
