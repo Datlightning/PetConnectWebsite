@@ -99,6 +99,10 @@ hr.white{
         opacity: 1;
     }
 }
+.height-cap{
+    object-fit: cover;
+    object-position: 0  100%;
+}
 .banner-font{
     font-size: 2em !important;
 }
