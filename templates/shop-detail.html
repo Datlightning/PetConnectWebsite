@@ -47,6 +47,7 @@
     <video autoplay muted src="../static/videos/PetFreshAnimationV7.mp4">
     </center>
 </div>
+<br>
 {% endif %}
 <section class="py-5">
     <div class="container px-4 px-lg-5 my-5">
@@ -64,14 +65,15 @@
             
                 <div class="small mb-1"></div>
                 <div class="name-holder">
-                    <h1 class="display-5 fw-bolder">{{ name }}</h1>
+                    <h1 class="display-5 fw-bolder vaguely_larger">{{ name }}</h1>
                 </div>
                 <div class="fs-5 mb-5 cost">
                     <span>{{product_costs[0]}}</span>
                 </div>
                 <div class="description">
-                    <p class="lead">{{product_descriptions[0]}}</p>
+                    <p class="lead barely_larger">{{product_descriptions[0]}}</p>
                 </div>
+                <br>
                 <div class="d-flex">
                     {% if product_names|length > 1 %}
                     <form action="" method="post">
@@ -91,6 +93,7 @@
 
 
                 </div>
+                <br>
                 <button class="btn btn-outline-dark flex-shrink-0" id="redirect" type="button">
                     <i class="bi-cart-fill me-1"></i>
                     Buy Now

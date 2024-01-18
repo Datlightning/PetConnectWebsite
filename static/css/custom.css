@@ -126,10 +126,21 @@ strong{
     /* font-style: bold; */
     font-weight: 1200;
   }
+
+.height-cap{
+    object-fit: cover;
+    object-position: 0 0%;
+}
 .upper{
     position: absolute;
 
     z-index: 2;
+}
+.vaguely_larger{
+    font-size: 3.2em;
+}
+.barely_larger{
+    font-size: 1.8em;
 }
 .slide{
     position: relative;
