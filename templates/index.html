@@ -2,116 +2,131 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-{% extends 'base.html' %}
-{% block title %}PetConnect{% endblock %}
-{% block headerinfo %}
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
-<!-- Site CSS -->
-<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
-<!-- Responsive CSS -->
-<link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css' )}}">
-<!-- Custom CSS -->
-<link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css')}}">
-
-<link rel="stylesheet" href="{{ url_for('static', filename='css/banner-video.css')}}">
-
-
-<link href='https://fonts.googleapis.com/css?family=Caveat' rel='stylesheet'>
-
-
-{% endblock %}
-{% block BodyContent %}
-
-<!-- Start Main Top -->
-
-<!-- End Main Top -->
-
-<!-- Start Top Search -->
-<div class="top-search">
-    <div class="container">
-        <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-search"></i></span>
-            <input type="text" class="form-control" placeholder="Search">
-            <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+    {% extends 'base.html' %}
+    {% block title %}PetConnect{% endblock %}
+    {% block headerinfo %}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css' )}}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/banner-video.css')}}">
+    <link href='https://fonts.googleapis.com/css?family=Caveat' rel='stylesheet'>
+    {% endblock %}
+    {% block BodyContent %}
+    <!-- Start Main Top -->
+    <!-- End Main Top -->
+    <!-- Start Top Search -->
+    <div class="top-search">
+        <div class="container">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                <input type="text" class="form-control" placeholder="Search">
+                <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+            </div>
         </div>
     </div>
-</div>
-<!-- End Top Search -->
-
-<!-- Start Slider -->
-<div class="top_header">
-    <div class="overlay"></div>
-
-    <video playsinline="playsinline" autoplay="autoplay" muted="muted">
-        <source src="../static/videos/Logo Animation2-1.m4v" type="video/mp4">
-    </video>
-
-    <div class="container h-100">
-        <div class="d-flex h-100 text-center align-items-center">
-            <div class="w-100 text-white">
-                <div class="container row">
-                    <div class="col-md-12">
-                        <p class="m-b-40 large">Connecting hearts, one paw at a time.</p>
-                        <p><a class="btn btn-info btn-lg larger-button" href="/shop">Shop Now</a></p>
+    <!-- End Top Search -->
+    <!-- Start Slider -->
+    <div class="top_header">
+        <div class="overlay"></div>
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted">
+            <source src="../static/videos/Logo Animation2-1.m4v" type="video/mp4">
+        </video>
+        <div class="container h-100">
+            <div class="d-flex h-100 text-center align-items-center">
+                <div class="w-100 text-white">
+                    <div class="container row">
+                        <div class="col-md-12">
+                            <p class="m-b-40 large">Connecting hearts, one paw at a time.</p>
+                            <p><a class="btn btn-info btn-lg larger-button" href="/shop">Shop Now</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<div class="alternate_header">
-
-<div id="slides-shop" class="cover-slides">
-    <ul class="slides-container">
-        <li class="text-center">
-            <img src="../static/images/banner-01.jpg" alt="">
+    <div class="alternate_header">
+    <div id="slides-shop" class="cover-slides">
+        <ul class="slides-container">
+            <li class="text-center">
+                <img src="../static/images/banner-01.jpg" alt="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="xl m-b-20" style="font-family: 'Caveat';"><strong>PetConnect</strong></h1>
+                            <p class="m-b-40 xl">Connecting hearts, one paw at a time.</p>
+                            <p><a class="btn hvr-hover " href="/shop">Shop Now</a></p>
+                        </div>
+        </ul>
+        <div class="slides-navigation">
+            <a href="/" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            <a href="/" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+        </div>
+    </div>
+    </div>
+    <div class="white-bar"></div>
+    <!-- Start Products  -->
+    <div class="parallax">
+        <div class="products-box">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="xl m-b-20" style="font-family: 'Caveat';"><strong>PetConnect</strong></h1>
-                        <p class="m-b-40 xl">Connecting hearts, one paw at a time.</p>
-                        <p><a class="btn hvr-hover " href="/shop">Shop Now</a></p>
+                    <div class="col-lg-12">
+                        <div class="title-sp text-center">
+                            <h1 class="white">Our Product Line</h1>
+                            <p class="white">Innovation. Intelligence. Imagination.</p>
+                        </div>
                     </div>
-    </ul>
-    <div class="slides-navigation">
-        <a href="/" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
-        <a href="/" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                </div>
+                <div class="row special-list">
+                    {% for product in range(names|length) %}
+                    <div class="inline col-lg-3 col-md-3 col-xl-3 col-xs-3 col-ms-3 special-grid {{ feature[product]}}">
+                        <div class="products-single fix">
+                            <div class="box-img-hover">
+                                <div class="type-lb">
+                                    <p class="{{ sale[product].lower() }}">{{ sale[product]}}</p>
+                                </div>
+                                <img src="../static/images/products/{{pictures[product]}}" class="img-fluid" alt="Image">
+                                <div class="mask-icon">
+                                    <a class="cart" href="/shop/{{ names[product] }}">Learn More</a>
+                                </div>
+                            </div>
+                            <div class="why-text">
+                                <h4>{{ names[product] }}</h4>
+                                <h5>{{ cost[product] }}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-</div>
-<div class="white-bar"></div>
-
-<!-- Start Products  -->
-<div class="parallax">
-    <div class="products-box">
+    <!-- End Products  -->
+    <!-- Start Blog  -->
+    <div class="latest-blog w3-hide">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="title-sp text-center">
-                        <h1 class="white">Our Product Line</h1>
-                        <p class="white">Innovation. Intelligence. Imagination.</p>
+                    <div class="title-all text-center">
+                        <h1>Latest Blogs</h1>
                     </div>
                 </div>
             </div>
-
-            <div class="row special-list">
-                {% for product in range(names|length) %}
-                <div class="inline col-lg-3 col-md-3 col-xl-3 col-xs-3 col-ms-3 special-grid {{ feature[product]}}">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="{{ sale[product].lower() }}">{{ sale[product]}}</p>
-                            </div>
-                            <img src="../static/images/products/{{pictures[product]}}" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <a class="cart" href="/shop/{{ names[product] }}">Learn More</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>{{ names[product] }}</h4>
-                            <h5>{{ cost[product] }}</h5>
+            <div class="row ">
+                {% for id in ids %}
+                <div class="col-md-6 col-lg-4 col-xl-4 max-height">
+                    <div class="blog-img {{ id }}">
+                        <img class="img-fluid" src="../static/images/{{ blog_data['pictures'][id] }}" alt="" />
+                    </div>
+                    <div class="blog-content">
+                        <div class="title-blog">
+                            <h3>{{ blog_data["names"][id] }}</h3>
+                            <a class="btn btn-outline-info" href="/blog/{{ id }}">Read More</a>
+                            <p>{{ blog_data["authors"][id] }} - {{ blog_data["views"][id] }} Views</p>
                         </div>
                     </div>
                 </div>
@@ -119,49 +134,7 @@
             </div>
         </div>
     </div>
-</div>
-<!-- End Products  -->
-
-<!-- Start Blog  -->
-<div class="latest-blog w3-hide">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="title-all text-center">
-                    <h1>Latest Blogs</h1>
-                </div>
-            </div>
-        </div>
-        <div class="row ">
-            {% for id in ids %}
-            <div class="col-md-6 col-lg-4 col-xl-4 max-height">
-                <div class="blog-img {{ id }}">
-                    <img class="img-fluid" src="../static/images/{{ blog_data['pictures'][id] }}" alt="" />
-                </div>
-                <div class="blog-content">
-                    <div class="title-blog">
-                        <h3>{{ blog_data["names"][id] }}</h3>
-                        <a class="btn btn-outline-info" href="/blog/{{ id }}">Read More</a>
-                        <p>{{ blog_data["authors"][id] }} - {{ blog_data["views"][id] }} Views</p>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-</div>
-
-<!-- End Blog  -->
-
-
-
-<!-- End Instagram Feed  -->
-
-
-
-
-<!-- <a href="/" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a> -->
-
-
-
-{% endblock %}
+    <!-- End Blog  -->
+    <!-- End Instagram Feed  -->
+    <!-- <a href="/" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a> -->
+    {% endblock %}

@@ -42,9 +42,7 @@
 {% if "Fresh" in name %}
 <div class = "video">
     <center>
-        <!-- <img class="card-img-top mb-5 mb-md-0" src="../static/images/widescreen.png"
-                    alt="..." /> -->
-    <video autoplay muted src="../static/videos/PetFreshAnimationV7.mp4">
+    <video autoplay muted src="../static/videos/PetFreshAnimationV4.mkv">
     </center>
 </div>
 {% endif %}
@@ -126,9 +124,6 @@
                 url: '/shop/{{name}}',
                 data: { type: $('select.form-select').val() },
                 success: function (response) {
-                    if (response["redirect"] !== ""){
-                        window.location.href = response["redirect"];
-                    }
 
                     let picture = response["picture"]
                     let description = response["description"]

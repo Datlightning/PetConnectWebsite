@@ -118,6 +118,7 @@ def get_everything(pictures):
     get_products()
     get_product_variations()
     get_names()
+
     if pictures:
         af.update_product_pictures()
         af.update_blog_pictures()

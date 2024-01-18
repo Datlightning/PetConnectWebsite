@@ -43,15 +43,14 @@
         <div class="row">
             {% for id in ids %}
                 <div class="col-lg-4">
-                    <div class="banner-frame"> 
-                        <img class="img-fluid" src="../static/images/{{ blog_data['pictures'][id] }}"
+                    <div class="banner-frame"> <img class="img-fluid" src="../static/images/{{ blog_data['pictures'][id] }}"
                             alt="Pet Connect" />
                     </div>
                     <div class="blog-content">
                                     <div class="title-blog">
                                         <h3>{{ blog_data["names"][id] }}</h3>
                                         <a class="btn btn-outline-info" href = "/blog/{{ id }}">Read More</a>
-                                        <p>{{ blog_data["authors"][id] }} - {{ blog_data["views"][id] }} Views </p>
+                                        <p>{{ blog_data["authors"][id] }}</p>
                                     </div>
                                 </div>
                 </div>
