@@ -103,6 +103,12 @@ hr.white{
     object-fit: cover;
     object-position: 0  100%;
 }
+.vaguely_larger{
+    font-size: 3.2em;
+}
+.barely_larger{
+    font-size: 1.8em;
+}
 .banner-font{
     font-size: 2em !important;
 }
