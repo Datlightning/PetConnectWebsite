@@ -4,8 +4,7 @@ from flask import Flask, render_template, request, url_for, flash, redirect, ses
 import os
 import hashlib
 
-from graphviz import render
-from sympy import true
+
 import readdata as rd
 # import accessspreadsheet as gd
 from pathlib import Path
