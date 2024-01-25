@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}VideoGame{% endblock %}
+{% block headerinfo %}
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+<!-- Site CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+<!-- Responsive CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css' )}}">
+<!-- Custom CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css')}}">{% endblock %}
+{% block BodyContent %}
+
+
+<script src="videogameMain.js" type="module"></script>
+
+<body>
+    <canvas id="glcanvas" width="640" height="480"></canvas>
+</body>
+<!-- Start Top Search -->
+<div id = "videogameMainBox">
+
+
+
+
+
+</div>
+
+{% endblock %}
