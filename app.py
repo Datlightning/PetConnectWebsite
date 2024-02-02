@@ -68,6 +68,10 @@ def shop():
 def contact():
     return render_template("contact-us.html")
 
+@app.route("/petconnectvideogame")
+def videogame(): 
+    return render_template("videogame.html")
+
 @app.route('/blog/<blogid>')
 def blog_specific(blogid):
     blog_data = rd.get_blogs()
@@ -128,6 +132,7 @@ def social():
 @app.route('/<path:path>')
 def catch_all(path):
         return render_template("404.html", back="Back to PetConnect", link = "/", text = "Page Not Found.")
+
 # @app.route("/update")
 # def gatherdata():
 #     gd.get_everything(False)
