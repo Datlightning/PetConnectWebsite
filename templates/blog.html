@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block title %}Blog{% endblock %}
+{% block headerinfo %}
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+<!-- Site CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+<!-- Responsive CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css' )}}">
+<!-- Custom CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css')}}">{% endblock %}
+{% block BodyContent %}
+<!-- Start Top Search -->
+<div class="top-search">
+    <div class="container">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+            <input type="text" class="form-control" placeholder="Search">
+            <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+        </div>
+    </div>
+</div>
+<!-- End Top Search -->
+
+<!-- Start All Title Box -->
+<div class="all-title-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Blogs</h2>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active">Blogs</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End All Title Box -->
+<br><br>
+<!-- Start Contact Us  -->
+    <div class="container" id="{{ ids[title] }}" tabindex="-1">
+        <div class="row">
+            {% for id in ids %}
+                <div class="col-lg-4">
+                    <div class="banner-frame"> 
+                        <img class="img-fluid" src="../static/images/{{ blog_data['pictures'][id] }}"
+                            alt="Pet Connect" />
+                    </div>
+                    <div class="blog-content">
+                                    <div class="title-blog">
+                                        <h3>{{ blog_data["names"][id] }}</h3>
+                                        <a class="btn btn-outline-info" href = "/blog/{{ id }}">Read More</a>
+                                        <p>{{ blog_data["authors"][id] }} - {{ blog_data["views"][id] }} Views </p>
+                                    </div>
+                                </div>
+                </div>
+
+            {% endfor %}
+        </div>
+
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% block title %}Blog{% endblock %}
+{% block headerinfo %}
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+<!-- Site CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+<!-- Responsive CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css' )}}">
+<!-- Custom CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css')}}">{% endblock %}
+{% block BodyContent %}
+<!-- Start Top Search -->
+<div class="top-search">
+    <div class="container">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+            <input type="text" class="form-control" placeholder="Search">
+            <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+        </div>
+    </div>
+</div>
+<!-- End Top Search -->
+
+<!-- Start All Title Box -->
+<div class="all-title-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active">Blogs</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End All Title Box -->
+
+<!-- Start Contact Us  -->
+<div class="about-box-main" tabindex="-1">
+    <div class="container" id = "{{ id }}" tabindex="-1">
+            <div class="row">
+                {% if type == "H" %}
+                    <div class="col-lg-6">
+                        <div class="banner-frame"> <img class="img-fluid" src="../static/images/{{ blog_picture }}"
+                                alt="Pet Connect" />
+                                <p>{{ picture_description }}</p>
+
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <!-- <h2 class="noo-sh-title-top">{{ blog_name }}</h2> -->
+                        <h2>{{ blog_name }}</h2>
+
+                        <p>{{ author }}</p>
+                        <p>{{ view_text }}</p>
+                        <!-- <button class="like"> <i class="fa fa-heart"></i> </button> -->
+                        {% for text in blog_description %}
+                            <p>{{text}}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% else %}
+            </div>
+                    <center>
+                        <div class="full">
+                            <div class="banner-frame"> <img class="height-cap img-fluid" src="../static/images/{{ blog_picture }}"
+                                    alt="Pet Connect" />
+                                    <p>{{ picture_description }}</p>
+
+                            </div>
+                        </div>
+                    </center>
+                
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2>{{ blog_name }}</h2>
+
+                        <!-- <h2 class="noo-sh-title-top">{{ blog_name }}</h2> -->
+                        <p>{{ author }}</p>
+                        <p>{{ view_text }}</p>
+                        <!-- <button class="like"> <i class="fa fa-heart"></i> </button> -->
+                        {% for text in blog_description %}
+                            <p>{{text}}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+            
+            <hr>
+        </div>
+</div>
+
+{% endblock %}
