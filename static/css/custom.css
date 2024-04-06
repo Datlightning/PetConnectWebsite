@@ -13,8 +13,16 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
+
 .white{
     color: white !important
+}
+.middle{
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20vh;
+    margin-bottom: 25vh;
+    width: 50%;
 }
 hr.white{
     background-color: white !important;
